@@ -42,6 +42,8 @@ public class PageAccedi {
     @FXML
     private ImageView img_avatar;
     @FXML
+    private ImageView img_avatar2;
+    @FXML
     private PasswordField hiddentxtField_psw;
 
     public TextField txtField_psw;
@@ -73,21 +75,21 @@ public class PageAccedi {
         }
     }
 
-    ImageView imgAvatar = new ImageView(new Image("file:../img/imgView.png"));
-
     @FXML
     void func_changeVisibility(MouseEvent event) {
         if (checkbox_show.isSelected()) {
             txtField_psw.setText(hiddentxtField_psw.getText());
             txtField_psw.setVisible(true);
             hiddentxtField_psw.setVisible(false);
-            imgAvatar.setImage(new Image("file:img/imgNot.png"));
+            img_avatar.setVisible(false);
+            img_avatar2.setVisible(true);
             return;
         }
         hiddentxtField_psw.setText(txtField_psw.getText());
         hiddentxtField_psw.setVisible(true);
         txtField_psw.setVisible(false);
-        imgAvatar.setImage(new Image("file:img/imgView.png"));
+        img_avatar2.setVisible(false);
+        img_avatar.setVisible(true);
 
     }
 
