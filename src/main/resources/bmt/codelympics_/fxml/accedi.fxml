@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -38,16 +39,23 @@
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btn_annullaAcc" layoutX="322.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="ANNULLA" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <TextField layoutX="226.0" layoutY="172.0" promptText="username" />
-      <Circle fill="#1fff29" layoutX="301.0" layoutY="92.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-      <PasswordField layoutX="225.0" layoutY="216.0" promptText="password" />
-      <CheckBox layoutX="248.0" layoutY="252.0" mnemonicParsing="false" text="show password" />
-      <Label fx:id="lbl_error" layoutX="287.0" layoutY="282.0" />
+      <TextField fx:id="txtField_username" layoutX="226.0" layoutY="172.0" promptText="username" />
+      <Circle fx:id="colorAvatar" fill="#1fff29" layoutX="301.0" layoutY="92.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
+      <TextField fx:id="txtField_psw" layoutX="225.0" layoutY="216.0" promptText="password" visible="false" />
+      <PasswordField fx:id="hiddentxtField_psw" layoutX="225.0" layoutY="216.0" promptText="password" />      
+      <CheckBox fx:id="checkbox_show" layoutX="248.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#func_changeVisibility" text="show password" />
+      <Label fx:id="lbl_error" layoutX="278.0" layoutY="281.0" text="ERRORE" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -38,17 +40,25 @@
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="btn_annullaAcc" layoutX="322.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="ANNULLA" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <TextField layoutX="225.0" layoutY="194.0" promptText="username" />
-      <Circle fill="#1fff29" layoutX="301.0" layoutY="97.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
-      <PasswordField layoutX="225.0" layoutY="232.0" promptText="password" />
-      <TextField layoutX="225.0" layoutY="156.0" promptText="email" />
-      <CheckBox layoutX="249.0" layoutY="261.0" mnemonicParsing="false" text="show password" />
-      <Label fx:id="lbl_error" layoutX="299.0" layoutY="284.0" />
+      <TextField fx:id="txtField_username" layoutX="225.0" layoutY="194.0" promptText="username" />
+      <Circle fx:id="colorAvatar" fill="WHITE" layoutX="301.0" layoutY="79.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <TextField fx:id="txtField_psw" layoutX="225.0" layoutY="230.0" promptText="password" visible="false" />
+      <PasswordField fx:id="hiddentxtField_psw" layoutX="225.0" layoutY="230.0" promptText="password" />      
+      <TextField fx:id="txtField_email" layoutX="225.0" layoutY="156.0" promptText="email" />
+      <CheckBox fx:id="checkbox_show" layoutX="248.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#func_changeVisibility" text="show password" />
+      <Label fx:id="lbl_error" layoutX="286.0" layoutY="284.0" />
+      <ColorPicker fx:id="colorChange" layoutX="278.0" layoutY="125.0" onAction="#setColor" prefHeight="18.0" prefWidth="46.0" />
    </children>
 </AnchorPane>
