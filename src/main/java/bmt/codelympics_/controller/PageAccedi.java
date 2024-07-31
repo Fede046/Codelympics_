@@ -18,6 +18,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
 public class PageAccedi {
 
@@ -37,9 +39,11 @@ public class PageAccedi {
 
     @FXML
     private TextField txtField_email;
-
+    @FXML
+    private ImageView img_avatar;
     @FXML
     private PasswordField hiddentxtField_psw;
+
     public TextField txtField_psw;
 
     // --------------------------------
@@ -69,17 +73,22 @@ public class PageAccedi {
         }
     }
 
+    ImageView imgAvatar = new ImageView(new Image("file:../img/imgView.png"));
+
     @FXML
     void func_changeVisibility(MouseEvent event) {
         if (checkbox_show.isSelected()) {
             txtField_psw.setText(hiddentxtField_psw.getText());
             txtField_psw.setVisible(true);
             hiddentxtField_psw.setVisible(false);
+            imgAvatar.setImage(new Image("file:img/imgNot.png"));
             return;
         }
         hiddentxtField_psw.setText(txtField_psw.getText());
         hiddentxtField_psw.setVisible(true);
         txtField_psw.setVisible(false);
+        imgAvatar.setImage(new Image("file:img/imgView.png"));
+
     }
 
     private void updateLoginUsernamesAndPasswords() throws IOException {
