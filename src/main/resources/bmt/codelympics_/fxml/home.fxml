@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.Home">
+   <children>
+      <ImageView fitHeight="419.0" fitWidth="610.0" layoutX="-5.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../img/Home1.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_accedi" layoutX="95.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#func_accedi" prefHeight="41.0" prefWidth="139.0" style="-fx-background-radius: 6; -fx-background-color: Black; -fx-cursor: hand;" text="ACCEDI" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btn_iscriviti" layoutX="396.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#func_iscriviti" prefHeight="41.0" prefWidth="139.0" style="-fx-background-radius: 6; -fx-background-color: Black;" text="ISCRIVITI" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>
