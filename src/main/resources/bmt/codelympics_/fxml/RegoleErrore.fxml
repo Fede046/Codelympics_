@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegoleErrore">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="607.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="HOME" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lb_title" layoutX="332.0" layoutY="-14.0" prefHeight="94.0" prefWidth="267.0" text="Trova l'errore">
+         <font>
+            <Font name="Verdana Pro Black" size="30.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="69.0" layoutY="52.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="258.0" prefWidth="462.0" text="Benvenuto Atleta!&#10;La tua avventura olimpica comincia ora. &#10;Sconfiggi l'avversario e conquista la medaglia d'oro. &#10;Ogni sfida che affronterai sarà un passo avanti verso la gloria e &#10;la maestria nella programmazione. &#10;&#10;Il gioco ti mostrerà 4 codici, ma solo uno di essi è sbagliato, trovalo!&#10;Conferma la tua scelta e scopri se hai risposto corretto. &#10;Attenzione, non si torna indietro. &#10;&#10;Che la sfida abbia inizio!" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_princErrore" layoutX="45.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#func_PrincErrore" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="PRINCIPIANTE" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_DifficileErrore1" layoutX="407.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#func_DifficileErrore" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="DIFFICILE" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_princErrore2" layoutX="225.0" layoutY="320.0" mnemonicParsing="false" onMouseClicked="#func_IntErrore" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="INTERMEDIO" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
