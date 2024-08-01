@@ -97,7 +97,15 @@ public class PageIscriviti {
         String username = txtField_username.getText();
         String mail = txtField_email.getText();
         String password = txtField_psw.getText();
-        if(controlEqualsUsernameAndMail(username,mail)&&ContrlUsPswMail(username,password,mail)) writeToFile();
+        if(controlEqualsUsernameAndMail(username,mail)&&ContrlUsPswMail(username,password,mail)){
+         //----------------cambio stage GamesHome-----------
+         writeToFile();
+         Stage stage1 = (Stage) btn_iscrivitiGo.getScene().getWindow();
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
+         Parent root = loader.load();
+         stage1.setScene(new Scene(root));
+           
+        }
         
         
     }

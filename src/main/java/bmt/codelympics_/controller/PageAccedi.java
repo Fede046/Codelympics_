@@ -56,9 +56,10 @@ public class PageAccedi {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
         Stage stage1 = (Stage) btn_annullaAcc.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
+         Parent root = loader.load();
+         stage1.setScene(new Scene(root));
+       
     }
 
     @FXML
@@ -70,10 +71,17 @@ public class PageAccedi {
         String encryptedPassword = loginInfo.get(username);
         if (encryptor.encryptString(password).equals(encryptedPassword)) {
             System.out.println("successfully login!");
+            Stage stage1 = (Stage) btn_accediGo.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
+            Parent root = loader.load();
+            stage1.setScene(new Scene(root));
+            
         } else {
             lbl_error.setVisible(true);
         }
     }
+
+   
 
     @FXML
     void func_changeVisibility(MouseEvent event) {
