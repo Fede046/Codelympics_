@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 
-public class PageAccedi {
+public class PageAccedi extends ChangeStage{
 
     @FXML
     private Button btn_accediGo;
@@ -56,11 +56,7 @@ public class PageAccedi {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
          // -----------------cambio stage home--------------------
-        Stage stage1 = (Stage) btn_annullaAcc.getScene().getWindow();
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-         Parent root = loader.load();
-         stage1.setScene(new Scene(root));
-       
+            fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home.fxml");
     }
 
     @FXML
@@ -72,11 +68,9 @@ public class PageAccedi {
         String encryptedPassword = loginInfo.get(username);
         if (encryptor.encryptString(password).equals(encryptedPassword)) {
             System.out.println("successfully login!");
-             // -----------------cambio stage home--------------------
-            Stage stage1 = (Stage) btn_accediGo.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
-            Parent root = loader.load();
-            stage1.setScene(new Scene(root));
+             // -----------------cambio stage gamesHome--------------------
+             fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/playGames.fxml");
+
             
         } else {
             lbl_error.setVisible(true);

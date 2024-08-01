@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class Home {
+public class Home extends ChangeStage{
 
     @FXML
     private Button btn_accedi;
@@ -19,19 +19,15 @@ public class Home {
     @FXML
     void func_accedi(MouseEvent event) throws Exception {
          // -----------------cambio stage accedi--------------------
-        Stage stage1 = (Stage) btn_accedi.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/accedi.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+         fuc_changeStage(btn_accedi, "/bmt/codelympics_/fxml/accedi.fxml");
+        
     }
 
     @FXML
     void func_iscriviti(MouseEvent event) throws Exception {
          // -----------------cambio stage iscriviti--------------------
-        Stage stage1 = (Stage) btn_iscriviti.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/iscriviti.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+         fuc_changeStage(btn_iscriviti, "/bmt/codelympics_/fxml/iscriviti.fxml");
+        
     }
 
 }

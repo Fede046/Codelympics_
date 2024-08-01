@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class RegoleErrore {
+public class RegoleErrore extends ChangeStage{
 
     @FXML
     private Button btn_DifficileErrore1;
@@ -34,10 +34,8 @@ public class RegoleErrore {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
     // -----------------cambio stage gamesHome--------------------
-        Stage stage1 = (Stage) btn_GoHome.getScene().getWindow();
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
-         Parent root = loader.load();
-         stage1.setScene(new Scene(root));
+    fuc_changeStage(btn_GoHome,"/bmt/codelympics_/fxml/playGames.fxml");
+        
     }
 
     @FXML

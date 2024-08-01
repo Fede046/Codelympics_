@@ -34,7 +34,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
-public class PageIscriviti {
+public class PageIscriviti extends ChangeStage{
 
     @FXML
     private Button btn_annullaAcc;
@@ -73,10 +73,8 @@ public class PageIscriviti {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
         // -----------------cambio stage home--------------------
-        Stage stage1 = (Stage) btn_annullaAcc.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+        fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home.fxml");
+        
     }
 
     @FXML
@@ -100,10 +98,8 @@ public class PageIscriviti {
         if(controlEqualsUsernameAndMail(username,mail)&&ContrlUsPswMail(username,password,mail)){
          //----------------cambio stage GamesHome-----------
          writeToFile();
-         Stage stage1 = (Stage) btn_iscrivitiGo.getScene().getWindow();
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
-         Parent root = loader.load();
-         stage1.setScene(new Scene(root));
+         fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/playGames.fxml");
+         
            
         }
         

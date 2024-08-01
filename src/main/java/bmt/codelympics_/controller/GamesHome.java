@@ -12,7 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class GamesHome {
+public class GamesHome extends ChangeStage {
 
     @FXML
     private Button btn_GoHome;
@@ -68,55 +68,43 @@ public class GamesHome {
     @FXML
     void func_Home(MouseEvent event) throws Exception{
     // -----------------cambio stage home--------------------
-        Stage stage1 = (Stage) btn_goMedagliere.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+    fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/home.fxml");
+        
     }
 
     @FXML
     void func_goMedagliere(MouseEvent event) throws Exception{
     // -----------------cambio stage Medagliere--------------------
-    Stage stage1 = (Stage) btn_goMedagliere.getScene().getWindow();
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-    Parent root = loader.load();
-    stage1.setScene(new Scene(root));
+    fuc_changeStage(btn_goMedagliere, "/bmt/codelympics_/fxml/home.fxml");
+    
     }
 
     @FXML
     void func_startErrore(MouseEvent event) throws Exception{
         // -----------------cambio stage trovaErrore--------------------
-        Stage stage1 = (Stage) btn_startErrore.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/RegoleErrore.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+        fuc_changeStage(btn_startErrore, "/bmt/codelympics_/fxml/RegoleErrore.fxml");
+        
     }
 
     @FXML
     void func_startMultiplo(MouseEvent event)throws Exception {
  // -----------------cambio stage Ris Multiple--------------------
-    Stage stage1 = (Stage) btn_startMultiple.getScene().getWindow();
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-    Parent root = loader.load();
-    stage1.setScene(new Scene(root));
+ fuc_changeStage(btn_startMultiple, "/bmt/codelympics_/fxml/RegoleMultipla.fxml");
+    
     }
 
     @FXML
     void func_startRiordina(MouseEvent event) throws Exception{
         // -----------------cambio stage Riordinamento--------------------
-        Stage stage1 = (Stage) btn_startRiordinamento.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+        fuc_changeStage(btn_startRiordinamento, "/bmt/codelympics_/fxml/RegoleRio.fxml");
+    
     }
 
     @FXML
     void func_startVF(MouseEvent event) throws Exception{
         // -----------------cambio stage trovaErrore--------------------
-        Stage stage1 = (Stage) btn_startVF.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
-        Parent root = loader.load();
-        stage1.setScene(new Scene(root));
+        fuc_changeStage(btn_startVF, "/bmt/codelympics_/fxml/RegoleVF.fxml");
+
     }
 
 }
