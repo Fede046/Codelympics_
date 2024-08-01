@@ -65,7 +65,7 @@ public class PageIscriviti {
     private Circle colorAvatar;
 
     // -------------------------------------------
-
+//provavavavavvavava
     Encryptor encryptor = new Encryptor();
     File file = new File("data.csv");
     HashMap<String, String> loginInfo = new HashMap<>();
