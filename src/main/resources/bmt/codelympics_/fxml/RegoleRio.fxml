@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegoleRio">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="606.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Downloads/_a5bf4584-e6cc-46cb-be00-1ccb1b28e6b8.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="HOME" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lb_title" layoutX="341.0" layoutY="-13.0" prefHeight="94.0" prefWidth="306.0" text="Riodinamento">
+         <font>
+            <Font name="Verdana Pro Black" size="30.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="69.0" layoutY="53.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="258.0" prefWidth="462.0" text="Benvenuto Atleta!&#10;La tua avventura olimpica comincia ora. &#10;Sconfiggi l'avversario e conquista la medaglia d'oro. &#10;Ogni sfida che affronterai sarà un passo avanti verso la gloria e &#10;la maestria nella programmazione. &#10;&#10;All’interno di questo esercizio verrà mostrato al giocatore &#10;una serie di blocchi contenenti delle parti di codice Java, &#10;il giocatore dovrà riordinarlo in modo che sia corretto e funzionante.&#10;Conferma la tua scelta e scopri se hai risposto corretto. &#10;Attenzione, non si torna indietro. &#10;&#10;Che la sfida abbia inizio!" textAlignment="CENTER">
+         <font>
+            <Font name="Verdana" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_princRio" layoutX="45.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_PrincRio" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="PRINCIPIANTE" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_DifficileRio" layoutX="407.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_DifficileRio" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="DIFFICILE" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btn_princRio" layoutX="225.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_IntRio" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="INTERMEDIO" textFill="WHITE">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
