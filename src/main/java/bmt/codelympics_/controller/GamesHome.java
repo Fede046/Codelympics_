@@ -66,8 +66,12 @@ public class GamesHome {
     private Rectangle rect41;
 
     @FXML
-    void func_Home(MouseEvent event) {
-
+    void func_Home(MouseEvent event) throws Exception{
+    // -----------------cambio stage home--------------------
+        Stage stage1 = (Stage) btn_goMedagliere.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
+        Parent root = loader.load();
+        stage1.setScene(new Scene(root));
     }
 
     @FXML

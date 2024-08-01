@@ -1,9 +1,13 @@
 package bmt.codelympics_.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class RegoleErrore {
 
@@ -28,8 +32,12 @@ public class RegoleErrore {
     }
 
     @FXML
-    void func_Home(MouseEvent event) {
-
+    void func_Home(MouseEvent event) throws Exception {
+    // -----------------cambio stage gamesHome--------------------
+        Stage stage1 = (Stage) btn_GoHome.getScene().getWindow();
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
+         Parent root = loader.load();
+         stage1.setScene(new Scene(root));
     }
 
     @FXML

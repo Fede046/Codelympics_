@@ -18,6 +18,7 @@ public class Home {
 
     @FXML
     void func_accedi(MouseEvent event) throws Exception {
+         // -----------------cambio stage accedi--------------------
         Stage stage1 = (Stage) btn_accedi.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/accedi.fxml"));
         Parent root = loader.load();
@@ -26,6 +27,7 @@ public class Home {
 
     @FXML
     void func_iscriviti(MouseEvent event) throws Exception {
+         // -----------------cambio stage iscriviti--------------------
         Stage stage1 = (Stage) btn_iscriviti.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/iscriviti.fxml"));
         Parent root = loader.load();

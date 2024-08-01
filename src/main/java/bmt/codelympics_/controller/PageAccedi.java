@@ -55,6 +55,7 @@ public class PageAccedi {
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
+         // -----------------cambio stage home--------------------
         Stage stage1 = (Stage) btn_annullaAcc.getScene().getWindow();
          FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/home.fxml"));
          Parent root = loader.load();
@@ -71,6 +72,7 @@ public class PageAccedi {
         String encryptedPassword = loginInfo.get(username);
         if (encryptor.encryptString(password).equals(encryptedPassword)) {
             System.out.println("successfully login!");
+             // -----------------cambio stage home--------------------
             Stage stage1 = (Stage) btn_accediGo.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/bmt/codelympics_/fxml/playGames.fxml"));
             Parent root = loader.load();
