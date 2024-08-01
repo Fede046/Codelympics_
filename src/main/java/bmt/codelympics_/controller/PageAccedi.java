@@ -101,6 +101,7 @@ public class PageAccedi {
             String[] usernameAndPassword = scanner.nextLine().split(",");
             loginInfo.put(usernameAndPassword[0], usernameAndPassword[1]);
         }
+        scanner.close();
     }
 
 }

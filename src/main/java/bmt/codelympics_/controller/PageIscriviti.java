@@ -28,6 +28,7 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -67,6 +68,7 @@ public class PageIscriviti {
 
     Encryptor encryptor = new Encryptor();
     File file = new File("data.csv");
+    HashMap<String, String> loginInfo = new HashMap<>();
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
@@ -92,11 +94,45 @@ public class PageIscriviti {
 
     @FXML
     void func_goPlayHome(MouseEvent event) throws Exception {
-        writeToFile();
+        String username = txtField_username.getText();
+        String mail = txtField_email.getText();
+        String password = txtField_psw.getText();
+        if(controlEqualsUsernameAndMail(username,mail)&&ContrlUsPswMail(username,password,mail)) writeToFile();
+        
+        
+    }
+   
+
+    private void seeUsernameAndMail() throws IOException {
+        Scanner scanner = new Scanner(file);
+        loginInfo.clear();
+        loginInfo = new HashMap<>();
+        while (scanner.hasNext()) {
+            String[] usernameAndMail = scanner.nextLine().split(",");
+            loginInfo.put(usernameAndMail[0], usernameAndMail[2]);
+        }
+        scanner.close();
     }
 
-    void writeToFile()
-            throws Exception {
+//uso di GPT https://chatgpt.com/share/ce867cef-dde3-443a-bda8-0c0b41584602
+    boolean ContrlUsPswMail(String username,String password,String mail){
+        if(!username.matches("[a-zA-Z0-9 ]*")) {lbl_error.setVisible(true);return false;}
+        if(password.isBlank()) {lbl_error.setVisible(true);return false;}
+        if(!mail.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) {lbl_error.setVisible(true);return false;}
+    
+        return true;
+    }
+
+    boolean controlEqualsUsernameAndMail(String username,String mail)throws Exception{
+        seeUsernameAndMail();
+        if(loginInfo.containsKey(username)){lbl_error.setVisible(true);return false;}
+        if(loginInfo.containsValue(mail)) {lbl_error.setVisible(true); return false;}
+        return true;
+    }
+
+
+
+    void writeToFile() throws Exception {
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();
         String email = txtField_email.getText();
@@ -104,7 +140,7 @@ public class PageIscriviti {
         BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
         writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
         writer.close();
-
+        System.out.print("FAttttttttto");
     }
 
     @FXML

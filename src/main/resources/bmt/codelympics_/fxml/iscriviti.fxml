@@ -61,8 +61,7 @@
          <font>
             <Font size="11.0" />
          </font></CheckBox>
-      <Label fx:id="lbl_error" layoutX="286.0" layoutY="284.0" />
       <ColorPicker fx:id="colorChange" layoutX="278.0" layoutY="125.0" onAction="#setColor" prefHeight="18.0" prefWidth="46.0" />
-      <Label fx:id="lbl_error1" alignment="TOP_CENTER" layoutX="260.0" layoutY="283.0" prefHeight="18.0" prefWidth="79.0" style="-fx-background-color: red;" text="ERRORE" textAlignment="CENTER" textFill="WHITE" visible="false" />
+      <Label fx:id="lbl_error" alignment="TOP_CENTER" layoutX="260.0" layoutY="283.0" prefHeight="18.0" prefWidth="79.0" style="-fx-background-color: red;" text="ERRORE" textAlignment="CENTER" textFill="WHITE" visible="false" />
    </children>
 </AnchorPane>
