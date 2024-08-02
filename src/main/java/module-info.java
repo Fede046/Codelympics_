@@ -17,6 +17,6 @@ module bmt.codelympics_ {
 
     exports bmt.codelympics_.controller.esercizi;
     opens bmt.codelympics_.controller.esercizi to javafx.fxml;
-    exports bmt.codelympics_.controller.confermaes;
-    opens bmt.codelympics_.controller.confermaes to javafx.fxml;
+    exports bmt.codelympics_.controller.transizioni;
+    opens bmt.codelympics_.controller.transizioni to javafx.fxml;
 }

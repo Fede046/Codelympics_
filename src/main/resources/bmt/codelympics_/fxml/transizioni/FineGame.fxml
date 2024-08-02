@@ -10,8 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FineGame">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.transizioni.transFineGame">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-3.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
          <fill>
@@ -44,7 +43,7 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lb_punti1" alignment="CENTER" layoutX="160.0" layoutY="122.0" prefHeight="54.0" prefWidth="284.0" text="Hai fatto n risposte giuste su 5.&#10;" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="160.0" layoutY="122.0" prefHeight="54.0" prefWidth="284.0" text="Hai fatto    risposte giuste su 5.&#10;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -59,7 +58,17 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lb_punti2" layoutX="242.0" layoutY="200.0" text="n*100 PUNTI!" textFill="WHITE">
+      <Label fx:id="lb_punti2" layoutX="242.0" layoutY="200.0" text="n*100 " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_punti1" layoutX="253.0" layoutY="136.0" prefHeight="17.0" prefWidth="22.0" text="n" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="200.0" text="PUNTI!" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

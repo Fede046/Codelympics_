@@ -32,19 +32,19 @@ public class RegoleErrore extends ChangeStage {
     }
     @FXML
     void func_DifficileErrore(MouseEvent event) throws Exception{
-        // -----------------cambio stage esercizioTrovaErrore--------------------
+        // -----------------cambio stage esTrovaErrore--------------------
         fuc_changeStage(btn_difficileErrore, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 
     @FXML
     void func_IntErrore(MouseEvent event)throws Exception {
-         // -----------------cambio stage esercizioTrovaErrore--------------------
+         // -----------------cambio stage esTrovaErrore--------------------
         fuc_changeStage(btn_intErrore, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 
     @FXML
     void func_PrincErrore(MouseEvent event)throws Exception {
-         // -----------------cambio stage esercizioTrovaErrore--------------------
+         // -----------------cambio stage esTrovaErrore--------------------
         fuc_changeStage(btn_princErrore, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 

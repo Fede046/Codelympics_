@@ -10,7 +10,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 
-public class esTrovaErrore extends ChangeStage{
+public class esRispMult extends ChangeStage{
+
+    @FXML
+    private ToggleGroup RM;
 
     @FXML
     private Button btn_Conferma;
@@ -22,13 +25,19 @@ public class esTrovaErrore extends ChangeStage{
     private ImageView img_r1;
 
     @FXML
-    private ImageView img_r2;
+    private Label lb_domanda;
 
     @FXML
-    private ImageView img_r3;
+    private Label lb_r1;
 
     @FXML
-    private ImageView img_r4;
+    private Label lb_r2;
+
+    @FXML
+    private Label lb_r3;
+
+    @FXML
+    private Label lb_r4;
 
     @FXML
     private Label lb_title;
@@ -49,29 +58,17 @@ public class esTrovaErrore extends ChangeStage{
     private Rectangle rec_r1;
 
     @FXML
-    private Rectangle rec_r2;
-
-    @FXML
-    private Rectangle rec_r3;
-
-    @FXML
-    private Rectangle rec_r4;
-
-    @FXML
-    private ToggleGroup risposte;
-    
-    @FXML
     void func_ConfermaExit(MouseEvent event)throws Exception {
-// -----------------cambio stage AbbandonaGame--------------------
-fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
+ // -----------------cambio stage AbbandonaGame--------------------
+ fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
-    // -----------------cambio stage ConfermaEs--------------------
-    fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+ // -----------------cambio stage ConfermaEs--------------------
+ fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
 
-   
+    
 
 }
