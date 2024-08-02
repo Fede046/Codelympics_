@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import bmt.codelympics_.controller.utility.ChangeStage;
-import bmt.codelympics_.crypto.Encryptor;
+import bmt.codelympics_.model.ChangeStage;
+import bmt.codelympics_.model.Encryptor;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;

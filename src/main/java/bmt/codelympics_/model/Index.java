@@ -1,4 +1,4 @@
-package bmt.codelympics_;
+package bmt.codelympics_.model;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

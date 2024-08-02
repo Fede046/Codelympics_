@@ -1,6 +1,6 @@
 package bmt.codelympics_.controller.homes;
 
-import bmt.codelympics_.controller.utility.ChangeStage;
+import bmt.codelympics_.model.ChangeStage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;

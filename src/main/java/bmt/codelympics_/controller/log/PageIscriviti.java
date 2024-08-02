@@ -1,6 +1,6 @@
 package bmt.codelympics_.controller.log;
 
-import bmt.codelympics_.controller.utility.ChangeStage;
+import bmt.codelympics_.model.ChangeStage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -11,7 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-import bmt.codelympics_.crypto.Encryptor;
+import bmt.codelympics_.model.Encryptor;
 
 import java.io.BufferedWriter;
 import java.io.File;
