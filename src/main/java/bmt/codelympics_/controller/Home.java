@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Home extends ChangeStage{
-
+     
     @FXML
     private Button btn_accedi;
 

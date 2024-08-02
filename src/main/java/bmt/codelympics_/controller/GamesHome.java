@@ -75,7 +75,7 @@ public class GamesHome extends ChangeStage {
     @FXML
     void func_goMedagliere(MouseEvent event) throws Exception{
     // -----------------cambio stage Medagliere--------------------
-    fuc_changeStage(btn_goMedagliere, "/bmt/codelympics_/fxml/home.fxml");
+    //fuc_changeStage(btn_goMedagliere, "/bmt/codelympics_/fxml/home.fxml");
     
     }
 

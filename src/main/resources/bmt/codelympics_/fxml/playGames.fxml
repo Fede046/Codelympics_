@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="614.0" fitWidth="632.0" layoutX="-10.0" layoutY="-111.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/Schermatagiochi.jpeg" />
+            <Image url="@../img/gamesHome/Schermatagiochi.jpeg" />
          </image>
       </ImageView>
       <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="ESCI" textFill="WHITE">
@@ -43,24 +43,24 @@
       <Rectangle fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="353.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" />
       <ImageView fitHeight="95.0" fitWidth="136.0" layoutX="356.0" layoutY="263.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/gamesHome_Arco.png" />
+            <Image url="@../img/gamesHome/gamesHome_Arco.png" />
          </image>
       </ImageView>
       <ImageView fx:id="img_scherma" fitHeight="106.0" fitWidth="191.0" layoutX="56.0" layoutY="94.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/gamesHome_Scherma.png" />
+            <Image url="@../img/gamesHome/gamesHome_Scherma.png" />
          </image>
       </ImageView>
       <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="53.0" layoutY="252.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" />
       <Rectangle fx:id="rect41" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="357.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" />
       <ImageView fitHeight="112.0" fitWidth="115.0" layoutX="46.0" layoutY="257.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/gamesHome_Pugile.png" />
+            <Image url="@../img/gamesHome/gamesHome_Pugile.png" />
          </image>
       </ImageView>
       <ImageView fx:id="img_pesi" fitHeight="112.0" fitWidth="203.0" layoutX="365.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.6" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/gamesHome_Pesi.png" />
+            <Image url="@../img/gamesHome/gamesHome_Pesi.png" />
          </image>
       </ImageView>
       <Button fx:id="btn_startErrore" layoutX="106.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#func_startErrore" prefHeight="18.0" prefWidth="78.0" style="-fx-background-color: black;" text="START" textFill="WHITE">
