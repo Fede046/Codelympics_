@@ -1,15 +1,12 @@
-package bmt.codelympics_.controller;
+package bmt.codelympics_.controller.regole;
 
+import bmt.codelympics_.controller.utility.ChangeStage;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
-public class RegoleErrore extends ChangeStage{
+public class RegoleErrore extends ChangeStage {
 
     @FXML
     private Button btn_DifficileErrore1;

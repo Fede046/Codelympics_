@@ -1,16 +1,13 @@
-package bmt.codelympics_.controller;
+package bmt.codelympics_.controller.homes;
 
+import bmt.codelympics_.controller.utility.ChangeStage;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 
 public class GamesHome extends ChangeStage {
 

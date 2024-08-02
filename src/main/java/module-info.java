@@ -8,6 +8,12 @@ module bmt.codelympics_ {
 
     opens bmt.codelympics_ to javafx.fxml;
     exports bmt.codelympics_;
-    exports bmt.codelympics_.controller;
-    opens bmt.codelympics_.controller to javafx.fxml;
+    exports bmt.codelympics_.controller.homes;
+    opens bmt.codelympics_.controller.homes to javafx.fxml;
+    exports bmt.codelympics_.controller.log;
+    opens bmt.codelympics_.controller.log to javafx.fxml;
+    exports bmt.codelympics_.controller.utility;
+    opens bmt.codelympics_.controller.utility to javafx.fxml;
+    exports bmt.codelympics_.controller.regole;
+    opens bmt.codelympics_.controller.regole to javafx.fxml;
 }

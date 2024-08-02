@@ -1,14 +1,11 @@
-package bmt.codelympics_.controller;
+package bmt.codelympics_.controller.homes;
 
+import bmt.codelympics_.controller.utility.ChangeStage;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
-public class Home extends ChangeStage{
+public class Home extends ChangeStage {
      
     @FXML
     private Button btn_accedi;

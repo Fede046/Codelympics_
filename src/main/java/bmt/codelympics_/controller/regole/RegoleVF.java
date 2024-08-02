@@ -1,11 +1,12 @@
-package bmt.codelympics_.controller;
+package bmt.codelympics_.controller.regole;
 
+import bmt.codelympics_.controller.utility.ChangeStage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class RegoleVF extends ChangeStage{
+public class RegoleVF extends ChangeStage {
 
     @FXML
     private Button btn_DifficileVF;

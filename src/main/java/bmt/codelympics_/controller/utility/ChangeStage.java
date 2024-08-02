@@ -1,4 +1,4 @@
-package bmt.codelympics_.controller;
+package bmt.codelympics_.controller.utility;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

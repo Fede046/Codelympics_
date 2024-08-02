@@ -1,27 +1,22 @@
-package bmt.codelympics_.controller;
+package bmt.codelympics_.controller.log;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import bmt.codelympics_.controller.utility.ChangeStage;
 import bmt.codelympics_.crypto.Encryptor;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
 
-public class PageAccedi extends ChangeStage{
+public class PageAccedi extends ChangeStage {
 
     @FXML
     private Button btn_accediGo;
