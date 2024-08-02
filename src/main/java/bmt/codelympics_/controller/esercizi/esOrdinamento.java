@@ -57,7 +57,7 @@ public class esOrdinamento extends ChangeStage{
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
 // -----------------cambio stage AbbandonaGame--------------------
-fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
+fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
     @FXML
