@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConfermaEsercizio">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-3.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
+         <fill>
+            <LinearGradient endX="0.49242422074982617" endY="1.0" startX="0.43181817414182605">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.08235294371843338" green="0.29019609093666077" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8705882430076599" green="0.7372549176216125" blue="0.8705882430076599" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="278.0" layoutX="155.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="290.0" />
+      <Button fx:id="btn_Avanti" layoutX="247.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#func_Avanti" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="AVANTI" textFill="WHITE" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="286.0">
+         <font>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lbl_risultato" layoutX="235.0" layoutY="74.0" text="CORRETTO!" textFill="#179e02">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <ImageView fx:id="img_gif" fitHeight="150.0" fitWidth="200.0" layoutX="207.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@e.gif" />
+         </image></ImageView>
+   </children>
+</AnchorPane>
