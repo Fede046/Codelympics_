@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="419.0" fitWidth="610.0" layoutX="-5.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/home/Home1.png"/>
+            <Image url="@../../img/home/Home1.png"/>
          </image>
       </ImageView>
       <Button fx:id="btn_accedi" layoutX="95.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#func_accedi" prefHeight="41.0" prefWidth="139.0" style="-fx-background-radius: 6; -fx-background-color: Black; -fx-cursor: hand;" text="ACCEDI" textFill="WHITE">

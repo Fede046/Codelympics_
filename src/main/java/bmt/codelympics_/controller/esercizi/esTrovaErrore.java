@@ -63,7 +63,7 @@ public class esTrovaErrore extends ChangeStage{
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
     // -----------------cambio stage ConfermaEs--------------------
-    fuc_changeStage(btn_Conferma,"/bmt/codelympics_/fxml/ConfermaEs.fxml");
+    fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
 
     @FXML

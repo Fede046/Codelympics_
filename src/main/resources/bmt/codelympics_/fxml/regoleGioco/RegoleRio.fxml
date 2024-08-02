@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="423.0" fitWidth="615.0" layoutX="-5.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/regoleGioco/regoleGioco_Arco.png" />
+            <Image url="@../../img/regoleGioco/regoleGioco_Arco.png" />
          </image>
       </ImageView>
       <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="HOME" textFill="WHITE">

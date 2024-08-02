@@ -57,13 +57,13 @@
       <Circle fx:id="colorAvatar" fill="WHITE" layoutX="301.0" layoutY="92.0" radius="45.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView id="img_avatar" fx:id="img_avatar" visible="true" fitHeight="81.0" fitWidth="74.0" layoutX="264.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/accedi/imgView.png" />
+            <Image url="@../../img/log/imgView.png" />
          </image>
       </ImageView>
 
       <ImageView id="img_avatar" fx:id="img_avatar2" visible="false" fitHeight="81.0" fitWidth="74.0" layoutX="264.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/accedi/imgNot.png"/>
+            <Image url="@../../img/log/imgNot.png"/>
          </image>
 
       </ImageView>

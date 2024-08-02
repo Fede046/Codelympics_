@@ -44,7 +44,7 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="lb_punti" alignment="CENTER" layoutX="158.0" layoutY="123.0" prefHeight="108.0" prefWidth="284.0" text="Hai fatto n risposte giuste su 5.&#10;HAI OTTENUTO n*100 PUNTI!&#10;" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="lb_punti1" alignment="CENTER" layoutX="160.0" layoutY="122.0" prefHeight="54.0" prefWidth="284.0" text="Hai fatto n risposte giuste su 5.&#10;" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -52,6 +52,16 @@
       <Label layoutX="116.0" layoutY="246.0" text="Ora sei pronto per passare al prossimo livello. &#10;Che l'avventura continui!" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="239.0" layoutY="172.0" text="HAI OTTENUTO " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_punti2" layoutX="242.0" layoutY="200.0" text="n*100 PUNTI!" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
    </children>

@@ -51,7 +51,7 @@ public class PageAccedi extends ChangeStage {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
          // -----------------cambio stage home--------------------
-            fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home.fxml");
+            fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home/home.fxml");
     }
 
     @FXML
@@ -64,7 +64,7 @@ public class PageAccedi extends ChangeStage {
         if (encryptor.encryptString(password).equals(encryptedPassword)) {
             System.out.println("successfully login!");
              // -----------------cambio stage gamesHome--------------------
-             fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/playGames.fxml");
+             fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
 
             
         } else {

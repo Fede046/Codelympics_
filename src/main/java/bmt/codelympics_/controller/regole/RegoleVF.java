@@ -24,7 +24,7 @@ public class RegoleVF extends ChangeStage {
     @FXML
     void func_Home(MouseEvent event) throws Exception{
          // -----------------cambio stage gamesHome--------------------
-        fuc_changeStage(btn_GoHome,"/bmt/codelympics_/fxml/playGames.fxml");
+        fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
     }
 
 

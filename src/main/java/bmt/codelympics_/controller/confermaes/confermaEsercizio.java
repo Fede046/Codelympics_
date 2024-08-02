@@ -20,7 +20,7 @@ public class confermaEsercizio extends ChangeStage{
     @FXML
     void func_Avanti(MouseEvent event)throws Exception {
          // -----------------cambio stage esercizioTrovaErrore--------------------
-         fuc_changeStage(btn_Avanti,"/bmt/codelympics_/fxml/EsErrore.fxml");   
+         fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 
 }

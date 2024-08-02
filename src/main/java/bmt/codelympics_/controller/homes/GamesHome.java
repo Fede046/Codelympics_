@@ -65,7 +65,7 @@ public class GamesHome extends ChangeStage {
     @FXML
     void func_Home(MouseEvent event) throws Exception{
     // -----------------cambio stage home--------------------
-    fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/home.fxml");
+    fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/home/home.fxml");
         
     }
 
@@ -79,28 +79,28 @@ public class GamesHome extends ChangeStage {
     @FXML
     void func_startErrore(MouseEvent event) throws Exception{
         // -----------------cambio stage trovaErrore--------------------
-        fuc_changeStage(btn_startErrore, "/bmt/codelympics_/fxml/RegoleErrore.fxml");
+        fuc_changeStage(btn_startErrore, "/bmt/codelympics_/fxml/regoleGioco/RegoleErrore.fxml");
         
     }
 
     @FXML
     void func_startMultiplo(MouseEvent event)throws Exception {
  // -----------------cambio stage Ris Multiple--------------------
- fuc_changeStage(btn_startMultiple, "/bmt/codelympics_/fxml/RegoleMultipla.fxml");
+ fuc_changeStage(btn_startMultiple, "/bmt/codelympics_/fxml/regoleGioco/RegoleMultipla.fxml");
     
     }
 
     @FXML
     void func_startRiordina(MouseEvent event) throws Exception{
         // -----------------cambio stage Riordinamento--------------------
-        fuc_changeStage(btn_startRiordinamento, "/bmt/codelympics_/fxml/RegoleRio.fxml");
+        fuc_changeStage(btn_startRiordinamento, "/bmt/codelympics_/fxml/regoleGioco/RegoleRio.fxml");
     
     }
 
     @FXML
     void func_startVF(MouseEvent event) throws Exception{
         // -----------------cambio stage trovaErrore--------------------
-        fuc_changeStage(btn_startVF, "/bmt/codelympics_/fxml/RegoleVF.fxml");
+        fuc_changeStage(btn_startVF, "/bmt/codelympics_/fxml/regoleGioco/RegoleVF.fxml");
 
     }
 

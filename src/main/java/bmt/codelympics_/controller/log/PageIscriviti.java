@@ -62,7 +62,7 @@ public class PageIscriviti extends ChangeStage {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
         // -----------------cambio stage home--------------------
-        fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home.fxml");
+        fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home/home.fxml");
         
     }
 
@@ -87,7 +87,7 @@ public class PageIscriviti extends ChangeStage {
         if(controlEqualsUsernameAndMail(username,mail)&&ContrlUsPswMail(username,password,mail)){
          //----------------cambio stage GamesHome-----------
          writeToFile();
-         fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/playGames.fxml");
+         fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
          
            
         }

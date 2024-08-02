@@ -27,25 +27,25 @@ public class RegoleErrore extends ChangeStage {
     @FXML
     void func_Home(MouseEvent event) throws Exception {
     // -----------------cambio stage gamesHome--------------------
-    fuc_changeStage(btn_GoHome,"/bmt/codelympics_/fxml/playGames.fxml");
+    fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
         
     }
     @FXML
     void func_DifficileErrore(MouseEvent event) throws Exception{
         // -----------------cambio stage esercizioTrovaErrore--------------------
-        fuc_changeStage(btn_difficileErrore,"/bmt/codelympics_/fxml/EsErrore.fxml");    
+        fuc_changeStage(btn_difficileErrore, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 
     @FXML
     void func_IntErrore(MouseEvent event)throws Exception {
          // -----------------cambio stage esercizioTrovaErrore--------------------
-        fuc_changeStage(btn_intErrore,"/bmt/codelympics_/fxml/EsErrore.fxml");    
+        fuc_changeStage(btn_intErrore, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 
     @FXML
     void func_PrincErrore(MouseEvent event)throws Exception {
          // -----------------cambio stage esercizioTrovaErrore--------------------
-        fuc_changeStage(btn_princErrore,"/bmt/codelympics_/fxml/EsErrore.fxml");    
+        fuc_changeStage(btn_princErrore, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
     }
 
 }
