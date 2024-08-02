@@ -56,6 +56,8 @@ public class PageAccedi extends ChangeStage {
 
     @FXML
     void func_goPlayHome(MouseEvent event) throws Exception {
+        // -----------------cambio stage gamesHome--------------------
+        fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();
         updateLoginUsernamesAndPasswords();

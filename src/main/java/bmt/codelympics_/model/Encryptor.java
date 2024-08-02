@@ -19,7 +19,7 @@ public class Encryptor {
         return bigInt.toString(16);
     }
 
-    public static void main(String[] args) throws NoSuchAlgorithmException {
+   /*  public static void main(String[] args) throws NoSuchAlgorithmException {
         Encryptor encryptor = new Encryptor();
 
         String password = "monkey123";
@@ -37,5 +37,5 @@ public class Encryptor {
             System.out.println("Wrong!!");
         }
 
-    }
+    }*/
 }
