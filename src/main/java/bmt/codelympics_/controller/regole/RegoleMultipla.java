@@ -31,20 +31,20 @@ public class RegoleMultipla extends ChangeStage {
 
     @FXML
     void func_DifficileMult(MouseEvent event) throws Exception{
- // -----------------cambio stage esRispMult--------------------
- fuc_changeStage(btn_difficileMult, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+        // -----------------cambio stage esRispMult--------------------
+        fuc_changeStage(btn_difficileMult, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
 
     @FXML
     void func_IntMult(MouseEvent event) throws Exception {
-// -----------------cambio stage esRispMult--------------------
-fuc_changeStage(btn_intMult, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+        // -----------------cambio stage esRispMult--------------------
+        fuc_changeStage(btn_intMult, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
 
     @FXML
     void func_PrincMult(MouseEvent event) throws Exception{
-// -----------------cambio stage esRispMult--------------------
-fuc_changeStage(btn_princMult, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+        // -----------------cambio stage esRispMult--------------------
+        fuc_changeStage(btn_princMult, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
 
 }

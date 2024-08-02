@@ -9,12 +9,14 @@ import javafx.scene.input.MouseEvent;
 public class RegoleVF extends ChangeStage {
 
     @FXML
-    private Button btn_DifficileVF;
+    private Button btn_difficileVF;
 
     @FXML
     private Button btn_GoHome;
 
-    
+    @FXML
+    private Button btn_intVF;
+
     @FXML
     private Button btn_princVF;
 
@@ -30,21 +32,21 @@ public class RegoleVF extends ChangeStage {
 
 
     @FXML
-    void func_DifficileVF(MouseEvent event) {
-// -----------------cambio stage esRispMult--------------------
-fuc_changeStage(btn_intMult, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+    void func_DifficileVF(MouseEvent event) throws Exception{
+        // -----------------cambio stage esRispMult--------------------
+        fuc_changeStage(btn_difficileVF, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
     }
 
     @FXML
-    void func_IntVF(MouseEvent event) {
-// -----------------cambio stage esRispMult--------------------
-fuc_changeStage(btn_intMult, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+    void func_IntVF(MouseEvent event) throws Exception{
+        // -----------------cambio stage esRispMult--------------------
+        fuc_changeStage(btn_intVF, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
     }
 
     @FXML
-    void func_PrincVF(MouseEvent event) {
-// -----------------cambio stage esRispMult--------------------
-fuc_changeStage(btn_intMult, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+    void func_PrincVF(MouseEvent event) throws Exception{
+        // -----------------cambio stage esRispMult--------------------
+        fuc_changeStage(btn_princVF, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
     }
 
 }
