@@ -20,13 +20,15 @@ public class RegoleMultipla extends ChangeStage {
     private Label lb_title;
 
     @FXML
-    void func_DifficileMult(MouseEvent event) {
-
+    void func_Home(MouseEvent event)throws Exception {
+         // -----------------cambio stage gamesHome--------------------
+        fuc_changeStage(btn_GoHome,"/bmt/codelympics_/fxml/playGames.fxml");
     }
 
+
     @FXML
-    void func_Home(MouseEvent event)throws Exception {
-        fuc_changeStage(btn_GoHome,"/bmt/codelympics_/fxml/playGames.fxml");
+    void func_DifficileMult(MouseEvent event) {
+
     }
 
     @FXML

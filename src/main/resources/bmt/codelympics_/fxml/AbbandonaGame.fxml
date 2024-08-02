@@ -3,8 +3,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -12,7 +10,8 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.confermaes.confermaEsercizio">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AbbandonaGame">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-3.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
          <fill>
@@ -32,8 +31,8 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="278.0" layoutX="155.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="290.0" />
-      <Button fx:id="btn_Avanti" layoutX="247.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#func_Avanti" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="AVANTI" textFill="WHITE" AnchorPane.leftAnchor="247.0" AnchorPane.topAnchor="286.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="278.0" layoutX="156.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="290.0" />
+      <Button fx:id="btn_Conferma" layoutX="169.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#func_Conferma" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="CONFERMA" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -41,13 +40,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="lbl_risultato" layoutX="235.0" layoutY="74.0" text="CORRETTO!" textFill="#179e02">
+      <Button fx:id="btn_AnnullaConferma" layoutX="324.0" layoutY="292.0" mnemonicParsing="false" onMouseClicked="#func_AnnullaConferma" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="ANNULLA" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="24.0" />
-         </font></Label>
-      <ImageView fx:id="img_gif" fitHeight="150.0" fitWidth="200.0" layoutX="207.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@e.gif" />
-         </image></ImageView>
+            <Font name="Verdana Pro" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="169.0" layoutY="129.0" text="Sei sicuro di voler uscire?&#10;Se abbandoni ora perderai tutti i &#10;tuoi progressi&#10; " textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

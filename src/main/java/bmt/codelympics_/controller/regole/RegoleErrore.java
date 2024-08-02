@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 public class RegoleErrore extends ChangeStage {
 
     @FXML
-    private Button btn_DifficileErrore1;
+    private Button btn_difficileErrore;
 
     @FXML
     private Button btn_GoHome;
@@ -18,15 +18,11 @@ public class RegoleErrore extends ChangeStage {
     private Button btn_princErrore;
 
     @FXML
-    private Button btn_princErrore2;
+    private Button btn_intErrore;
 
     @FXML
     private Label lb_title;
 
-    @FXML
-    void func_DifficileErrore(MouseEvent event) {
-
-    }
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
@@ -34,15 +30,22 @@ public class RegoleErrore extends ChangeStage {
     fuc_changeStage(btn_GoHome,"/bmt/codelympics_/fxml/playGames.fxml");
         
     }
-
     @FXML
-    void func_IntErrore(MouseEvent event) {
-
+    void func_DifficileErrore(MouseEvent event) throws Exception{
+        // -----------------cambio stage esercizioTrovaErrore--------------------
+        fuc_changeStage(btn_difficileErrore,"/bmt/codelympics_/fxml/EsErrore.fxml");    
     }
 
     @FXML
-    void func_PrincErrore(MouseEvent event) {
+    void func_IntErrore(MouseEvent event)throws Exception {
+         // -----------------cambio stage esercizioTrovaErrore--------------------
+        fuc_changeStage(btn_intErrore,"/bmt/codelympics_/fxml/EsErrore.fxml");    
+    }
 
+    @FXML
+    void func_PrincErrore(MouseEvent event)throws Exception {
+         // -----------------cambio stage esercizioTrovaErrore--------------------
+        fuc_changeStage(btn_princErrore,"/bmt/codelympics_/fxml/EsErrore.fxml");    
     }
 
 }
