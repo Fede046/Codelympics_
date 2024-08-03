@@ -1,16 +1,13 @@
 package bmt.codelympics_.controller.log;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Scanner;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.Encryptor;
 import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -109,7 +106,7 @@ public class PageAccedi extends ChangeStage {
         scanner.close();
     }*/
     private void updateLoginUsernamesAndPasswords() throws Exception {
-        InputStream is = getClass().getResourceAsStream("/data.csv");
+        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data/data.csv");
         if (is == null) {
             throw new IOException("File CSV non trovato");
         }
