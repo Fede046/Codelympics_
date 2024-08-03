@@ -95,16 +95,7 @@ public class PageAccedi extends ChangeStage {
     }
 
 
-    /*private void updateLoginUsernamesAndPasswords() throws IOException {
-        Scanner scanner = new Scanner(file);
-        loginInfo.clear();
-        loginInfo = new HashMap<>();
-        while (scanner.hasNext()) {
-            String[] usernameAndPassword = scanner.nextLine().split(",");
-            loginInfo.put(usernameAndPassword[0], usernameAndPassword[1]);
-        }
-        scanner.close();
-    }*/
+
     private void updateLoginUsernamesAndPasswords() throws Exception {
         InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data/data.csv");
         if (is == null) {

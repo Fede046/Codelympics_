@@ -1,6 +1,7 @@
 package bmt.codelympics_.controller.log;
 
 import bmt.codelympics_.model.ChangeStage;
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +15,7 @@ import javafx.scene.input.MouseEvent;
 
 import bmt.codelympics_.model.Encryptor;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
 import javafx.scene.paint.Color;
@@ -97,15 +95,22 @@ public class PageIscriviti extends ChangeStage {
     }
    
 
-    private void seeUsernameAndMail() throws IOException {
-        Scanner scanner = new Scanner(file);
-        loginInfo.clear();
-        loginInfo = new HashMap<>();
-        while (scanner.hasNext()) {
-            String[] usernameAndMail = scanner.nextLine().split(",");
-            loginInfo.put(usernameAndMail[0], usernameAndMail[2]);
+    private void seeUsernameAndMail() throws Exception {
+
+        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data/data.csv");
+        if (is == null) {
+            throw new IOException("File CSV non trovato");
         }
-        scanner.close();
+        try (CSVReader reader = new CSVReader(new InputStreamReader(is))) {
+            loginInfo.clear();
+            String[] line;
+            while ((line = reader.readNext()) != null) {
+                if (line.length >= 2) {
+                    loginInfo.put(line[0], line[2]);
+                }
+            }
+        }
+
     }
 
 //uso di GPT https://chatgpt.com/share/ce867cef-dde3-443a-bda8-0c0b41584602
@@ -132,29 +137,15 @@ public class PageIscriviti extends ChangeStage {
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
 
-        try (CSVWriter writer = new CSVWriter(new FileWriter("src/main/resources/data/data.csv", true))) {
-            String[] record = { username, encryptor.encryptString(password), email, colore.toString() };
+        try (CSVWriter writer = new CSVWriter(new FileWriter("src/main/resources/data.csv", true))) {
+            String[] record = { username,",", encryptor.encryptString(password),",", email,",", colore.toString(),"\n" };
             writer.writeNext(record);
         }
 
-        //BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-        //writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
-       // writer.close();
+
         System.out.print("FAttttttttto");
     }
-    /*public void writeToFile() throws IOException {
-        String username = txtField_username.getText();
-        String password = hiddentxtField_psw.getText();
-        String email = txtField_email.getText();
-        Paint colore = colorAvatar.getFill();
-        String encryptedPassword = encryptString(password); // Sostituisci con il tuo metodo di criptazione
 
-        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath, true))) {
-            String[] record = { username, encryptedPassword, email, colore.toString() };
-            writer.writeNext(record);
-        }
-        System.out.println("FAttttttttto");
-    }*/
 
     @FXML
     void setColor(ActionEvent event) {
