@@ -55,7 +55,7 @@ public class PageIscriviti extends ChangeStage {
     // -------------------------------------------
 
     Encryptor encryptor = new Encryptor();
-    File file = new File("\\data\\data.csv");
+    //File file = new File("\\data\\data.csv");
     HashMap<String, String> loginInfo = new HashMap<>();
 
     @FXML
@@ -137,10 +137,21 @@ public class PageIscriviti extends ChangeStage {
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
 
-        try (CSVWriter writer = new CSVWriter(new FileWriter("src/main/resources/data.csv", true))) {
-            String[] record = { username,",", encryptor.encryptString(password),",", email,",", colore.toString(),"\n" };
-            writer.writeNext(record);
+
+
+
+
+
+
+
+        try (CSVWriter writerw = new CSVWriter(new FileWriter("src/main/resources/data/data.csv", true))) {
+            BufferedWriter writer = new BufferedWriter(writerw);
+            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
+            writer.close();
+            //String[] record = { username, encryptor.encryptString(password), email, colore.toString()};
+            //writer.writeNext(record);
         }
+
 
 
         System.out.print("FAttttttttto");
