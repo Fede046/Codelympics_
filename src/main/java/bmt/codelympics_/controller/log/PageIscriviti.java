@@ -55,14 +55,14 @@ public class PageIscriviti extends ChangeStage {
     // -------------------------------------------
 
     Encryptor encryptor = new Encryptor();
-    //File file = new File("\\data\\data.csv");
+    // File file = new File("\\data\\data.csv");
     HashMap<String, String> loginInfo = new HashMap<>();
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
         // -----------------cambio stage home--------------------
         fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home/home.fxml");
-        
+
     }
 
     @FXML
@@ -83,17 +83,14 @@ public class PageIscriviti extends ChangeStage {
         String username = txtField_username.getText();
         String mail = txtField_email.getText();
         String password = txtField_psw.getText();
-        if(controlEqualsUsernameAndMail(username,mail)&&ContrlUsPswMail(username,password,mail)){
-         //----------------cambio stage GamesHome-----------
-         writeToFile();
-         fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
-         
-           
+        if (controlEqualsUsernameAndMail(username, mail) && ContrlUsPswMail(username, password, mail)) {
+            // ----------------cambio stage GamesHome-----------
+            writeToFile();
+            fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
+
         }
-        
-        
+
     }
-   
 
     private void seeUsernameAndMail() throws Exception {
 
@@ -113,23 +110,36 @@ public class PageIscriviti extends ChangeStage {
 
     }
 
-//uso di GPT https://chatgpt.com/share/ce867cef-dde3-443a-bda8-0c0b41584602
-    boolean ContrlUsPswMail(String username,String password,String mail){
-        if(!username.matches("[a-zA-Z0-9 ]*")) {lbl_error.setVisible(true);return false;}
-        if(password.isBlank()) {lbl_error.setVisible(true);return false;}
-        if(!mail.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) {lbl_error.setVisible(true);return false;}
-    
+    // uso di GPT https://chatgpt.com/share/ce867cef-dde3-443a-bda8-0c0b41584602
+    boolean ContrlUsPswMail(String username, String password, String mail) {
+        if (!username.matches("[a-zA-Z0-9 ]*")) {
+            lbl_error.setVisible(true);
+            return false;
+        }
+        if (password.isBlank()) {
+            lbl_error.setVisible(true);
+            return false;
+        }
+        if (!mail.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) {
+            lbl_error.setVisible(true);
+            return false;
+        }
+
         return true;
     }
 
-    boolean controlEqualsUsernameAndMail(String username,String mail)throws Exception{
+    boolean controlEqualsUsernameAndMail(String username, String mail) throws Exception {
         seeUsernameAndMail();
-        if(loginInfo.containsKey(username)){lbl_error.setVisible(true);return false;}
-        if(loginInfo.containsValue(mail)) {lbl_error.setVisible(true); return false;}
+        if (loginInfo.containsKey(username)) {
+            lbl_error.setVisible(true);
+            return false;
+        }
+        if (loginInfo.containsValue(mail)) {
+            lbl_error.setVisible(true);
+            return false;
+        }
         return true;
     }
-
-
 
     void writeToFile() throws Exception {
         String username = txtField_username.getText();
@@ -137,26 +147,20 @@ public class PageIscriviti extends ChangeStage {
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
 
+        // try (CSVWriter writerw = new CSVWriter(new
+        // FileWriter("src/main/resources/data/data.csv", true))) {
+        try (PrintWriter writer = new PrintWriter(
+                new BufferedWriter(new FileWriter("src/main/resources/bmt/codelympics_/data/data.csv", true)));) {
 
-
-
-
-
-
-
-        try (CSVWriter writerw = new CSVWriter(new FileWriter("src/main/resources/data/data.csv", true))) {
-            BufferedWriter writer = new BufferedWriter(writerw);
             writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
             writer.close();
-            //String[] record = { username, encryptor.encryptString(password), email, colore.toString()};
-            //writer.writeNext(record);
+            // String[] record = { username, encryptor.encryptString(password), email,
+            // colore.toString()};
+            // writer.writeNext(record);
         }
-
-
 
         System.out.print("FAttttttttto");
     }
-
 
     @FXML
     void setColor(ActionEvent event) {
