@@ -54,7 +54,7 @@
       </Button>
       <TextField fx:id="txtField_username" layoutX="225.0" layoutY="191.0" promptText="username" />
       <Circle fx:id="colorAvatar" fill="WHITE" layoutX="301.0" layoutY="79.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <TextField fx:id="txtField_psw" layoutX="225.0" layoutY="230.0" promptText="password" visible="false" />
+      <TextField fx:id="txtField_psw" layoutX="225.0" layoutY="227.0" promptText="password" visible="false" />
       <PasswordField fx:id="hiddentxtField_psw" layoutX="225.0" layoutY="227.0" promptText="password" />      
       <TextField fx:id="txtField_email" layoutX="225.0" layoutY="154.0" promptText="email" />
       <CheckBox fx:id="checkbox_show" layoutX="248.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#func_changeVisibility" prefHeight="16.0" prefWidth="106.0" text="show password">
