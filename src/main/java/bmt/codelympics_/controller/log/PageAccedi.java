@@ -105,7 +105,7 @@ public class PageAccedi extends ChangeStage {
             loginInfo.clear();
             String[] line;
             while ((line = reader.readNext()) != null) {
-                if (line.length >= 2) { // Assicurati che ci siano almeno due colonne (username e password)
+                if (line.length >= 2) {
                     loginInfo.put(line[0], line[1]);
                 }
             }
@@ -120,6 +120,5 @@ public class PageAccedi extends ChangeStage {
             throw new RuntimeException(e);
         }
     }
-
 }
 //https://chatgpt.com/share/a3883244-1901-4ce6-9d9b-e17cbfeed365
