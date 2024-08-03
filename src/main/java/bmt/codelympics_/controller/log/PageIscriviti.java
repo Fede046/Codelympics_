@@ -1,6 +1,7 @@
 package bmt.codelympics_.controller.log;
 
 import bmt.codelympics_.model.ChangeStage;
+import com.opencsv.CSVWriter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -130,11 +131,30 @@ public class PageIscriviti extends ChangeStage {
         String password = hiddentxtField_psw.getText();
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
-        BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-        writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
-        writer.close();
+
+        try (CSVWriter writer = new CSVWriter(new FileWriter("src/main/resources/data.csv", true))) {
+            String[] record = { username, encryptor.encryptString(password), email, colore.toString() };
+            writer.writeNext(record);
+        }
+
+        //BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+        //writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
+       // writer.close();
         System.out.print("FAttttttttto");
     }
+    /*public void writeToFile() throws IOException {
+        String username = txtField_username.getText();
+        String password = hiddentxtField_psw.getText();
+        String email = txtField_email.getText();
+        Paint colore = colorAvatar.getFill();
+        String encryptedPassword = encryptString(password); // Sostituisci con il tuo metodo di criptazione
+
+        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath, true))) {
+            String[] record = { username, encryptedPassword, email, colore.toString() };
+            writer.writeNext(record);
+        }
+        System.out.println("FAttttttttto");
+    }*/
 
     @FXML
     void setColor(ActionEvent event) {
