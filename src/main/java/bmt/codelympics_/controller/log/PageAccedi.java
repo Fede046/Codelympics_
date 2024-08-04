@@ -97,7 +97,7 @@ public class PageAccedi extends ChangeStage {
 
 
     private void updateLoginUsernamesAndPasswords() throws Exception {
-        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data/data.csv");
+        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data.csv");
         if (is == null) {
             throw new IOException("File CSV non trovato");
         }

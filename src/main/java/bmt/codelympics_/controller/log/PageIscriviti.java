@@ -17,7 +17,7 @@ import bmt.codelympics_.model.Encryptor;
 
 import java.io.*;
 import java.util.HashMap;
-import java.util.Scanner;
+
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -83,7 +83,7 @@ public class PageIscriviti extends ChangeStage {
         String username = txtField_username.getText();
         String mail = txtField_email.getText();
         String password = txtField_psw.getText();
-        if (controlEqualsUsernameAndMail(username, mail) && ContrlUsPswMail(username, password, mail)) {
+        if (controlEqualsUsernameAndMail(username, mail) /*&& ContrlUsPswMail(username, password, mail)*/) {
             // ----------------cambio stage GamesHome-----------
             writeToFile();
             fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
@@ -94,7 +94,7 @@ public class PageIscriviti extends ChangeStage {
 
     private void seeUsernameAndMail() throws Exception {
 
-        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data/data.csv");
+        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data.csv");
         if (is == null) {
             throw new IOException("File CSV non trovato");
         }
@@ -147,16 +147,10 @@ public class PageIscriviti extends ChangeStage {
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
 
-        // try (CSVWriter writerw = new CSVWriter(new
-        // FileWriter("src/main/resources/data/data.csv", true))) {
-        try (PrintWriter writer = new PrintWriter(
-                new BufferedWriter(new FileWriter("src/main/resources/bmt/codelympics_/data/data.csv", true)));) {
 
-            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
-            writer.close();
-            // String[] record = { username, encryptor.encryptString(password), email,
-            // colore.toString()};
-            // writer.writeNext(record);
+        try (CSVWriter writer = new CSVWriter(new FileWriter("src/main/resources/bmt/codelympics_/data.csv", true))){
+            String[] record = { username, encryptor.encryptString(password), email, colore.toString()};
+            writer.writeNext(record);
         }
 
         System.out.print("FAttttttttto");
