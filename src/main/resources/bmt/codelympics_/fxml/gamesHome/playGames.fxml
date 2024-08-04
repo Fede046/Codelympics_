@@ -11,14 +11,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.GamesHome">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.GamesHome">
    <children>
       <ImageView fitHeight="614.0" fitWidth="632.0" layoutX="-10.0" layoutY="-111.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../img/gamesHome/Schermatagiochi.jpeg" />
          </image>
       </ImageView>
-      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="ESCI" textFill="WHITE">
+      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" text="ESCI" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -31,7 +31,7 @@
             <Font name="Verdana Pro Black" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btn_goMedagliere" layoutX="133.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_goMedagliere" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="MEDAGLIERE" textFill="WHITE">
+      <Button fx:id="btn_goMedagliere" layoutX="133.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_goMedagliere" prefHeight="38.0" prefWidth="106.0" text="MEDAGLIERE" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -63,7 +63,7 @@
             <Image url="@../../img/gamesHome/gamesHome_Pesi.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_startErrore" layoutX="106.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#func_startErrore" prefHeight="18.0" prefWidth="78.0" style="-fx-background-color: black;" text="START" textFill="WHITE">
+      <Button fx:id="btn_startErrore" layoutX="106.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#func_startErrore" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -84,7 +84,7 @@
       </Label>
       <ProgressBar fx:id="prgbar_errore" layoutX="55.0" layoutY="210.0" prefWidth="187.0" progress="0.0" />
       <ProgressBar fx:id="prgbar_multiple" layoutX="356.0" layoutY="210.0" prefWidth="187.0" progress="0.0" />
-      <Button fx:id="btn_startMultiple" layoutX="409.0" layoutY="172.0" mnemonicParsing="false" onMouseClicked="#func_startMultiplo" prefHeight="18.0" prefWidth="78.0" style="-fx-background-color: black;" text="START" textFill="WHITE">
+      <Button fx:id="btn_startMultiple" layoutX="409.0" layoutY="172.0" mnemonicParsing="false" onMouseClicked="#func_startMultiplo" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -103,7 +103,7 @@
          </font>
       </Label>
       <ProgressBar fx:id="prgbar_VF" layoutX="57.0" layoutY="368.0" prefWidth="187.0" progress="0.0" />
-      <Button fx:id="btn_startVF" layoutX="111.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#func_startVF" prefHeight="18.0" prefWidth="78.0" style="-fx-background-color: black;" text="START" textFill="WHITE">
+      <Button fx:id="btn_startVF" layoutX="111.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#func_startVF" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -122,7 +122,7 @@
          </font>
       </Label>
       <ProgressBar fx:id="prgbar_riordinamento" layoutX="357.0" layoutY="367.0" prefWidth="187.0" progress="0.0" />
-      <Button fx:id="btn_startRiordinamento" layoutX="411.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#func_startRiordina" prefHeight="18.0" prefWidth="78.0" style="-fx-background-color: black;" text="START" textFill="WHITE">
+      <Button fx:id="btn_startRiordinamento" layoutX="411.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#func_startRiordina" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>

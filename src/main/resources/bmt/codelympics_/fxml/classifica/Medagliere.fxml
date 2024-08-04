@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.medagliere">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.medagliere">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-2.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
          <fill>
@@ -64,7 +64,7 @@
             <TableColumn prefWidth="93.5999755859375" text="Tempo" />
         </columns>
       </TableView>
-      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="HOME" textFill="WHITE">
+      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" text="HOME" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>

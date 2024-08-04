@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.regole.RegoleMultipla">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.regole.RegoleMultipla">
    <children>
       <ImageView fitHeight="419.0" fitWidth="617.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../img/regoleGioco/regoleGioco_Pesi.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="HOME" textFill="WHITE">
+      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" text="HOME" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -33,7 +33,7 @@
             <Font name="Verdana" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btn_princMult" layoutX="45.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_PrincMult" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="PRINCIPIANTE" textFill="WHITE">
+      <Button fx:id="btn_princMult" layoutX="45.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_PrincMult" prefHeight="38.0" prefWidth="149.0" text="PRINCIPIANTE" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -41,7 +41,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_difficileMult" layoutX="407.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_DifficileMult" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="DIFFICILE" textFill="WHITE">
+      <Button fx:id="btn_difficileMult" layoutX="407.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_DifficileMult" prefHeight="38.0" prefWidth="149.0" text="DIFFICILE" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="btn_intMult" layoutX="225.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_IntMult" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: black; -fx-background-radius: 6;" text="INTERMEDIO" textFill="WHITE">
+      <Button fx:id="btn_intMult" layoutX="225.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#func_IntMult" prefHeight="38.0" prefWidth="149.0" text="INTERMEDIO" textFill="WHITE">
          <font>
             <Font name="Verdana Pro" size="12.0" />
          </font>
