@@ -1,0 +1,35 @@
+#btn_accediGo:hover,#btn_accedi:hover,#btn_iscriviti:hover,#btn_Conferma:hover,#btn_accedi:hover{
+	-fx-background-color: rgb(75, 75, 75);
+}
+#btn_accediGo,#btn_conferma,#btn_iscriviti,#btn_accedi{
+	-fx-background-radius: 6;
+	-fx-background-color:black;
+}
+
+#btn_ConfermaExit:hover{
+	-fx-background-color: gray;
+}
+#btn_ConfermaExit{
+	-fx-background-radius: 6;
+	-fx-background-color:black;
+	-fx-width: absolute;
+}
+
+#btn_GoHome:hover{
+	-fx-background-color: gray;
+}
+#btn_GoHome{
+	-fx-background-radius: 6;
+	-fx-background-color:black;
+	-fx-width: absolute;
+}
+
+#btn_goMedagliere:hover{
+	-fx-background-color: gray;
+}
+#btn_goMedagliere{
+	-fx-background-radius: 6;
+	-fx-background-color:black;
+	-fx-width: absolute;
+}
+/**********************************************************************/
