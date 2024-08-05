@@ -20,7 +20,11 @@ public class DataSingleton {
     public void setNumEsercizio(int numEsercizio){
         this.numEsercizio=numEsercizio;
     }
-    public int punteggio
+    public int puntTotMicroEsercizi(boolean[] risposteMicroEsercizi){
+        int tot=0;
+        for(boolean e:risposteMicroEsercizi) if(e) tot++;
+        return tot;
+    }
 
     public boolean risposta(int numMacroEsercizio,int numEsercizio,int[] risp){
 
