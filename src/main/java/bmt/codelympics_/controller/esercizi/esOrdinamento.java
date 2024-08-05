@@ -2,12 +2,18 @@ package bmt.codelympics_.controller.esercizi;
 
 import bmt.codelympics_.model.ChangeStage;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.input.MouseEvent;
 
-public class esOrdinamento extends ChangeStage{
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+public class esOrdinamento extends ChangeStage implements Initializable {
 
     @FXML
     private Button btn_Conferma;
@@ -37,22 +43,27 @@ public class esOrdinamento extends ChangeStage{
     private Label lb_title;
 
     @FXML
-    private Spinner<?> sp_1;
+    private Spinner<Integer> sp_1;
 
     @FXML
-    private Spinner<?> sp_2;
+    private Spinner<Integer> sp_2;
 
     @FXML
-    private Spinner<?> sp_3;
+    private Spinner<Integer> sp_3;
 
     @FXML
-    private Spinner<?> sp_4;
+    private Spinner<Integer> sp_4;
 
     @FXML
-    private Spinner<?> sp_5;
+    private Spinner<Integer> sp_5;
 
     @FXML
-    private Spinner<?> sp_6;
+    private Spinner<Integer> sp_6;
+
+
+
+
+
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception{
 // -----------------cambio stage AbbandonaGame--------------------
@@ -65,6 +76,16 @@ fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaG
 fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
 
-   
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Spinner[] spinners = new Spinner[]{sp_1,sp_2,sp_3,sp_4,sp_5,sp_6};
+        //caso 6 scelte
+        for(Spinner e:spinners) e.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,6,1));
+
+    }
+
+
 
 }
