@@ -1,8 +1,8 @@
 package bmt.codelympics_.controller.log;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 
 import bmt.codelympics_.model.ChangeStage;
@@ -51,30 +51,25 @@ public class PageAccedi extends ChangeStage {
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
-         // -----------------cambio stage home--------------------
-            fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home/home.fxml");
+        // -----------------cambio stage home--------------------
+        fuc_changeStage(btn_annullaAcc, "/bmt/codelympics_/fxml/home/home.fxml");
     }
 
     @FXML
     void func_goPlayHome(MouseEvent event) throws Exception {
-
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();
         updateLoginUsernamesAndPasswords();
 
         String encryptedPassword = loginInfo.get(username);
         if (encryptor.encryptString(password).equals(encryptedPassword)) {
-            System.out.println("successfully login!");
-             // -----------------cambio stage gamesHome--------------------
-             fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
-
-            
+            System.out.println("Login successful!");
+            // -----------------cambio stage gamesHome--------------------
+            fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
         } else {
             lbl_error.setVisible(true);
         }
     }
-
-   
 
     @FXML
     void func_changeVisibility(MouseEvent event) {
@@ -91,17 +86,11 @@ public class PageAccedi extends ChangeStage {
         txtField_psw.setVisible(false);
         img_avatar2.setVisible(false);
         img_avatar.setVisible(true);
-
     }
 
-
-
     private void updateLoginUsernamesAndPasswords() throws Exception {
-        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data.csv");
-        if (is == null) {
-            throw new IOException("File CSV non trovato");
-        }
-        try (CSVReader reader = new CSVReader(new InputStreamReader(is))) {
+        String filePath = "C:\\playproj\\props.csv";
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             loginInfo.clear();
             String[] line;
             while ((line = reader.readNext()) != null) {
@@ -109,16 +98,21 @@ public class PageAccedi extends ChangeStage {
                     loginInfo.put(line[0], line[1]);
                 }
             }
+        } catch (FileNotFoundException e) {
+            throw new IOException("File CSV non trovato: " + filePath);
         }
     }
+
     @FXML
     public void initialize() {
         try {
             updateLoginUsernamesAndPasswords();
         } catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
+            lbl_error.setText("Errore nel caricamento dei dati di login");
+            lbl_error.setVisible(true);
         }
     }
 }
+
 //https://chatgpt.com/share/a3883244-1901-4ce6-9d9b-e17cbfeed365

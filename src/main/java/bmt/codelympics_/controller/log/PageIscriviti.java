@@ -16,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import bmt.codelympics_.model.Encryptor;
 
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 import javafx.scene.paint.Color;
@@ -91,7 +92,21 @@ public class PageIscriviti extends ChangeStage {
         }
 
     }
-
+    private void seeUsernameAndMail() throws Exception {
+        String filePath = "C:\\playproj\\props.csv";
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+            loginInfo.clear();
+            String[] line;
+            while ((line = reader.readNext()) != null) {
+                if (line.length >= 2) {
+                    loginInfo.put(line[0], line[2]);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new IOException("File CSV non trovato: " + filePath);
+        }
+    }
+/*
     private void seeUsernameAndMail() throws Exception {
 
         InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data.csv");
@@ -109,7 +124,7 @@ public class PageIscriviti extends ChangeStage {
         }
 
     }
-
+*/
     // uso di GPT https://chatgpt.com/share/ce867cef-dde3-443a-bda8-0c0b41584602
     boolean ContrlUsPswMail(String username, String password, String mail) {
         if (!username.matches("[a-zA-Z0-9 ]*")) {
@@ -146,11 +161,13 @@ public class PageIscriviti extends ChangeStage {
         String password = hiddentxtField_psw.getText();
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
+        String filePath = "C:\\playproj\\props.csv";
 
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))){
+            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
 
-        try (CSVWriter writer = new CSVWriter(new FileWriter("src/main/resources/bmt/codelympics_/data.csv", true))){
-            String[] record = { username, encryptor.encryptString(password), email, colore.toString()};
-            writer.writeNext(record);
+        }catch (Exception e){
+            e.getStackTrace();
         }
 
         System.out.print("FAttttttttto");
