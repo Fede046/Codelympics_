@@ -40,16 +40,16 @@
 
 }
 #img_1{
-	-fx-background-image:url(img/gamesHome/gamesHome_Scherma.png);
+	-fx-background-image:url(img/gamesHome/GH_scherma.gif);
 }
 #img_2{
-	-fx-background-image:url(img/gamesHome/gamesHome_Pesi.png);
+	-fx-background-image:url(img/gamesHome/GH_pesi.png);
 }
 #img_3{
-	-fx-background-image:url(img/gamesHome/gamesHome_Pugile.png);
+	-fx-background-image:url(img/gamesHome/GH_boxe.png);
 }
 #img_4{
-	-fx-background-image:url(img/gamesHome/gamesHome_Arco.png);
+	-fx-background-image:url(img/gamesHome/GH_arco.png);
 }
 #img_gif{
 	-fx-background-image:url(img/esercizi/trovaErrore/scherma.gif);
