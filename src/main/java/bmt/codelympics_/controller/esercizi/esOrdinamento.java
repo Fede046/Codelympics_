@@ -1,6 +1,7 @@
 package bmt.codelympics_.controller.esercizi;
 
 import bmt.codelympics_.model.ChangeStage;
+import bmt.codelympics_.model.DataSingleton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -62,7 +63,7 @@ public class esOrdinamento extends ChangeStage implements Initializable {
 
 
 
-
+    DataSingleton data = DataSingleton.getInstance();
 
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception{
@@ -72,6 +73,17 @@ fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaG
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
+        System.out.println("cccccc");
+        data.setNumEsercizio(data.getNumEsercizio()+1);
+        int[] risp = new int[]{sp_1.getValue(),sp_2.getValue(),sp_3.getValue(),sp_4.getValue(),sp_5.getValue(),sp_6.getValue()};
+        data.risposta(data.getnumMacroEsercizio(), data.getNumEsercizio(),risp);
+
+        //controlli
+        System.out.println(data.getnumMacroEsercizio());
+        System.out.println(data.getNumEsercizio());
+        System.out.println();
+        for(int a: risp) System.out.print(a+" ");
+
 // -----------------cambio stage ConfermaEs--------------------
 fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }

@@ -7,11 +7,20 @@ public class DataSingleton {
     private static final DataSingleton instance= new DataSingleton();
 
     private int numEsercizio;
+    private int numMacroEsercizio;
 
     private DataSingleton (){}
 
     public static DataSingleton getInstance(){
         return instance;
+    }
+
+    public int getnumMacroEsercizio(){
+        return numMacroEsercizio;
+    }
+
+    public void setNumMacroEsercizio(int numMacroEsercizio) {
+        this.numMacroEsercizio = numMacroEsercizio;
     }
 
     public int getNumEsercizio(){
@@ -20,6 +29,8 @@ public class DataSingleton {
     public void setNumEsercizio(int numEsercizio){
         this.numEsercizio=numEsercizio;
     }
+
+
     public int puntTotMicroEsercizi(boolean[] risposteMicroEsercizi){
         int tot=0;
         for(boolean e:risposteMicroEsercizi) if(e) tot++;
