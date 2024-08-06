@@ -76,11 +76,6 @@ fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaG
 
         Risposta();
 
-        //controlli
-        System.out.println(data.getnumMacroEsercizio());
-        System.out.println(data.getNumEsercizio());
-        System.out.println();
-       // for(int a: risp) System.out.print(a+" ");
 
 // -----------------cambio stage ConfermaEs--------------------
 fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
