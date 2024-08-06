@@ -83,16 +83,41 @@ public class DataSingleton {
 
         //calcola le medaglie
 
-
-        //trova il punto da modificare e modifica
-
+        //crea un secondo file csv per salvare le modifiche
+        String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
+
+        File file = new File(filePath2);
+        if (!file.exists()) {
+            try (FileWriter writer = new FileWriter(file)) {
+                try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+                    String[] line;
+                    while ((line = reader.readNext()) != null) {
+                        if(line[])
+                        writer.append(line.toString());
+
+
+
+
+                    }
+
+
+                } catch (FileNotFoundException e) {
+                    throw new IOException("File CSV non trovato: " + filePath);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        // modifica csv
+
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
-            BufferedWriter writer =new BufferedWriter(new FileWriter(filePath, true);
+            BufferedWriter writer =new BufferedWriter(new FileWriter(filePath2, true);
             String[] line;
             while ((line = reader.readNext()) != null) {
                 if(line[0].equals(arrayUtente[0])){
-                    
+
                     for(String a: line) System.out.print(a+" ");
                 }
 
