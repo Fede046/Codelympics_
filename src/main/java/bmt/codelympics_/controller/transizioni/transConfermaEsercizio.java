@@ -24,6 +24,26 @@ public class transConfermaEsercizio extends ChangeStage{
     @FXML
     void func_Avanti(MouseEvent event)throws Exception {
 
+        if(data.getNumEsercizio()>4) TerminaMacroEsercizio();
+        else ContinuaEsercizio();
+
+
+    }
+
+    void TerminaMacroEsercizio()throws Exception{
+
+
+            data.setNumEsercizio(0);
+            data.setValue(0);
+
+            // -----------------cambio stage FineGame--------------------
+            fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/transizioni/FineGame.fxml");
+
+
+
+    }
+
+    void ContinuaEsercizio()throws Exception{
         if(data.getnumMacroEsercizio()<20) {
             // -----------------cambio stage esercizio Multipla--------------------
             fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");

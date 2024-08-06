@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class DataSingleton {
 
     private static final DataSingleton instance= new DataSingleton();
-
+    private boolean[] arrayRisposte = new boolean[5];
+    private int value = 0;
     private int numEsercizio;
     private int numMacroEsercizio;
 
@@ -30,11 +31,17 @@ public class DataSingleton {
         this.numEsercizio=numEsercizio;
     }
 
+    public boolean[] getArrayRisposte() {
+        return arrayRisposte;
+    }
 
-    public int puntTotMicroEsercizi(boolean[] risposteMicroEsercizi){
-        int tot=0;
-        for(boolean e:risposteMicroEsercizi) if(e) tot++;
-        return tot;
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public void addarrayDirisposte(boolean rispostaMicroEsercizi){
+        arrayRisposte[value]=rispostaMicroEsercizi;
+        value++;
     }
 
     public boolean risposta(int numMacroEsercizio,int numEsercizio,int[] risp){
