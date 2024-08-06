@@ -21,10 +21,7 @@ public class esVF extends ChangeStage{
     private Button btn_ConfermaExit;
 
     @FXML
-    private Label lb_domanda;
-
-    @FXML
-    private Label lb_title;
+    private Button lb_domanda;
 
     @FXML
     private RadioButton rb_falso;

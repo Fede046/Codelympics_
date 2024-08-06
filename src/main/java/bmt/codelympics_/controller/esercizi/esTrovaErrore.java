@@ -9,9 +9,13 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 
 public class esTrovaErrore extends ChangeStage{
+
+    @FXML
+    private ToggleGroup Errore;
 
     @FXML
     private Button btn_Conferma;
@@ -20,19 +24,16 @@ public class esTrovaErrore extends ChangeStage{
     private Button btn_ConfermaExit;
 
     @FXML
-    private ImageView img_r1;
+    private AnchorPane p_1;
 
     @FXML
-    private ImageView img_r2;
+    private AnchorPane p_2;
 
     @FXML
-    private ImageView img_r3;
+    private AnchorPane p_3;
 
     @FXML
-    private ImageView img_r4;
-
-    @FXML
-    private Label lb_title;
+    private AnchorPane p_4;
 
     @FXML
     private RadioButton rb_r1;
@@ -45,21 +46,6 @@ public class esTrovaErrore extends ChangeStage{
 
     @FXML
     private RadioButton rb_r4;
-
-    @FXML
-    private Rectangle rec_r1;
-
-    @FXML
-    private Rectangle rec_r2;
-
-    @FXML
-    private Rectangle rec_r3;
-
-    @FXML
-    private Rectangle rec_r4;
-
-    @FXML
-    private ToggleGroup risposte;
 
 
     DataSingleton data = DataSingleton.getInstance();

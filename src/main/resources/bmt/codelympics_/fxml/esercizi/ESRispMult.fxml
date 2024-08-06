@@ -1,81 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.esercizi.esRispMult">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-3.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
-         <fill>
-            <LinearGradient endX="0.49242422074982617" endY="1.0" startX="0.43181817414182605">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.08235294371843338" green="0.29019609093666077" blue="0.7843137383460999" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.8705882430076599" green="0.7372549176216125" blue="0.8705882430076599" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Button fx:id="btn_ConfermaExit" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_ConfermaExit" prefHeight="38.0" prefWidth="106.0" text="HOME" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label fx:id="lb_title" layoutX="280.0" layoutY="-14.0" prefHeight="94.0" prefWidth="320.0" text="Risposta Multipla">
-         <font>
-            <Font name="Verdana Pro Black" size="30.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn_Conferma" layoutX="256.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#func_Conferma" prefHeight="38.0" prefWidth="106.0" text="CONFERMA" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Rectangle fx:id="rec_r1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="249.0" layoutX="30.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="250.0" />
-      <ImageView fx:id="img_r1" fitHeight="249.0" fitWidth="250.0" layoutX="30.0" layoutY="85.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../../../../../../../../Desktop/Screenshot%202024-08-04%20190924.png" />
-         </image></ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="354.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
-      <RadioButton fx:id="rb_r1" layoutX="325.0" layoutY="100.0" mnemonicParsing="false">
-         <toggleGroup>
-            <ToggleGroup fx:id="RM" />
-         </toggleGroup>
-      </RadioButton>
-      <Label fx:id="lb_r1" layoutX="440.0" layoutY="101.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="355.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
-      <RadioButton fx:id="rb_r2" layoutX="326.0" layoutY="165.0" mnemonicParsing="false" toggleGroup="$RM" />
-      <Label fx:id="lb_r2" layoutX="441.0" layoutY="166.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="355.0" layoutY="213.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
-      <RadioButton fx:id="rb_r3" layoutX="326.0" layoutY="228.0" mnemonicParsing="false" toggleGroup="$RM" />
-      <Label fx:id="lb_r3" layoutX="441.0" layoutY="229.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="355.0" layoutY="276.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
-      <RadioButton fx:id="rb_r4" layoutX="326.0" layoutY="291.0" mnemonicParsing="false" toggleGroup="$RM" />
-      <Label fx:id="lb_r4" layoutX="441.0" layoutY="292.0" />
-      <Label fx:id="lb_domanda" layoutX="67.0" layoutY="63.0" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodySfondo" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.esercizi.esRispMult">
+   <bottom>
+      <GridPane prefHeight="83.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btn_Conferma" maxHeight="46.0" maxWidth="600.0" mnemonicParsing="false" onMouseClicked="#func_Conferma" prefHeight="32.0" prefWidth="200.0" styleClass="bottoni" text="CONFERMA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets left="200.0" right="200.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+   <top>
+      <GridPane prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="260.79998474121095" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="340.000015258789" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btn_ConfermaExit" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_ConfermaExit" prefHeight="46.0" prefWidth="80.0" styleClass="bottoni" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Pro" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="60.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Risposta Multipla" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Pro Black" size="26.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane maxWidth="1300.0" prefHeight="250.0" prefWidth="282.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="800.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane prefHeight="242.0" prefWidth="269.0" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btn_r1" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <RadioButton fx:id="rb_r1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.halignment="RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="RM" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <Button fx:id="btn_r2" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <RadioButton fx:id="rb_r2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <Button fx:id="btn_r3" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <RadioButton fx:id="rb_r3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <Button fx:id="btn_r4" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <RadioButton fx:id="rb_r4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets left="25.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+               </children>
+            </GridPane>
+            <ScrollPane maxHeight="600.0" maxWidth="900.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <content>
+                  <AnchorPane fx:id="p_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+               </content>
+               <GridPane.margin>
+                  <Insets left="25.0" right="10.0" />
+               </GridPane.margin>
+            </ScrollPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

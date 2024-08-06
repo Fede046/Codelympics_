@@ -1,76 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.medagliere">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-2.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
-         <fill>
-            <LinearGradient endX="0.49242422074982617" endY="1.0" startX="0.43181817414182605">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.08235294371843338" green="0.29019609093666077" blue="0.7843137383460999" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.8705882430076599" green="0.7372549176216125" blue="0.8705882430076599" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Label fx:id="lb_title" layoutX="385.0" layoutY="-14.0" prefHeight="94.0" prefWidth="232.0" text="Medagliere">
-         <font>
-            <Font name="Verdana Pro Black" size="30.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutX="41.0" layoutY="149.0" prefHeight="230.0" prefWidth="526.0">
-         <content>
-            <TableView fx:id="tb_allUsers" prefHeight="232.0" prefWidth="510.0">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodySfondo" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.classifica.medagliere">
+   <top>
+      <GridPane prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="260.79998474121095" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="340.000015258789" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btn_GoHome" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#btn_GoHome" prefHeight="46.0" prefWidth="80.0" styleClass="bottoni" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Pro" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="60.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Medagliere" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Pro Black" size="26.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane alignment="CENTER" maxHeight="500.0" maxWidth="800.0" style="-fx-background-color: rgba(255,255,255,.7); -fx-background-radius: 6;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="161.20001831054688" minHeight="10.0" prefHeight="83.60001220703126" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="253.19998779296876" minHeight="10.0" prefHeight="253.19998779296876" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ScrollPane maxHeight="300.0" maxWidth="600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <content>
+                  <AnchorPane fx:id="p_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="232.0" prefWidth="534.0">
+                     <children>
+                        <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="574.0" style="-fx-background-radius: 6;">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="Data" />
+                              <TableColumn prefWidth="75.0" text="User" />
+                              <TableColumn prefWidth="61.5999755859375" text="Esercizio" />
+                              <TableColumn prefWidth="50.0" style="-fx-background-color: gold;" />
+                              <TableColumn prefWidth="50.0" style="-fx-background-color: silver;" />
+                              <TableColumn prefWidth="50.0" style="-fx-background-color: brown;" />
+                              <TableColumn prefWidth="76.800048828125" text="Punteggio" />
+                              <TableColumn prefWidth="90.39990234375" text="Tempo" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+               </GridPane.margin>
+            </ScrollPane>
+            <TableView fx:id="tb_User" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <columns>
                   <TableColumn prefWidth="75.0" text="Data" />
                   <TableColumn prefWidth="75.0" text="User" />
-                  <TableColumn prefWidth="61.5999755859375" text="Esercizio" />
-                  <TableColumn prefWidth="50.0" style="-fx-background-color: gold;" />
-                  <TableColumn prefWidth="50.0" style="-fx-background-color: silver;" />
-                  <TableColumn prefWidth="50.0" style="-fx-background-color: brown;" />
-                  <TableColumn prefWidth="76.800048828125" text="Punteggio" />
-                  <TableColumn prefWidth="90.39990234375" text="Tempo" />
+                  <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: gold;" />
+                  <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: silver;" />
+                  <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: brown;" />
+                  <TableColumn prefWidth="102.4000244140625" text="Punteggio" />
+                  <TableColumn prefWidth="111.99993896484375" text="Tempo" />
                </columns>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
             </TableView>
-         </content></ScrollPane>
-      <TableView fx:id="tb_User" layoutX="41.0" layoutY="69.0" prefHeight="56.0" prefWidth="519.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Data" />
-          <TableColumn prefWidth="75.0" text="User" />
-            <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: gold;" />
-            <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: silver;" />
-            <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: brown;" />
-            <TableColumn prefWidth="89.60003662109375" text="Punteggio" />
-            <TableColumn prefWidth="93.5999755859375" text="Tempo" />
-        </columns>
-      </TableView>
-      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" text="HOME" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-   </children>
-</AnchorPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+</BorderPane>

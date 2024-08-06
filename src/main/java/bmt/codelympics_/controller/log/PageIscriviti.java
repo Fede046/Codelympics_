@@ -25,7 +25,7 @@ import javafx.scene.shape.Circle;
 
 public class PageIscriviti extends ChangeStage {
 
-    @FXML
+       @FXML
     private Button btn_annullaAcc;
 
     @FXML
@@ -35,23 +35,25 @@ public class PageIscriviti extends ChangeStage {
     private CheckBox checkbox_show;
 
     @FXML
+    private Circle colorAvatar;
+
+    @FXML
+    private ColorPicker colorChange;
+
+    @FXML
+    private PasswordField hiddentxtField_psw;
+
+    @FXML
     private Label lbl_error;
 
     @FXML
     private TextField txtField_email;
 
     @FXML
-    private PasswordField hiddentxtField_psw;
-
-    public TextField txtField_psw;
+    private TextField txtField_psw;
 
     @FXML
     private TextField txtField_username;
-
-    @FXML
-    private ColorPicker colorChange;
-    @FXML
-    private Circle colorAvatar;
 
     // -------------------------------------------
 
@@ -164,7 +166,7 @@ public class PageIscriviti extends ChangeStage {
         String filePath = "C:\\playproj\\props.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))){
-            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + ","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+"\n");
+            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + ","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+"\n");
 
         }catch (Exception e){
             e.getStackTrace();

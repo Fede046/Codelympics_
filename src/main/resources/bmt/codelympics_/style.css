@@ -1,9 +1,133 @@
+.body{
+	-fx-background-image:url(img/gamesHome/SG.jpeg);
+    -fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+.bodyHome{
+	-fx-background-image:url(img/home/Home1.png);
+    -fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+.bodySfondo{
+	-fx-background-color:linear-gradient(#154ac8, #debcde);
+}
+.bodyLog{
+	-fx-background-color:linear-gradient(#154ac8, #0e4766);
+
+}
+.bodyRegole{
+	-fx-background-image:url(img/regoleGioco/regoleGioco_Scherma.png);
+    -fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+	
+}
+.bottoni{
+    	 -fx-background-color: black;
+		 -fx-text-fill: white;
+		 -fx-background-radius:6;
+
+
+}
+.bd{
+    -fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;	
+	-fx-background-radius:8;
+	-fx-background-border:black;
+
+}
+#img_1{
+	-fx-background-image:url(img/gamesHome/gamesHome_Scherma.png);
+}
+#img_2{
+	-fx-background-image:url(img/gamesHome/gamesHome_Pesi.png);
+}
+#img_3{
+	-fx-background-image:url(img/gamesHome/gamesHome_Pugile.png);
+}
+#img_4{
+	-fx-background-image:url(img/gamesHome/gamesHome_Arco.png);
+}
+#img_gif{
+	-fx-background-image:url(img/esercizi/trovaErrore/scherma.gif);
+	-fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+#img_avatar{
+	-fx-background-image:url(img/log/imgView.png);
+	-fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+#img_avatar2{
+	-fx-background-image:url(img/log/imgNot.png);
+	-fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
 #btn_accediGo:hover,#btn_AnnullaConferma:hover,#btn_Conferma:hover,#btn_ConfermaExit:hover,#btn_startMultiple:hover,#btn_startVF:hover,#btn_Avanti:hover,#btn_intVF:hover,#btn_princVF:hover,#btn_startRiordinamento:hover,#btn_difficileVF:hover,#btn_GoHome:hover,#btn_startErrore:hover,#btn_princRio:hover,#btn_intRio:hover,#btn_difficileRio:hover,#btn_intErrore:hover,#btn_princMult:hover,#btn_difficileMult:hover,#btn_intMult:hover,#btn_goMedagliere:hover,#btn_princErrore:hover,#btn_difficileErrore:hover,#btn_accedi:hover,#btn_iscriviti:hover,#btn_Conferma:hover,#btn_annullaAcc:hover,#btn_iscrivitiGo:hover{
 	-fx-background-color: rgb(75, 75, 75);
 }
-#btn_accediGo,#btn_AnnullaConferma,#btn_Conferma,#btn_ConfermaExit,#btn_startMultiple,#btn_startVF,#btn_startRiordinamento,#btn_GoHome,#btn_princVF,#btn_Avanti,#btn_intVF,#btn_difficileVF,#btn_goMedagliere,#btn_conferma,#btn_iscriviti,#btn_accedi,#btn_princRio,#btn_intRio,#btn_difficileRio,#btn_annullaAcc,#btn_princMult,#btn_difficileMult,#btn_intMult,#btn_princErrore,#btn_intErrore,#btn_iscrivitiGo,#btn_difficileErrore,#btn_startErrore{
-	-fx-background-radius: 6;
-	-fx-background-color:black;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
 }
+.bodySfondo{
+	-fx-background-color:linear-gradient(#154ac8, #debcde);
+}
+.bodyLog{
+	-fx-background-color:linear-gradient(#154ac8, #0e4766);
 
-/**********************************************************************/
+}
+.bodyRegole{
+	-fx-background-image:url(regoleGioco_Scherma.png);
+    -fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+	
+}
+.bottoni{
+    	 -fx-background-color: black;
+		 -fx-text-fill: white;
+		 -fx-background-radius:6;
+
+
+}
+.bd{
+    -fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;	
+	-fx-background-radius:8;
+	-fx-background-border:black;
+
+}
+#img_1{
+	-fx-background-image:url(scherma.png);
+}
+#img_2{
+	-fx-background-image:url(pesi.png);
+}
+#img_3{
+	-fx-background-image:url(boxe.png);
+}
+#img_4{
+	-fx-background-image:url(arco.png);
+}
+#img_gif{
+	-fx-background-image:url(scherma.gif);
+	-fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+#provaimg{
+	-fx-background-image:url(imgView.png);
+	-fx-background-size: cover;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position:center;
+}
+#btn_accediGo:hover,#btn_AnnullaConferma:hover,#btn_Conferma:hover,#btn_ConfermaExit:hover,#btn_startMultiple:hover,#btn_startVF:hover,#btn_Avanti:hover,#btn_intVF:hover,#btn_princVF:hover,#btn_startRiordinamento:hover,#btn_difficileVF:hover,#btn_GoHome:hover,#btn_startErrore:hover,#btn_princRio:hover,#btn_intRio:hover,#btn_difficileRio:hover,#btn_intErrore:hover,#btn_princMult:hover,#btn_difficileMult:hover,#btn_intMult:hover,#btn_goMedagliere:hover,#btn_princErrore:hover,#btn_difficileErrore:hover,#btn_accedi:hover,#btn_iscriviti:hover,#btn_Conferma:hover,#btn_annullaAcc:hover,#btn_iscrivitiGo:hover{
+	-fx-background-color: rgb(75, 75, 75);
+}

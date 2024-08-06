@@ -9,11 +9,12 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 
 public class esRispMult extends ChangeStage{
 
-    @FXML
+     @FXML
     private ToggleGroup RM;
 
     @FXML
@@ -23,25 +24,19 @@ public class esRispMult extends ChangeStage{
     private Button btn_ConfermaExit;
 
     @FXML
-    private ImageView img_r1;
+    private Button btn_r1;
 
     @FXML
-    private Label lb_domanda;
+    private Button btn_r2;
 
     @FXML
-    private Label lb_r1;
+    private Button btn_r3;
 
     @FXML
-    private Label lb_r2;
+    private Button btn_r4;
 
     @FXML
-    private Label lb_r3;
-
-    @FXML
-    private Label lb_r4;
-
-    @FXML
-    private Label lb_title;
+    private AnchorPane p_1;
 
     @FXML
     private RadioButton rb_r1;
@@ -54,9 +49,6 @@ public class esRispMult extends ChangeStage{
 
     @FXML
     private RadioButton rb_r4;
-
-    @FXML
-    private Rectangle rec_r1;
 
     DataSingleton data = DataSingleton.getInstance();
 

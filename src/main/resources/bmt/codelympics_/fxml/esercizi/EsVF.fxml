@@ -1,68 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.esercizi.esVF">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="410.0" layoutX="-3.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="607.0">
-         <fill>
-            <LinearGradient endX="0.49242422074982617" endY="1.0" startX="0.43181817414182605">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.08235294371843338" green="0.29019609093666077" blue="0.7843137383460999" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.8705882430076599" green="0.7372549176216125" blue="0.8705882430076599" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Button fx:id="btn_ConfermaExit" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_ConfermaExit" prefHeight="38.0" prefWidth="106.0" text="HOME" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="btn_Conferma" layoutX="247.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#func_Conferma" prefHeight="38.0" prefWidth="106.0" text="CONFERMA" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label fx:id="lb_title" layoutX="368.0" layoutY="-5.0" prefHeight="94.0" prefWidth="267.0" text="Vero o Falso">
-         <font>
-            <Font name="Verdana Pro Black" size="30.0" />
-         </font>
-      </Label>
-      <Label fx:id="lb_domanda" layoutX="286.0" layoutY="89.0" text="Label" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="201.0" layoutY="152.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
-      <RadioButton fx:id="rb_vero" layoutX="172.0" layoutY="167.0" mnemonicParsing="false">
-         <toggleGroup>
-            <ToggleGroup fx:id="VF" />
-         </toggleGroup>
-      </RadioButton>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="201.0" layoutY="220.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
-      <RadioButton fx:id="rb_falso" layoutX="172.0" layoutY="235.0" mnemonicParsing="false" toggleGroup="$VF" />
-      <Label layoutX="287.0" layoutY="168.0" text="VERO" />
-      <Label layoutX="287.0" layoutY="235.0" text="FALSO" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodySfondo" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.esercizi.esVF">
+   <bottom>
+      <GridPane prefHeight="83.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btn_Conferma" maxHeight="46.0" maxWidth="600.0" mnemonicParsing="false" onMouseClicked="#func_Conferma" prefHeight="32.0" prefWidth="200.0" styleClass="bottoni" text="CONFERMA" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets left="200.0" right="200.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </bottom>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="lb_domanda" alignment="CENTER" maxHeight="150.0" maxWidth="800.0" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,.7); -fx-background-radius: 6;" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod &#10;tempor incididunt " textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </GridPane.margin>
+            </Button>
+            <Button maxHeight="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="VERO" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="200.0" right="200.0" top="25.0" />
+               </GridPane.margin>
+            </Button>
+            <Button maxHeight="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="200.0" right="200.0" top="25.0" />
+               </GridPane.margin>
+            </Button>
+            <RadioButton fx:id="rb_vero" mnemonicParsing="false" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="170.0" />
+               </GridPane.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="VF" />
+               </toggleGroup>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </RadioButton>
+            <RadioButton fx:id="rb_falso" maxWidth="800.0" mnemonicParsing="false" toggleGroup="$VF" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="170.0" right="170.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </RadioButton>
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <GridPane prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="260.79998474121095" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="340.000015258789" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btn_ConfermaExit" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_ConfermaExit" prefHeight="46.0" prefWidth="80.0" styleClass="bottoni" text="HOME" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Pro" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="60.0" top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Vero o Falso" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Pro Black" size="26.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -7,61 +8,110 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.log.PageIscriviti">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" stroke="TRANSPARENT" strokeType="INSIDE" width="600.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.08235294371843338" green="0.29019609093666077" blue="0.7843137383460999" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.054901961237192154" green="0.27843138575553894" blue="0.4000000059604645" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="332.0" layoutX="161.0" layoutY="34.0" opacity="0.25" stroke="WHITE" strokeType="INSIDE" style="-fx-arc-width: 15; -fx-arc-height: 15;" width="280.0" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="34.0" />
-      <Button fx:id="btn_iscrivitiGo" layoutX="173.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#func_goPlayHome" prefHeight="38.0" prefWidth="106.0" text="ISCRIVITI" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Button fx:id="btn_annullaAcc" layoutX="322.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" text="ANNULLA" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <TextField fx:id="txtField_username" layoutX="225.0" layoutY="191.0" promptText="username" />
-      <Circle fx:id="colorAvatar" fill="WHITE" layoutX="301.0" layoutY="79.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <TextField fx:id="txtField_psw" layoutX="225.0" layoutY="227.0" promptText="password" visible="false" />
-      <PasswordField fx:id="hiddentxtField_psw" layoutX="225.0" layoutY="227.0" promptText="password" />      
-      <TextField fx:id="txtField_email" layoutX="225.0" layoutY="154.0" promptText="email" />
-      <CheckBox fx:id="checkbox_show" layoutX="248.0" layoutY="256.0" mnemonicParsing="false" onMouseClicked="#func_changeVisibility" prefHeight="16.0" prefWidth="106.0" text="show password">
-         <font>
-            <Font size="11.0" />
-         </font></CheckBox>
-      <ColorPicker fx:id="colorChange" layoutX="278.0" layoutY="125.0" onAction="#setColor" prefHeight="18.0" prefWidth="46.0" />
-      <Label fx:id="lbl_error" alignment="TOP_CENTER" layoutX="260.0" layoutY="283.0" prefHeight="18.0" prefWidth="79.0" style="-fx-background-color: red;" text="ERRORE" textAlignment="CENTER" textFill="WHITE" visible="false" />
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodyLog" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.log.PageIscriviti">
+   <center>
+      <BorderPane maxHeight="500.0" maxWidth="400.0" prefHeight="340.0" prefWidth="290.0" style="-fx-background-color: rgba(255,255,255,.25); -fx-background-radius: 6;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="155.0" right="155.0" top="40.0" />
+         </BorderPane.margin>
+         <bottom>
+            <GridPane prefHeight="61.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btn_iscrivitiGo" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_goPlayHome" styleClass="bottoni" text="ISCRIVITI">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="btn_annullaAcc" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_Home" styleClass="bottoni" text="ANNULLA" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </bottom>
+         <center>
+            <GridPane prefHeight="164.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="5.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="5.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="2.0" prefHeight="5.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="1.7976931348623157E308" minHeight="1.0" prefHeight="1.0" valignment="CENTER" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <children>
+                  <TextField fx:id="txtField_username" alignment="CENTER" maxHeight="50.0" maxWidth="400.0" prefHeight="78.0" prefWidth="189.0" promptText="username" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="22.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lbl_error" alignment="TOP_CENTER" prefHeight="18.0" prefWidth="79.0" style="-fx-background-color: red;" text="ERRORE" textAlignment="CENTER" textFill="WHITE" visible="false" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="checkbox_show" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_changeVisibility" text="show password" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="10.0" />
+                     </GridPane.margin></CheckBox>
+                  <TextField fx:id="txtField_psw" alignment="CENTER" maxHeight="50.0" maxWidth="400.0" promptText="password" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <PasswordField fx:id="hiddentxtField_psw" alignment="CENTER" maxHeight="50.0" maxWidth="400.0" promptText="password" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="22.0" />
+                     </GridPane.margin>
+                  </PasswordField>
+                  <TextField fx:id="txtField_email" alignment="CENTER" maxHeight="50.0" maxWidth="400.0" prefHeight="78.0" prefWidth="189.0" promptText="email" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="22.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+         </center>
+         <top>
+            <GridPane prefHeight="114.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="87.79999389648438" minHeight="10.0" prefHeight="87.79999389648438" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="44.60001220703125" minHeight="10.0" prefHeight="11.000006103515616" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ColorPicker fx:id="colorChange" onAction="#setColor" prefHeight="26.0" prefWidth="40.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </ColorPicker>
+                  <Circle fx:id="colorAvatar" fill="WHITE" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </GridPane>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

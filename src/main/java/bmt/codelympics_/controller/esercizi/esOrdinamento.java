@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class esOrdinamento extends ChangeStage implements Initializable {
 
-    @FXML
+   /* @FXML
     private Button btn_Conferma;
 
     @FXML
@@ -61,7 +61,12 @@ public class esOrdinamento extends ChangeStage implements Initializable {
     @FXML
     private Spinner<Integer> sp_6;
 
+*/
+    @FXML
+    private Button btn_Conferma;
 
+    @FXML
+    private Button btn_ConfermaExit;
 
     DataSingleton data = DataSingleton.getInstance();
 
@@ -74,26 +79,26 @@ fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaG
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
 
-        Risposta();
+        //Risposta();
 
 
 // -----------------cambio stage ConfermaEs--------------------
 fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
-
+/*
     void Risposta(){
         data.setNumEsercizio(data.getNumEsercizio()+1);
         int[] risp = new int[]{sp_1.getValue(),sp_2.getValue(),sp_3.getValue(),sp_4.getValue(),sp_5.getValue(),sp_6.getValue()};
         data.addarrayDirisposte(data.risposta(data.getnumMacroEsercizio(), data.getNumEsercizio(),risp));
     }
-
+*/
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Spinner[] spinners = new Spinner[]{sp_1,sp_2,sp_3,sp_4,sp_5,sp_6};
+       /*/ Spinner[] spinners = new Spinner[]{sp_1,sp_2,sp_3,sp_4,sp_5,sp_6};
         //caso 6 scelte
         for(Spinner e:spinners) e.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,6,1));
-
+*/
     }
 
 

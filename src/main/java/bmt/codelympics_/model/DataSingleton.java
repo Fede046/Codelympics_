@@ -57,45 +57,48 @@ public class DataSingleton {
     }
     //trova l'esercizio con la difficoltà giusta e lo cambia nel csv (solo se ci sono miglioramenti)
 
-    private int stringaMedaglie=0;
-    private int dificolta=0;
+    private int stringaMedaglia=0;
+   
 
     public void scriviPunteggioeMedagliaEserczio()throws Exception{
-        char tipoEsercizo = Integer.toString(numMacroEsercizio).charAt(0);
-        char difficoltaEsercizio = Integer.toString(numMacroEsercizio).charAt(1);
+        //char tipoEsercizo = Integer.toString(numMacroEsercizio).charAt(0);
+        //char difficoltaEsercizio = Integer.toString(numMacroEsercizio).charAt(1);
 
-        stringaMedaglie+=2;
-        int stringaPunti=stringaMedaglie+1;
+        
+        int stringaPunti=stringaMedaglia+3;
 
-        String medaglie = arrayUtente[stringaMedaglie];
-        String  medagliaSpecifica = medaglie.split("\\.")[dificolta];
+        
 
-        System.out.println(medagliaSpecifica);
+        System.out.println(arrayUtente[stringaMedaglia]);
 
-        String punti =arrayUtente[stringaPunti];
-        String puntiSpecifico = punti.split("\\.")[dificolta];
-
-        System.out.println(puntiSpecifico);
-
-        //calcola punteggio
-        int temp=0;
-        for(boolean e:arrayRisposte) temp+=200;/*aggiungere se si vuole variabile tempo*/
+        System.out.println(arrayUtente[stringaPunti]);
 
         //calcola le medaglie
+        int tempMed=0;
+        for(boolean e:arrayRisposte) tempMed++;
+        arrayUtente[stringaMedaglia]=Integer.toString(tempMed);
+
+        //calcola punteggio
+        int tempPunt=0;
+        for(boolean e:arrayRisposte) tempPunt+=200;/*aggiungere se si vuole variabile tempo*/
+        arrayUtente[stringaPunti]=Integer.toString(tempPunt);
+        
 
         //crea un secondo file csv per salvare le modifiche
         String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
 
-        File file = new File(filePath2);
-        if (!file.exists()) {
-            try (FileWriter writer = new FileWriter(file)) {
+        File file2 = new File(filePath2);
+        if (!file2.exists()) {
+            try (FileWriter writer = new FileWriter(file2)) {
                 try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
                     String[] line;
                     while ((line = reader.readNext()) != null) {
-                        if(line[])
+                        if(line[0].equals(arrayUtente[0])){
+                            writer.append(arrayUtente.toString());
+                        }else{
                         writer.append(line.toString());
-
+                        }
 
 
 
@@ -110,23 +113,26 @@ public class DataSingleton {
                 e.printStackTrace();
             }
         }
-        // modifica csv
+        // modifica csv sovrascrivendo
 
-        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
-            BufferedWriter writer =new BufferedWriter(new FileWriter(filePath2, true);
-            String[] line;
-            while ((line = reader.readNext()) != null) {
-                if(line[0].equals(arrayUtente[0])){
+        File file = new File(filePath);
+        if (!file.exists()) {
+            try (FileWriter writer = new FileWriter(file)) {
+                try (CSVReader reader = new CSVReader(new FileReader(filePath2))) {
+                    String[] line;
+                    while ((line = reader.readNext()) != null) {
+                        
+                        writer.append(line.toString());
+                        
+                    }
 
-                    for(String a: line) System.out.print(a+" ");
+                } catch (FileNotFoundException e) {
+                    throw new IOException("File CSV non trovato: " + filePath);
                 }
 
-
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-
-        } catch (FileNotFoundException e) {
-            throw new IOException("File CSV non trovato: " + filePath);
         }
 
 
@@ -142,7 +148,7 @@ public class DataSingleton {
         switch (numMacroEsercizio){
             //sollevamento pesi risposta multipla
             case 11:
-                stringaMedaglie=1;dificolta=0;
+                stringaMedaglia=4;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -162,7 +168,7 @@ public class DataSingleton {
                 }
                 break;
             case 12:
-                stringaMedaglie=1;dificolta=1;
+                stringaMedaglia=5;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -182,7 +188,7 @@ public class DataSingleton {
                 }
                 break;
             case 13:
-                stringaMedaglie=1;dificolta=2;
+                stringaMedaglia=6;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -203,7 +209,7 @@ public class DataSingleton {
                 break;
                 //box vero o falso
             case 21:
-                stringaMedaglie=2;dificolta=0;
+                stringaMedaglia=10;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -223,7 +229,7 @@ public class DataSingleton {
                 }
                 break;
             case 22:
-                stringaMedaglie=2;dificolta=1;
+                stringaMedaglia=11;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -243,7 +249,7 @@ public class DataSingleton {
                 }
                 break;
             case 23:
-                stringaMedaglie=2;dificolta=2;
+                stringaMedaglia=12;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -264,7 +270,7 @@ public class DataSingleton {
                 break;
                 //scherma trova l'errore
             case 31:
-                stringaMedaglie=3;dificolta=0;
+                stringaMedaglia=16;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -284,7 +290,7 @@ public class DataSingleton {
                 }
                 break;
             case 32:
-                stringaMedaglie=3;dificolta=1;
+                stringaMedaglia=17;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -304,7 +310,7 @@ public class DataSingleton {
                 }
                 break;
             case 33:
-                stringaMedaglie=3;dificolta=2;
+                stringaMedaglia=18;
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -325,7 +331,7 @@ public class DataSingleton {
                 break;
                 //Tiro con l'arco riordinamento
             case 41:
-                stringaMedaglie=4;dificolta=0;
+                stringaMedaglia=22;
                 switch (numEsercizio){
                     case 1:
                         if(Arrays.equals(risp, new int[]{1, 2, 3,4,5,6})) return true;
@@ -345,7 +351,7 @@ public class DataSingleton {
                 }
                 break;
             case 42:
-                stringaMedaglie=4;dificolta=1;
+                stringaMedaglia=23;
                 switch (numEsercizio){
                     case 1:
                         if(Arrays.equals(risp, new int[]{1, 2, 3,4,5,6})) return true;
@@ -365,7 +371,7 @@ public class DataSingleton {
                 }
                 break;
             case 43:
-                stringaMedaglie=4;dificolta=2;
+                stringaMedaglia=24;
                 switch (numEsercizio){
                     case 1:
                         if(Arrays.equals(risp, new int[]{1, 2, 3,4,5,6})) return true;

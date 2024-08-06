@@ -1,144 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.GamesHome">
-   <children>
-      <ImageView fitHeight="614.0" fitWidth="632.0" layoutX="-10.0" layoutY="-111.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../img/gamesHome/Schermatagiochi.jpeg" />
-         </image>
-      </ImageView>
-      <Button fx:id="btn_GoHome" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="38.0" prefWidth="106.0" text="ESCI" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label fx:id="lb_title" layoutX="251.0" layoutY="-15.0" prefHeight="94.0" prefWidth="350.0" text="codelympics games">
-         <font>
-            <Font name="Verdana Pro Black" size="30.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn_goMedagliere" layoutX="133.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#func_goMedagliere" prefHeight="38.0" prefWidth="106.0" text="MEDAGLIERE" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="52.0" layoutY="94.6" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" AnchorPane.leftAnchor="52.0" AnchorPane.topAnchor="94.6" />
-      <Rectangle fx:id="rect4" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="353.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" />
-      <ImageView fitHeight="95.0" fitWidth="136.0" layoutX="356.0" layoutY="263.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../img/gamesHome/gamesHome_Arco.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img_scherma" fitHeight="106.0" fitWidth="191.0" layoutX="56.0" layoutY="94.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../img/gamesHome/gamesHome_Scherma.png" />
-         </image>
-      </ImageView>
-      <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="53.0" layoutY="252.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" />
-      <Rectangle fx:id="rect41" arcHeight="5.0" arcWidth="5.0" fill="#e2f1ff" height="112.0" layoutX="357.0" layoutY="94.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="195.0" />
-      <ImageView fitHeight="112.0" fitWidth="115.0" layoutX="46.0" layoutY="257.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../img/gamesHome/gamesHome_Pugile.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img_pesi" fitHeight="112.0" fitWidth="203.0" layoutX="365.0" layoutY="95.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.6" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../img/gamesHome/gamesHome_Pesi.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="btn_startErrore" layoutX="106.0" layoutY="171.0" mnemonicParsing="false" onMouseClicked="#func_startErrore" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Accordion />
-      <Label layoutX="114.0" layoutY="98.0" prefHeight="18.0" prefWidth="72.0" text="SCHERMA">
-         <font>
-            <Font name="Verdana Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="406.0" layoutY="116.0" text="Risposta Multipla">
-         <font>
-            <Font name="Verdana Pro Black" size="11.0" />
-         </font>
-      </Label>
-      <ProgressBar fx:id="prgbar_errore" layoutX="55.0" layoutY="210.0" prefWidth="187.0" progress="0.0" />
-      <ProgressBar fx:id="prgbar_multiple" layoutX="356.0" layoutY="210.0" prefWidth="187.0" progress="0.0" />
-      <Button fx:id="btn_startMultiple" layoutX="409.0" layoutY="172.0" mnemonicParsing="false" onMouseClicked="#func_startMultiplo" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label alignment="CENTER" layoutX="371.0" layoutY="98.0" prefHeight="18.0" prefWidth="157.0" text="SOLLEVAMENTO PESI">
-         <font>
-            <Font name="Verdana Pro Black" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="105.0" layoutY="116.0" text="Trova l'errore">
-         <font>
-            <Font name="Verdana Pro Black" size="11.0" />
-         </font>
-      </Label>
-      <ProgressBar fx:id="prgbar_VF" layoutX="57.0" layoutY="368.0" prefWidth="187.0" progress="0.0" />
-      <Button fx:id="btn_startVF" layoutX="111.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#func_startVF" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label layoutX="137.0" layoutY="257.0" prefHeight="18.0" prefWidth="43.0" text="BOXE">
-         <font>
-            <Font name="Verdana Pro Black" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="120.0" layoutY="275.0" text="Vero o Falso">
-         <font>
-            <Font name="Verdana Pro Black" size="11.0" />
-         </font>
-      </Label>
-      <ProgressBar fx:id="prgbar_riordinamento" layoutX="357.0" layoutY="367.0" prefWidth="187.0" progress="0.0" />
-      <Button fx:id="btn_startRiordinamento" layoutX="411.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#func_startRiordina" prefHeight="18.0" prefWidth="78.0" text="START" textFill="WHITE">
-         <font>
-            <Font name="Verdana Pro" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label alignment="CENTER" layoutX="383.0" layoutY="257.0" prefHeight="18.0" prefWidth="134.0" text="TIRO CON L'ARCO">
-         <font>
-            <Font name="Verdana Pro Black" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="412.0" layoutY="275.0" text="Riordinamento">
-         <font>
-            <Font name="Verdana Pro Black" size="11.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" styleClass="body" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.homes.GamesHome">
+   <center>
+      <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="BOTTOM_CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <BorderPane id="img_1" fx:id="img_1" maxWidth="500.0" prefHeight="126.0" prefWidth="420.0" styleClass="bd" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="7.0" />
+               </GridPane.margin>
+               <bottom>
+                  <Button fx:id="btn_startErrore" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startErrore" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
+                     </BorderPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </bottom>
+               <top>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="SCHERMA" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <Label alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <Label alignment="TOP_CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="310.0" text="Trova l'errore" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </center>
+            </BorderPane>
+            <BorderPane id="img_3" fx:id="img_3" maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" styleClass="bd" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="7.0" />
+               </GridPane.margin>
+               <bottom>
+                  <Button fx:id="btn_startVF" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startVF" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
+                     </BorderPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </bottom>
+               <top>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="BOXE" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <Label alignment="TOP_CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="310.0" text="Vero o Falso" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </center>
+            </BorderPane>
+            <BorderPane id="img_2" fx:id="img_2" maxHeight="1.7976931348623157E308" maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" styleClass="bd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <bottom>
+                  <Button fx:id="btn_startMultiple" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startMultiplo" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
+                     </BorderPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </bottom>
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="7.0" />
+               </GridPane.margin>
+               <top>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="SOLLEVAMENTO PESI" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </top>
+               <center>
+                  <Label BorderPane.alignment="CENTER">
+                     <graphic>
+                        <Label alignment="TOP_CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="225.0" prefWidth="301.0" text="Risposta Multipla" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </center>
+            </BorderPane>
+            <BorderPane id="img_4" fx:id="img_4" maxHeight="1.7976931348623157E308" maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" styleClass="bd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <bottom>
+                  <Button fx:id="btn_startRiordinamento" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startRiordina" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
+                     </BorderPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </bottom>
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="7.0" />
+               </GridPane.margin>
+               <top>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                     <graphic>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="TIRO CON L'ARCO" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </top>
+               <center>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <Label alignment="TOP_CENTER" contentDisplay="TOP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="310.0" text="Ordinamento" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Label>
+               </center>
+            </BorderPane>
+            <ProgressBar fx:id="prgbar_errore" maxHeight="-Infinity" maxWidth="490.0" progress="0.0" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="154.0" />
+               </GridPane.margin>
+            </ProgressBar>
+            <ProgressBar fx:id="prgbar_multiple" maxHeight="-Infinity" maxWidth="490.0" progress="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="154.0" />
+               </GridPane.margin>
+            </ProgressBar>
+            <ProgressBar fx:id="prgbar_VF" maxHeight="-Infinity" maxWidth="490.0" progress="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="154.0" />
+               </GridPane.margin>
+            </ProgressBar>
+            <ProgressBar fx:id="prgbar_riordinamento" maxHeight="-Infinity" maxWidth="490.0" progress="0.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="154.0" />
+               </GridPane.margin>
+            </ProgressBar>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <top>
+      <GridPane prefHeight="49.0" prefWidth="598.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="89.60003662109375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="310.39996337890625" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="btn_GoHome" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_Home" styleClass="bottoni" text="ESCI">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btn_goMedagliere" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_goMedagliere" styleClass="bottoni" text="MEDAGLIERE" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" text="CODELYMPICS GAMES" textFill="WHITE" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Verdana Pro Black" size="26.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>

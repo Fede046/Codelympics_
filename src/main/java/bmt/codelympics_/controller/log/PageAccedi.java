@@ -17,34 +17,36 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.image.ImageView;
 
 public class PageAccedi extends ChangeStage {
-
-    @FXML
+     @FXML
     private Button btn_accediGo;
 
     @FXML
     private Button btn_annullaAcc;
 
     @FXML
-    private Label lbl_error;
-
-    @FXML
-    private TextField txtField_username;
-    @FXML
     private CheckBox checkbox_show;
 
     @FXML
-    private TextField txtField_email;
-    @FXML
-    private ImageView img_avatar;
-    @FXML
-    private ImageView img_avatar2;
-    @FXML
     private PasswordField hiddentxtField_psw;
 
-    public TextField txtField_psw;
+    @FXML
+    private AnchorPane img_avatar;
+
+    @FXML
+    private AnchorPane img_avatar2;
+
+    @FXML
+    private Label lbl_error;
+
+    @FXML
+    private TextField txtField_psw;
+
+    @FXML
+    private TextField txtField_username;
 
     // --------------------------------
     DataSingleton data = DataSingleton.getInstance();

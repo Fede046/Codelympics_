@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Index extends Application {
     @Override
     public void start(Stage Home) throws IOException {
-        FXMLLoader loader = new FXMLLoader((getClass().getResource("/bmt/codelympics_/fxml/home/home.fxml")));
+        FXMLLoader loader = new FXMLLoader((getClass().getResource("/bmt/codelympics_/fxml/home/Home.fxml")));
         Parent root = loader.load();
         Home.setTitle("CODELYMPICS");
         Home.setScene(new Scene(root));
