@@ -48,8 +48,8 @@ public class transFineGame extends ChangeStage{
 
     @FXML
     void func_Home(MouseEvent event) throws Exception{
-        data.scriviPunteggioeMedagliaEserczio();
-        String filePath = "C:\\playproj\\props.csv";
+        //data.scriviPunteggioeMedagliaEserczio();
+        //String filePath = "C:\\playproj\\props.csv";
         //obbiettivo trovare la parte giusta
        /* try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))){
             writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + ","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+"\n");

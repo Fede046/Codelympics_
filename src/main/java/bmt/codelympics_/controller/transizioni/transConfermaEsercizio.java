@@ -1,4 +1,36 @@
+
+
 package bmt.codelympics_.controller.transizioni;
+
+import bmt.codelympics_.model.ChangeStage;
+import bmt.codelympics_.model.DataSingleton;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+
+public class transConfermaEsercizio extends ChangeStage {
+
+    @FXML
+    private Button btn_Avanti;
+
+    @FXML
+    private AnchorPane img_gif;
+
+    @FXML
+    private Button lbl_risultato;
+
+    DataSingleton data = DataSingleton.getInstance();
+
+    @FXML
+    void func_Avanti(MouseEvent event) throws Exception{
+// -----------------cambio stage esercizio Multipla--------------------
+        fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+    }
+
+}
+
+/*package bmt.codelympics_.controller.transizioni;
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import javafx.fxml.FXML;
@@ -24,10 +56,11 @@ public class transConfermaEsercizio extends ChangeStage{
     @FXML
     void func_Avanti(MouseEvent event)throws Exception {
         //for(boolean e: data.getArrayRisposte()) System.out.print(e+" ");
-        if(data.getNumEsercizio()>4) TerminaMacroEsercizio();
-        else ContinuaEsercizio();
+        //if(data.getNumEsercizio()>4) TerminaMacroEsercizio();
+        //else ContinuaEsercizio();
 
-
+        // -----------------cambio stage esercizio Multipla--------------------
+        fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
 
     void TerminaMacroEsercizio()throws Exception{
@@ -60,3 +93,4 @@ public class transConfermaEsercizio extends ChangeStage{
     }
 
 }
+*/

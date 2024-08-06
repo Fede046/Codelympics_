@@ -70,7 +70,7 @@ fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaG
     }
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
-        Risposta();
+        //Risposta();
     // -----------------cambio stage ConfermaEs--------------------
     fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
