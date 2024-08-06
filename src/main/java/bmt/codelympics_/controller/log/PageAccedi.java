@@ -4,8 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Scanner;
 
 import bmt.codelympics_.model.ChangeStage;
+import bmt.codelympics_.model.DataSingleton;
 import bmt.codelympics_.model.Encryptor;
 import com.opencsv.CSVReader;
 import javafx.fxml.FXML;
@@ -45,7 +47,7 @@ public class PageAccedi extends ChangeStage {
     public TextField txtField_psw;
 
     // --------------------------------
-
+    DataSingleton data = DataSingleton.getInstance();
     HashMap<String, String> loginInfo = new HashMap<>();
     Encryptor encryptor = new Encryptor();
 
@@ -57,6 +59,7 @@ public class PageAccedi extends ChangeStage {
 
     @FXML
     void func_goPlayHome(MouseEvent event) throws Exception {
+        String filePath = "C:\\playproj\\props.csv";
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();
         updateLoginUsernamesAndPasswords();
@@ -64,6 +67,27 @@ public class PageAccedi extends ChangeStage {
         String encryptedPassword = loginInfo.get(username);
         if (encryptor.encryptString(password).equals(encryptedPassword)) {
             System.out.println("Login successful!");
+
+            try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+
+                String[] line;
+                while ((line = reader.readNext()) != null) {
+                    if(line[0].equals(username)){
+                        data.setArrayUtente(line);
+                        for(String a: line) System.out.print(a+" ");
+                    }
+
+
+                }
+
+
+            } catch (FileNotFoundException e) {
+                throw new IOException("File CSV non trovato: " + filePath);
+            }
+
+
+
+
             // -----------------cambio stage gamesHome--------------------
             fuc_changeStage(btn_accediGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
         } else {

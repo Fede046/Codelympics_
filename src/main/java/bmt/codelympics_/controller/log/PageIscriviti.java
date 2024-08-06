@@ -164,7 +164,7 @@ public class PageIscriviti extends ChangeStage {
         String filePath = "C:\\playproj\\props.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))){
-            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "\n");
+            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + ","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+"\n");
 
         }catch (Exception e){
             e.getStackTrace();
