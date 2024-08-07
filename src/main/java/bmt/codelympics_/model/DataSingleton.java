@@ -11,7 +11,7 @@ public class DataSingleton {
     private boolean[] arrayRisposte = new boolean[5];
     private int value = 0;
     private int numEsercizio;
-    private int numMacroEsercizio;
+
     private String[] arrayUtente=new String[12];
 
     private DataSingleton (){}
@@ -20,13 +20,6 @@ public class DataSingleton {
         return instance;
     }
 
-    public int getnumMacroEsercizio(){
-        return numMacroEsercizio;
-    }
-
-    public void setNumMacroEsercizio(int numMacroEsercizio) {
-        this.numMacroEsercizio = numMacroEsercizio;
-    }
 
     public int getNumEsercizio(){
         return numEsercizio;
@@ -58,7 +51,14 @@ public class DataSingleton {
     //trova l'esercizio con la difficoltà giusta e lo cambia nel csv (solo se ci sono miglioramenti)
 
     private int stringaMedaglia=0;
-   
+
+    public int getStringaMedaglia() {
+        return stringaMedaglia;
+    }
+
+    public void setStringaMedaglia(int stringaMedaglia) {
+        this.stringaMedaglia = stringaMedaglia;
+    }
 
     public void scriviPunteggioeMedagliaEserczio()throws Exception{
         //char tipoEsercizo = Integer.toString(numMacroEsercizio).charAt(0);
@@ -143,12 +143,11 @@ public class DataSingleton {
 
 
 
-    public boolean risposta(int numMacroEsercizio, int numEsercizio, int[] risp){
+    public boolean risposta( int numEsercizio, int[] risp){
 
-        switch (numMacroEsercizio){
+        switch (stringaMedaglia){
             //sollevamento pesi risposta multipla
-            case 11:
-                stringaMedaglia=4;
+            case 4:
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -167,8 +166,7 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 12:
-                stringaMedaglia=5;
+            case 5:
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -187,8 +185,7 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 13:
-                stringaMedaglia=6;
+            case 6:
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;

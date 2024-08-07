@@ -89,7 +89,7 @@ public class PageIscriviti extends ChangeStage {
         if (controlEqualsUsernameAndMail(username, mail) /*&& ContrlUsPswMail(username, password, mail)*/) {
             // ----------------cambio stage GamesHome-----------
             writeToFile();
-            fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
+            fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/log/accedi.fxml");
 
         }
 

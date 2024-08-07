@@ -30,9 +30,22 @@ public class RegoleGioco extends ChangeStage{
 
     @FXML
     void func_DifficileErrore(MouseEvent event) throws Exception{
-        data.setNumMacroEsercizio(13);
-        // -----------------cambio stage esRispMult--------------------
-        fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+        //risp mult
+        if(data.getStringaMedaglia()==4){
+            data.setStringaMedaglia(4+2);
+            // -----------------cambio stage esRispMult--------------------
+            fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+        }else if(data.getStringaMedaglia()==10){
+            data.setStringaMedaglia(10+2);
+            // -----------------cambio stage esRispMult--------------------
+            fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+        }else if(data.getStringaMedaglia()==16){
+            data.setStringaMedaglia(16+2);
+            // -----------------cambio stage esRispMult--------------------
+            fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+        }
+       //data.setNumMacroEsercizio(13);
+
     }
 
     @FXML
@@ -43,14 +56,14 @@ public class RegoleGioco extends ChangeStage{
 
     @FXML
     void func_IntErrore(MouseEvent event)throws Exception {
-        data.setNumMacroEsercizio(12);
+        //data.setNumMacroEsercizio(12);
         // -----------------cambio stage esRispMult--------------------
         fuc_changeStage(btn_int, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
 
     @FXML
     void func_PrincErrore(MouseEvent event) throws Exception{
-        data.setNumMacroEsercizio(11);
+       //data.setNumMacroEsercizio(11);
         // -----------------cambio stage esRispMult--------------------
         fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
