@@ -22,9 +22,9 @@ public class ChangeStage {
         }
 
         // Store the current width and height of the stage
-        double width = stage1.getWidth();
-        double height = stage1.getHeight();
-
+        double width = stage1.getWidth()-16;
+        double height = stage1.getHeight()-39;
+       
         stage1.setScene(new Scene(root, width, height));
 
         stage1.setOnCloseRequest(
