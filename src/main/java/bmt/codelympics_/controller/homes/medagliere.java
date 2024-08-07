@@ -22,7 +22,7 @@ public class medagliere extends ChangeStage {
     @FXML
     private TableView<?> tb_allUsers;
     @FXML
-    void func_Home(MouseEvent event)throws  Exception {
+    void btn_GoHome(MouseEvent event)throws  Exception {
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
     }
