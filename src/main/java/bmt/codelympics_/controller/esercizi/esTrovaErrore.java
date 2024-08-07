@@ -66,7 +66,7 @@ fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaG
         if(rb_r4.isSelected())  temp=4;
 
         int[] risp = new int[]{temp};
-        data.addarrayDirisposte(data.risposta(data.getnumMacroEsercizio(), data.getNumEsercizio(),risp));
+        data.addarrayDirisposte(data.risposta(data.getNumEsercizio(),risp));
     }
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{

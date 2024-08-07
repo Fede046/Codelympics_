@@ -35,21 +35,21 @@ public class RegoleVF extends ChangeStage {
 
     @FXML
     void func_DifficileVF(MouseEvent event) throws Exception{
-        data.setNumMacroEsercizio(23);
+      //  data.setNumMacroEsercizio(23);
         // -----------------cambio stage esRispMult--------------------
         fuc_changeStage(btn_difficileVF, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
     }
 
     @FXML
     void func_IntVF(MouseEvent event) throws Exception{
-        data.setNumMacroEsercizio(22);
+     //   data.setNumMacroEsercizio(22);
         // -----------------cambio stage esRispMult--------------------
         fuc_changeStage(btn_intVF, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
     }
 
     @FXML
     void func_PrincVF(MouseEvent event) throws Exception{
-        data.setNumMacroEsercizio(21);
+      //  data.setNumMacroEsercizio(21);
         // -----------------cambio stage esRispMult--------------------
         fuc_changeStage(btn_princVF, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
     }

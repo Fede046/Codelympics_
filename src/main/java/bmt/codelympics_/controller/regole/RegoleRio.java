@@ -37,21 +37,21 @@ public class RegoleRio extends ChangeStage {
 
     @FXML
     void func_DifficileRio(MouseEvent event)throws Exception {
-        data.setNumMacroEsercizio(43);
+       // data.setNumMacroEsercizio(43);
         // -----------------cambio stage esOrdinamento diff--------------------
         fuc_changeStage(btn_difficileRio, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
     }
 
     @FXML
     void func_IntRio(MouseEvent event)throws Exception {
-        data.setNumMacroEsercizio(42);
+      //  data.setNumMacroEsercizio(42);
         // -----------------cambio stage esOrdinamento int--------------------
         fuc_changeStage(btn_intRio, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
     }
 
     @FXML
     void func_PrincRio(MouseEvent event)throws Exception {
-        data.setNumMacroEsercizio(41);
+      //  data.setNumMacroEsercizio(41);
         // -----------------cambio stage esOrdinamento princ--------------------
         fuc_changeStage(btn_princRio, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
     }

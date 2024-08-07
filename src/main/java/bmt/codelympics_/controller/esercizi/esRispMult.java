@@ -69,7 +69,7 @@ public class esRispMult extends ChangeStage{
         if(rb_r4.isSelected())  temp=4;
 
         int[] risp = new int[]{temp};
-        data.addarrayDirisposte(data.risposta(data.getnumMacroEsercizio(), data.getNumEsercizio(),risp));
+        data.addarrayDirisposte(data.risposta(data.getNumEsercizio(),risp));
     }
 
     @FXML

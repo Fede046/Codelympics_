@@ -45,7 +45,7 @@ public class esVF extends ChangeStage{
         if(rb_falso.isSelected())  temp=2;
 
         int[] risp = new int[]{temp};
-        data.addarrayDirisposte(data.risposta(data.getnumMacroEsercizio(), data.getNumEsercizio(),risp));
+        data.addarrayDirisposte(data.risposta(data.getNumEsercizio(),risp));
     }
     @FXML
     void func_Conferma(MouseEvent event)throws Exception {
