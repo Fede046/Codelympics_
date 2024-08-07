@@ -45,16 +45,16 @@
 
 }
 #img_1{
-	-fx-background-image:url(img/gamesHome/GamesScherma.jpg);
+	-fx-background-image:url(img/gamesHome/GamesScherma.png);
 }
 #img_2{
-	-fx-background-image:url(img/gamesHome/GamesPesi.jpg);
+	-fx-background-image:url(img/gamesHome/GamesPesi.png);
 }
 #img_3{
-	-fx-background-image:url(img/gamesHome/GamesBoxe.jpg);
+	-fx-background-image:url(img/gamesHome/GamesBoxe.png);
 }
 #img_4{
-	-fx-background-image:url(img/gamesHome/GamesArco.jpg);
+	-fx-background-image:url(img/gamesHome/GamesArco.png);
 }
 #img_gif{
 	-fx-background-image:url(img/esercizi/trovaErrore/scherma.gif);
