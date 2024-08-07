@@ -1,6 +1,7 @@
 package bmt.codelympics_.controller.homes;
 
 import bmt.codelympics_.model.ChangeStage;
+import bmt.codelympics_.model.SalvaDimensioni;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -20,8 +21,13 @@ public class Home extends ChangeStage implements Initializable {
     @FXML
     private Button btn_iscriviti;
 
+
+
+
     @FXML
     void func_accedi(MouseEvent event) throws Exception {
+
+
          // -----------------cambio stage accedi--------------------
          fuc_changeStage(btn_accedi, "/bmt/codelympics_/fxml/log/accedi.fxml");
         
@@ -37,6 +43,8 @@ public class Home extends ChangeStage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+       
+
         String directoryPath = "C:\\playproj";
         String filePath = directoryPath + "\\props.csv";
 
