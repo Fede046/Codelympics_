@@ -18,11 +18,16 @@ public class ChangeStage {
         Double[] dimensions = salvaDimensioni.getArray();
         if (dimensions[0] == null || dimensions[1] == null) {
             // Se le dimensioni non sono valide, usa valori predefiniti
-            dimensions = new Double[]{850.0, 600.0};
+            dimensions = new Double[] { 870.0, 600.0 };
         }
 
-        stage1.setScene(new Scene(root, dimensions[0], dimensions[1]));
+        // Store the current width and height of the stage
+        double width = stage1.getWidth();
+        double height = stage1.getHeight();
 
-        stage1.setOnCloseRequest(event -> salvaDimensioni.setArray(new Double[]{stage1.getWidth(), stage1.getHeight()}));
+        stage1.setScene(new Scene(root, width, height));
+
+        stage1.setOnCloseRequest(
+                event -> salvaDimensioni.setArray(new Double[] { width, height }));
     }
 }
