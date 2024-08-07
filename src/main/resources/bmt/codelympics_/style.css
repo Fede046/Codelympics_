@@ -1,6 +1,11 @@
 @font-face {
-    -fx-font-family: 'Verdana Pro Black';
     src: url('font/VerdanaPro-Black.ttf');
+	src: url('font/VerdanaPro-Regular.ttf');
+
+}
+.title.disabled{
+	-fx-text-fill: white;
+	-fx-font-family: 'Verdana Pro Regular';
 }
 .body{
 	-fx-background-image:url(img/gamesHome/SG.jpeg);
@@ -32,7 +37,7 @@
     	 -fx-background-color: black;
 		 -fx-text-fill: white;
 		 -fx-background-radius:6;
-		 -fx-font-family: 'Verdana Pro Black';
+		 -fx-font-family: 'Verdana Pro Regular';
 
 
 }
@@ -76,6 +81,7 @@
 }
 #btn_accediGo:hover,#btn_AnnullaConferma:hover,#btn_Conferma:hover,#btn_ConfermaExit:hover,#btn_startMultiple:hover,#btn_startVF:hover,#btn_Avanti:hover,#btn_int:hover,#btn_difficile:hover,#btn_princ:hover,#btn_startRiordinamento:hover,#btn_difficileVF:hover,#btn_GoHome:hover,#btn_startErrore:hover,#btn_goMedagliere:hover,#btn_accedi:hover,#btn_iscriviti:hover,#btn_Conferma:hover,#btn_annullaAcc:hover,#btn_iscrivitiGo:hover{
 	-fx-background-color: rgb(75, 75, 75);
+
 }
 /*********************************************************************/
 

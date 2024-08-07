@@ -55,7 +55,7 @@
                   <Insets bottom="5.0" left="10.0" right="60.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Risposta Multipla" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="title" text="Risposta Multipla" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Verdana Pro Black" size="26.0" />
                </font>
