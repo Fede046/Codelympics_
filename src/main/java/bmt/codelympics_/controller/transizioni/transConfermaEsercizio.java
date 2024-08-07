@@ -24,10 +24,41 @@ public class transConfermaEsercizio extends ChangeStage {
 
     @FXML
     void func_Avanti(MouseEvent event) throws Exception{
-// -----------------cambio stage esercizio Multipla--------------------
-        fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
-    }
 
+        for(boolean e: data.getArrayRisposte()) System.out.print(e+" ");
+        if(data.getNumEsercizio()>4) TerminaMacroEsercizio();
+        else ContinuaEsercizio();
+
+// -----------------cambio stage esercizio Multipla--------------------
+        //fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+    }
+    void ContinuaEsercizio()throws Exception{
+        if(data.getStringaMedaglia()<7) {
+            // -----------------cambio stage esercizio Multipla--------------------
+            fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+        }else if(data.getStringaMedaglia()<13){
+            // -----------------cambio stage esercizio VF--------------------
+            fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+        }else if(data.getStringaMedaglia()<19){
+            // -----------------cambio stage esercizioTrovaErrore--------------------
+            fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
+        }else {
+            // -----------------cambio stage esercizio Ordine--------------------
+            fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
+        }
+    }
+    void TerminaMacroEsercizio()throws Exception{
+
+
+        data.setNumEsercizio(0);
+        data.setValue(0);
+
+        // -----------------cambio stage FineGame--------------------
+        fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/transizioni/FineGame.fxml");
+
+
+
+    }
 }
 
 /*package bmt.codelympics_.controller.transizioni;

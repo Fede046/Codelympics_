@@ -1,4 +1,4 @@
-package bmt.codelympics_.controller.regole;
+/*package bmt.codelympics_.controller.regole;
 
 import java.util.concurrent.ExecutionException;
 
@@ -57,3 +57,4 @@ public class RegoleRio extends ChangeStage {
     }
 
 }
+*/

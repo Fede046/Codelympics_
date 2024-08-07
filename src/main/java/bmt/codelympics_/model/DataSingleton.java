@@ -148,6 +148,7 @@ public class DataSingleton {
         switch (stringaMedaglia){
             //sollevamento pesi risposta multipla
             case 4:
+                //princ
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -167,6 +168,7 @@ public class DataSingleton {
                 }
                 break;
             case 5:
+                //int
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -186,6 +188,7 @@ public class DataSingleton {
                 }
                 break;
             case 6:
+                //diff
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -205,8 +208,8 @@ public class DataSingleton {
                 }
                 break;
                 //box vero o falso
-            case 21:
-                stringaMedaglia=10;
+            case 10:
+               //princ
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -225,8 +228,8 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 22:
-                stringaMedaglia=11;
+            case 11:
+              //int
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -245,8 +248,8 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 23:
-                stringaMedaglia=12;
+            case 12:
+             //diff
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -266,8 +269,8 @@ public class DataSingleton {
                 }
                 break;
                 //scherma trova l'errore
-            case 31:
-                stringaMedaglia=16;
+            case 16:
+              //pric
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -286,8 +289,8 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 32:
-                stringaMedaglia=17;
+            case 17:
+               //int
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -306,8 +309,8 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 33:
-                stringaMedaglia=18;
+            case 18:
+               //diff
                 switch (numEsercizio){
                     case 1:
                         if(risp[0]==1) return true;
@@ -327,8 +330,8 @@ public class DataSingleton {
                 }
                 break;
                 //Tiro con l'arco riordinamento
-            case 41:
-                stringaMedaglia=22;
+            case 22:
+               //princ
                 switch (numEsercizio){
                     case 1:
                         if(Arrays.equals(risp, new int[]{1, 2, 3,4,5,6})) return true;
@@ -347,8 +350,8 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 42:
-                stringaMedaglia=23;
+            case 23:
+               //int
                 switch (numEsercizio){
                     case 1:
                         if(Arrays.equals(risp, new int[]{1, 2, 3,4,5,6})) return true;
@@ -367,8 +370,8 @@ public class DataSingleton {
                         break;
                 }
                 break;
-            case 43:
-                stringaMedaglia=24;
+            case 24:
+                //diff
                 switch (numEsercizio){
                     case 1:
                         if(Arrays.equals(risp, new int[]{1, 2, 3,4,5,6})) return true;

@@ -73,7 +73,7 @@ public class GamesHome extends ChangeStage {
 
     @FXML
     void func_startErrore(MouseEvent event) throws Exception{
-         data.setStringaMedaglia(4);
+         data.setStringaMedaglia(16);
         // -----------------cambio stage trovaErrore--------------------
         fuc_changeStage(btn_startErrore, "/bmt/codelympics_/fxml/regoleGioco/RegoleGioco.fxml");
         
@@ -81,7 +81,7 @@ public class GamesHome extends ChangeStage {
 
     @FXML
     void func_startMultiplo(MouseEvent event)throws Exception {
-         data.setStringaMedaglia(10);
+         data.setStringaMedaglia(4);
  // -----------------cambio stage Ris Multiple--------------------
  fuc_changeStage(btn_startMultiple, "/bmt/codelympics_/fxml/regoleGioco/RegoleGioco.fxml");
     
@@ -89,7 +89,7 @@ public class GamesHome extends ChangeStage {
 
     @FXML
     void func_startRiordina(MouseEvent event) throws Exception{
-       data.setStringaMedaglia(16);
+       data.setStringaMedaglia(22);
         // -----------------cambio stage Riordinamento--------------------
         fuc_changeStage(btn_startRiordinamento, "/bmt/codelympics_/fxml/regoleGioco/RegoleGioco.fxml");
     
@@ -97,7 +97,7 @@ public class GamesHome extends ChangeStage {
 
     @FXML
     void func_startVF(MouseEvent event) throws Exception{
-         data.setStringaMedaglia(22);
+         data.setStringaMedaglia(10);
         // -----------------cambio stage trovaErrore--------------------
         fuc_changeStage(btn_startVF, "/bmt/codelympics_/fxml/regoleGioco/RegoleGioco.fxml");
 

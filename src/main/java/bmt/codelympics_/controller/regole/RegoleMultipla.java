@@ -1,4 +1,4 @@
-package bmt.codelympics_.controller.regole;
+/*package bmt.codelympics_.controller.regole;
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import javafx.fxml.FXML;
@@ -54,3 +54,4 @@ public class RegoleMultipla extends ChangeStage {
     }
 
 }
+*/

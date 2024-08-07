@@ -68,22 +68,22 @@ public class RegoleGioco extends ChangeStage{
             case 4:
                 data.setStringaMedaglia(4+1);
                 // -----------------cambio stage esRispMult int--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+                fuc_changeStage(btn_int, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
                 break;
             case 10:
                 data.setStringaMedaglia(10+1);
                 // -----------------cambio stage esVF int--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+                fuc_changeStage(btn_int, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
                 break;
             case 16:
                 data.setStringaMedaglia(16+1);
                 // -----------------cambio stage esErr int--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
+                fuc_changeStage(btn_int, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
                 break;
             case 22:
                 data.setStringaMedaglia(22+1);
                 // -----------------cambio stage esOrd int--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
+                fuc_changeStage(btn_int, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
                 break;
         }
     }
@@ -94,22 +94,22 @@ public class RegoleGioco extends ChangeStage{
             case 4:
                
                 // -----------------cambio stage esRispMult princ--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
+                fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
                 break;
             case 10:
                
                 // -----------------cambio stage esVF princ--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+                fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
                 break;
             case 16:
                
                 // -----------------cambio stage esErr princ--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
+                fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
                 break;
             case 22:
                
                 // -----------------cambio stage esOrd princ--------------------
-                fuc_changeStage(btn_difficile, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
+                fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
                 break;
         }
     }

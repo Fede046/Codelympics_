@@ -1,4 +1,4 @@
-package bmt.codelympics_.controller.regole;
+/*package bmt.codelympics_.controller.regole;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
@@ -55,3 +55,4 @@ public class RegoleVF extends ChangeStage {
     }
 
 }
+*/

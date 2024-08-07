@@ -1,5 +1,5 @@
 .body{
-	-fx-background-image:url(img/gamesHome/SchermataGiochi.jpeg);
+	-fx-background-image:url(img/gamesHome/SG.jpeg);
     -fx-background-size: cover;
 	-fx-background-repeat:no-repeat;
 	-fx-background-position:center;
@@ -40,16 +40,16 @@
 
 }
 #img_1{
-	-fx-background-image:url(img/gamesHome/GH_scherma.gif);
+	-fx-background-image:url(img/gamesHome/GamesScherma.jpg);
 }
 #img_2{
-	-fx-background-image:url(img/gamesHome/GH_pesi.png);
+	-fx-background-image:url(img/gamesHome/GamesPesi.jpg);
 }
 #img_3{
-	-fx-background-image:url(img/gamesHome/GH_boxe.png);
+	-fx-background-image:url(img/gamesHome/GamesBoxe.jpg);
 }
 #img_4{
-	-fx-background-image:url(img/gamesHome/GH_arco.png);
+	-fx-background-image:url(img/gamesHome/GamesArco.jpg);
 }
 #img_gif{
 	-fx-background-image:url(img/esercizi/trovaErrore/scherma.gif);
@@ -69,7 +69,7 @@
 	-fx-background-repeat:no-repeat;
 	-fx-background-position:center;
 }
-#btn_accediGo:hover,#btn_AnnullaConferma:hover,#btn_Conferma:hover,#btn_ConfermaExit:hover,#btn_startMultiple:hover,#btn_startVF:hover,#btn_Avanti:hover,#btn_intVF:hover,#btn_princVF:hover,#btn_startRiordinamento:hover,#btn_difficileVF:hover,#btn_GoHome:hover,#btn_startErrore:hover,#btn_princRio:hover,#btn_intRio:hover,#btn_difficileRio:hover,#btn_intErrore:hover,#btn_princMult:hover,#btn_difficileMult:hover,#btn_intMult:hover,#btn_goMedagliere:hover,#btn_princErrore:hover,#btn_difficileErrore:hover,#btn_accedi:hover,#btn_iscriviti:hover,#btn_Conferma:hover,#btn_annullaAcc:hover,#btn_iscrivitiGo:hover{
+#btn_accediGo:hover,#btn_AnnullaConferma:hover,#btn_Conferma:hover,#btn_ConfermaExit:hover,#btn_startMultiple:hover,#btn_startVF:hover,#btn_Avanti:hover,#btn_int:hover,#btn_difficile:hover,#btn_princ:hover,#btn_startRiordinamento:hover,#btn_difficileVF:hover,#btn_GoHome:hover,#btn_startErrore:hover,#btn_goMedagliere:hover,#btn_accedi:hover,#btn_iscriviti:hover,#btn_Conferma:hover,#btn_annullaAcc:hover,#btn_iscrivitiGo:hover{
 	-fx-background-color: rgb(75, 75, 75);
 }
 	
