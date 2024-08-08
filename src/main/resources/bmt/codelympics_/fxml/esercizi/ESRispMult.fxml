@@ -3,10 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -15,7 +17,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodySfondo" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.esercizi.esRispMult">
    <bottom>
-      <GridPane prefHeight="83.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
@@ -55,100 +57,139 @@
                   <Insets bottom="5.0" left="10.0" right="60.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="title" text="Risposta Multipla" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="title" text="Risposta Multipla" textAlignment="RIGHT" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                <font>
-                  <Font name="Verdana Pro Black" size="26.0" />
+                  <Font name="Verdana Pro Black" size="30.0" />
                </font>
-            </Button>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </top>
    <center>
-      <GridPane maxWidth="1300.0" prefHeight="250.0" prefWidth="282.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="800.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="127.79999389648438" minHeight="10.0" prefHeight="22.19998397827149" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="244.60001602172852" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <GridPane prefHeight="242.0" prefWidth="269.0" GridPane.columnIndex="1">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <GridPane maxWidth="1300.0" prefHeight="280.0" prefWidth="600.0" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="800.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="500.0" minHeight="10.0" prefHeight="228.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Button fx:id="btn_r1" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER">
+                  <GridPane prefHeight="242.0" prefWidth="269.0" GridPane.columnIndex="1">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="btn_r1" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <RadioButton fx:id="rb_r1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.halignment="RIGHT">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="RM" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <Button fx:id="btn_r2" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <RadioButton fx:id="rb_r2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <Button fx:id="btn_r3" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <RadioButton fx:id="rb_r3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                        <Button fx:id="btn_r4" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <RadioButton fx:id="rb_r4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </RadioButton>
+                     </children>
+                  </GridPane>
+                  <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: red;">
                      <GridPane.margin>
-                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
+                        <Insets bottom="10.0" left="25.0" top="10.0" />
                      </GridPane.margin>
-                  </Button>
-                  <RadioButton fx:id="rb_r1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.halignment="RIGHT">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="RM" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <Button fx:id="btn_r2" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <RadioButton fx:id="rb_r2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <Button fx:id="btn_r3" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <RadioButton fx:id="rb_r3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
-                  <Button fx:id="btn_r4" maxHeight="80.0" maxWidth="500.0" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="FALSO" GridPane.halignment="CENTER" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <RadioButton fx:id="rb_r4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <GridPane.margin>
-                        <Insets left="25.0" />
-                     </GridPane.margin>
-                  </RadioButton>
+                     <center>
+                        <ScrollPane fx:id="boh" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <ImageView id="img_RM" fx:id="img_RM" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../../../../../../../Downloads/RM_difficile22.png" />
+                                 </image>
+                              </ImageView>
+                           </content>
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                        </ScrollPane>
+                     </center>
+                  </BorderPane>
                </children>
-            </GridPane>
-            <ScrollPane maxHeight="600.0" maxWidth="900.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-               <content>
-                  <AnchorPane fx:id="p_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
-               </content>
                <GridPane.margin>
-                  <Insets left="25.0" right="10.0" />
+                  <Insets top="10.0" />
                </GridPane.margin>
-            </ScrollPane>
+            </GridPane>
+            <Label fx:id="lb_domanda" alignment="CENTER" contentDisplay="CENTER" maxHeight="80.0" maxWidth="800.0" style="-fx-background-color: rgba(255,255,255,.7); -fx-background-radius: 6;" text="Scegli la risposta corretta per completare il codice, digitato Codelympics&#10;&#10;&#10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="50.0" right="50.0" top="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+            </Label>
          </children>
       </GridPane>
    </center>
