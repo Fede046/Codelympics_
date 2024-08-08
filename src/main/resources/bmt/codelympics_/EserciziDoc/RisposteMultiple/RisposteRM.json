@@ -1,0 +1,170 @@
+{"base":[
+	{
+		"id":1,
+		"img":"Codice/RM_base1.png",
+		"domanda":"Scegli la risposta corretta per completare il codice:",
+		"r1":"args",
+		"r2":"String[] args",
+		"r3":"String",
+		"r4":"Codelympics",
+		"sol":"String[] args"
+	},
+	{
+		"id":2,
+		"img":"Codice/RM_base2.png",
+		"domanda":" Qual è l’output del seguente codice Java?",
+		"r1":"12",
+		"r2":"11",
+		"r3":"111",
+		"r4":"121",
+		"sol":"12"
+
+	},
+	{
+		"id":3,
+		"img":"Codice/RM_base3.png",
+		"domanda":"Scegli la risposta corretta per completare il codice, digitato 'Codelympics'",
+		"r1":"System.in",
+		"r2":"System.out.println",
+		"r3":"scanner.next()",
+		"r4":"Codelympics",
+		"sol":"System.in"
+	},
+	{
+		"id":4,
+		"img":"Codice/RM_base4.png",
+		"domanda":"Che cosa stampa a video la seguente istruzione Java?  ",
+		"r1":"Codelympics",
+		"r2":"Hello World",
+		"r3":"Hello Mars",
+		"r4":"11",
+		"sol":"Hello Mars"
+
+	},
+	{
+		"id":5,
+		"img":"Codice/RM_base5.png",
+		"domanda":"Qual è l’output del seguente codice Java?",
+		"r1":"Hi 2",
+		"r2":"Hi 3",
+		"r3":"Hi 4",
+		"r4":"Hi 1",
+		"sol":"Hi 3"
+
+	}
+	],
+
+	"intermedio":[
+	{
+		"id":1,
+		"img":"Codice/RM_Intermedio1.png",
+		"domanda":"Qual è l’output del seguente codice Java?",
+		"r1":"C d d l l",
+		"r2":"C ",
+		"r3":"C d d",
+		"r4":"C d",
+		"sol":"C d d l l"
+	},
+	{
+		"id":2,
+		"img":"Codice/RM_Intermedio2.png",
+		"domanda":"Qual è l’output del seguente codice Java?",
+		"r1":"28",
+		"r2":"29",
+		"r3":"30",
+		"r4":"31",
+		"sol":"29"
+
+	},
+	{
+		"id":3,
+		"img":"Codice/RM_Intermedio3.png",
+		"domanda":"Qual è l’output del seguente codice Java?",
+		"r1":"Hello Mars Hello Mars",
+		"r2":"Hello Mars Hello World",
+		"r3":"Hello World Hello Mars",
+		"r4":"Hello World Hello World",
+		"sol":"Hello Mars Hello Mars"
+	},
+	{
+		"id":4,
+		"img":"Codice/RM_Intermedio4.png",
+		"domanda":"Qual è l’output del seguente codice Java? Digitato strs = ['act','pots','tops','cat','stop','hat'] ",
+		"r1":"[['hat','act', 'cat'],['stop', 'pots', 'tops']]",
+		"r2":"[['hat”,'act', 'cat'],['stop'],[ 'pots', 'tops']]",
+		"r3":"[['act'],['hat”, 'cat'],['stop'], ['pots', 'tops']]",
+		"r4":"[['hat'],['act', 'cat'],['stop', 'pots', 'tops']]",
+		"sol":"[['hat'],['act', 'cat'],['stop', 'pots', 'tops']]"
+
+	},
+	{
+		"id":5,
+		"img":"Codice/RM_Intermedio5.png",
+		"domanda":"Qual è l’output del seguente codice Java?",
+		"r1":"[-1, 0, 1, 1, 2, 2, 3, 3, 4, 5]",
+		"r2":"[5, 4, 3, 3, 2, 2, 1, 1, 0, -1]",
+		"r3":"[5, 4, 3, 3, 2, 2, 1, 0, -1]",
+		"r4":"[-1, 0, 1, 2, 2, 3, 3, 4, 5]",
+		"sol":"[5, 4, 3, 3, 2, 2, 1, 1, 0, -1]"
+
+	}
+	
+	],
+
+	"difficile":[
+	{
+		"id":1,
+		"img":"Codice/RM_difficile1.png",
+		"domanda":"Qual è l’output del seguente codice Java?",
+		"r1":"\\Prova\\Prova",
+		"r2":"\\\"\\\\Prova\\Prova",
+		"r3":"\\\\Prova\\\\Prova",
+		"r4":"\\\\Prova\\\\Prova\\\"",
+		"sol":"\\Prova\\Prova"
+	},
+	{
+		"id":2,
+		"img":"Codice/RM_difficile2.png",
+		"domanda":"Qual è l’output del seguente codice Java? Digitato nums = [1,2,1]",
+		"r1":"[1, 2, 2, 1, 2, 1]",
+		"r2":"[1, 2, 1, 1, 2, 1]",
+		"r3":"[1, 2, 1, 0, 0, 0]",
+		"r4":"[1, 2, 1, 2, 1, 1]",
+		"sol":"[1, 2, 1, 1, 2, 1]"
+
+	},
+	{
+		"id":3,
+		"img":"Codice/RM_difficile3.png",
+		"domanda":"Qual è l’output del seguente codice Java? Digitato  arr = [17,18,5,4,6,1]",
+		"r1":"[18, 18, 5, 6, 6, 1]",
+		"r2":"[18, 6, 6, 6, 1, -1]",
+		"r3":"[18, 6, 6, 6, -1, -1]",
+		"r4":"[18, 6, 6, 1, -1, -1]",
+		"sol":"[18, 6, 6, 6, -1, -1]"
+	},
+	{
+		"id":4,
+		"img":"Codice/RM_difficile4.png",
+		"domanda":"Qual è l’output del seguente codice Java? Digitato s = 'abc', t ='ahbgdc'",
+		"r1":"true",
+		"r2":"[5, 4, 3, 3, 2, 2, 1, 1, 0, -1]",
+		"r3":"true perché t è una sottosequenza di s",
+		"r4":"false",
+		"sol":"false perché t non contiene s come sottosequenza"
+
+	},
+	{
+		"id":5,
+		"img":"Codice/RM_difficile5.png",
+		"domanda":"Qual è l’output del seguente codice Java? Digitato  nums = [1,2,2,3] ",
+		"r1":"true,e  il codice gestisce i numeri negativi",
+		"r2":" true, ma il codice non gestisce i numeri negativi",
+		"r3":"false",
+		"r4":"true,e l’output è uguale se l’Input: nums = [1,3,2]",
+		"sol":" true,e  il codice gestisce i numeri negativi"
+
+	}
+	
+	]
+}

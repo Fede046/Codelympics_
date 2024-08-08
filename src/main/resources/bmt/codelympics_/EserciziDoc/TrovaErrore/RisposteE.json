@@ -1,0 +1,137 @@
+{"base":[
+	{
+		"id":1,
+		"img1":"b1/E_base11.png",
+		"img2":"b1/E_base12.png",
+		"img3":"b1/E_base13.png",
+		"img4":"b1/E_base14.png",
+		"sol":"b1/E_base14.png"
+	},
+	{
+		"id":2,
+		"img1":"b2/E_base21.png",
+		"img2":"b2/E_base22.png",
+		"img3":"b2/E_base23.png",
+		"img4":"b2/E_base24.png",
+		"sol":"b2/E_base23.png"
+	},
+	{
+		"id":3,
+		"img1":"b3/E_base31.png",
+		"img2":"b3/E_base32.png",
+		"img3":"b3/E_base33.png",
+		"img4":"b3/E_base34.png",
+		"sol":"b3/E_base32.png"
+	},
+	{
+		"id":4,
+		"img1":"b4/E_base41.png",
+		"img2":"b4/E_base42.png",
+		"img3":"b4/E_base43.png",
+		"img4":"b4/E_base44.png",
+		"sol":"b4/E_base42.png"
+
+	},
+	{
+		"id":5,
+		"img1":"b5/E_base51.png",
+		"img2":"b5/E_base52.png",
+		"img3":"b5/E_base53.png",
+		"img4":"b5/E_base54.png",
+		"sol":"b5/E_base54.png"
+
+	}
+	],
+
+	"intermedio":[
+	{
+		"id":1,
+		"img1":"I1/E_int11.png",
+		"img2":"I1/E_int12.png",
+		"img3":"I1/E_int13.png",
+		"img4":"I1/E_int14.png",
+		"sol": "I1/E_int13.png"
+	},
+	{
+		"id":2,
+		"img1":"I2/E_int21.png",
+		"img2":"I2/E_int22.png",
+		"img3":"I2/E_int23.png",
+		"img4":"I2/E_int24.png",
+		"sol": "I2/E_int24.png"
+
+	},
+	{
+		"id":3,
+		"img1":"I3/E_int31.png",
+		"img2":"I3/E_int32.png",
+		"img3":"I3/E_int33.png",
+		"img4":"I3/E_int34.png",
+		"sol": "I3/E_int31.png"
+	},
+	{
+		"id":4,
+		"img1":"I4/E_int41.png",
+		"img2":"I4/E_int42.png",
+		"img3":"I4/E_int43.png",
+		"img4":"I4/E_int44.png",
+		"sol": "I4/E_int42.png"
+	},
+	{
+		"id":5,
+		"img1":"I5/E_int51.png",
+		"img2":"I5/E_int52.png",
+		"img3":"I5/E_int53.png",
+		"img4":"I5/E_int54.png",
+		"sol": "I5/E_int54.png"
+
+	}
+	
+	],
+
+	"difficile":[
+	{
+		"id":1,
+		"img1":"d1/E_dif11.png",
+		"img2":"d1/E_dif12.png",
+		"img3":"d1/E_dif13.png",
+		"img4":"d1/E_dif14.png",
+		"sol": "d1/E_dif14.png"
+	},
+	{
+		"id":2,
+		"img1":"d2/E_dif21.png",
+		"img2":"d2/E_dif22.png",
+		"img3":"d2/E_dif23.png",
+		"img4":"d2/E_dif24.png",
+		"sol": "d2/E_dif24.png"
+
+	},
+	{
+		"id":3,
+		"img1":"d3/E_dif31.png",
+		"img2":"d3/E_dif32.png",
+		"img3":"d3/E_dif33.png",
+		"img4":"d3/E_dif34.png",
+		"sol": "d3/E_dif32.png"
+	},
+	{
+		"id":4,
+		"img1":"d4/E_dif41.png",
+		"img2":"d4/E_dif42.png",
+		"img3":"d4/E_dif43.png",
+		"img4":"d4/E_dif44.png",
+		"sol": "d4/E_dif43.png"
+	},
+	{
+		"id":5,
+		"img1":"d5/E_dif51.png",
+		"img2":"d5/E_dif52.png",
+		"img3":"d5/E_dif53.png",
+		"img4":"d5/E_dif54.png",
+		"sol": "d5/E_dif54.png"
+
+	}
+	
+	]
+}

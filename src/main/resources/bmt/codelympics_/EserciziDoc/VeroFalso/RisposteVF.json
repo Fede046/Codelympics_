@@ -1,0 +1,79 @@
+{"base":[
+	{
+		"domanda":"Java è un linguaggio di programmazione orientato agli oggetti",
+		"sol":"vero"
+	},
+	{
+		"domanda":"In Java, una variabile dichiarata come final può essere modificata dopo l'inizializzazione.",
+		"sol":"falso"
+
+	},
+	{
+		"domanda":"Il garbage collector di Java si occupa automaticamente della gestione della memoria.",
+		"sol":"vero"
+	},
+	{
+		"domanda":"In Java, la parola chiave this si usa per fare riferimento alla variabile di classe.",
+		"sol":"falso"
+	},
+	{
+		"domanda":"Java supporta l'ereditarietà multipla tramite l'uso delle classi.",
+		"sol":"falso"
+
+	}
+	],
+
+	"intermedio":[
+	{
+		"domanda":"Un metodo statico in Java può accedere direttamente ai membri di istanza della classe.",
+		"sol":"falso"
+	},
+	{
+		"domanda":"Il costruttore di una classe in Java può essere sovraccaricato.",
+		"sol":"vero"
+
+	},
+	{
+		"domanda":"In Java, la classe String è mutabile.",
+		"sol":"falso"
+	},
+	{
+		"domanda":"Un metodo astratto in una classe astratta può avere un corpo in Java",
+		"sol":"falso"
+
+	},
+	{
+		"domanda":"In Java, una variabile di tipo superclasse può fare riferimento a un'istanza di una sua sottoclasse, e quando si chiama un metodo sovrascritto, viene eseguito il metodo della sottoclasse.",
+		"sol":"vero"
+
+	}
+	
+	],
+
+	"difficile":[
+	{
+		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, ovvero se due oggetti sono uguali secondo equals, devono avere lo stesso valore di hashCode.",
+		"sol":"vero"
+	},
+	{
+		"domanda":"In Java, una classe astratta può implementare dei metodi definiti in un'interfaccia senza dover implementare tutti i metodi dell'interfaccia.",
+		"sol":"vero"
+
+	},
+	{
+		"domanda":"In Java, l'utilizzo dei generics con le collezioni può migliorare le prestazioni eliminando il bisogno di cast espliciti e consentendo il controllo del tipo a compile-time.",
+		"sol":"vero"
+	},
+	{
+		"domanda":"In Java, l'implementazione di una HashMap è basata su una tabella hash che ridimensiona automaticamente la sua capacità quando viene superata una soglia di carico (load factor) specifica.",
+		"sol":"vero"
+
+	},
+	{
+		"domanda":"In Java, l'allocazione di memoria per un oggetto avviene nello heap, mentre la memoria per le variabili locali e i riferimenti agli oggetti avviene nello stack.",
+		"sol":"vero"
+
+	}
+	
+	]
+}
