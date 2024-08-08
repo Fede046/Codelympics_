@@ -24,7 +24,7 @@ public class transConfermaEsercizio extends ChangeStage {
 
     @FXML
     void func_Avanti(MouseEvent event) throws Exception{
-
+        System.out.println(data.getNumEsercizio());
         for(boolean e: data.getArrayRisposte()) System.out.print(e+" ");
         if(data.getNumEsercizio()>4) TerminaMacroEsercizio();
         else ContinuaEsercizio();

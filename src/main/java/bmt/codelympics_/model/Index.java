@@ -18,7 +18,7 @@ public class Index extends Application {
         Parent root = loader.load();
         Home.setTitle("CODELYMPICS");
 
-        Double[] dimensions = new Double[] { 870.0, 600.0 };
+        Double[] dimensions = new Double[] { 900.0, 600.0 };
         /*
          * if (dimensions[0] == null || dimensions[1] == null) {
          * // Se le dimensioni non sono valide, usa valori predefiniti

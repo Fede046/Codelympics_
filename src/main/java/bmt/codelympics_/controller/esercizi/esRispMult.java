@@ -22,6 +22,8 @@ public class esRispMult extends ChangeStage{
 
     @FXML
     private Button btn_ConfermaExit;
+    @FXML
+    private Button btn_domanda;
 
     @FXML
     private Button btn_r1;

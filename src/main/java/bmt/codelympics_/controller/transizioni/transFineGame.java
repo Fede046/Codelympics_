@@ -23,51 +23,114 @@ public class transFineGame extends ChangeStage {
     private Button lb_punti2;
 
     DataSingleton data = DataSingleton.getInstance();
-    // HashMaps<String,String>
 
-    // c'è da aggiungere quante risposte giuste e il punteggio in base a esso e al
-    // tempo
-    // aggiorna medaglie e punti dell'eserczio specifico
-    // devo 42 ci dice il tipo di esercizio e il tipo di difficoltà
-    /*
-     * void updateProfile()throws Exception{
-     * String filePath = "C:\\playproj\\props.csv";
-     * try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
-     * loginInfo.clear();
-     * String[] line;
-     * while ((line = reader.readNext()) != null) {
-     * if (line.length >= 2) {
-     * loginInfo.put(line[0], line[1]);
-     * }
-     * }
-     * } catch (FileNotFoundException e) {
-     * throw new IOException("File CSV non trovato: " + filePath);
-     * }
-     * 
-     * 
-     * }
-     */
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
-        // data.scriviPunteggioeMedagliaEserczio();
-        // String filePath = "C:\\playproj\\props.csv";
-        // obbiettivo trovare la parte giusta
-        /*
-         * try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath,
-         * true))){
-         * writer.write(username + "," + encryptor.encryptString(password) + "," + email
-         * + "," + colore +
-         * ","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+"0.0.0"+","+
-         * "0.0.0"+","+"0.0.0"+"\n");
-         * 
-         * }catch (Exception e){
-         * e.getStackTrace();
-         * }
-         */
+        String[] nuovoArrayUtente = data.getArrayUtente();
+        int stringaPunti = data.getStringaMedaglia() + 3;
 
-        // -----------------cambio stage gamesHome--------------------
-        fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
-    }
+        System.out.println(data.getArrayUtente()[data.getStringaMedaglia()]);
+        System.out.println(data.getArrayUtente()[stringaPunti]);
+        System.out.println();
+
+        int nuovaMedaglia = 0;
+        for (boolean e : data.getArrayRisposte()) {
+            if (e) {
+                nuovaMedaglia++;
+            }
+        }
+        nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(nuovaMedaglia);
+
+        int nuovoPunteggio = (nuovaMedaglia * 200)+700;
+        //aggiungere la variabile tempo se si vuole
+
+        nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio);
+//--------------------------------------------------------------------------------
+
+
+        String filePath2 = "C:\\playproj\\props2.csv";
+        String filePath = "C:\\playproj\\props.csv";
+
+        File file2 = new File(filePath2);
+
+        try (FileWriter writer = new FileWriter(file2)) {
+            try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+                String[] line;
+
+                while ((line = reader.readNext()) != null) {
+                    System.out.println(line[0]);
+
+                    for(int i=0;i<line.length;i++){
+                        if(line[0].equals(nuovoArrayUtente[0])){
+                            if(i== line.length-1){
+                                writer.append(nuovoArrayUtente[i]).append("\n");
+                                System.out.print(nuovoArrayUtente[i]);
+                            }else {
+                                writer.append(nuovoArrayUtente[i]).append(",");
+                                System.out.print(nuovoArrayUtente[i]+",");
+                            }
+                        }
+
+
+                        else if(i== line.length-1){
+                            writer.append(line[i]).append("\n");
+                            System.out.print(line[i]);
+                        }else {
+                            writer.append(line[i]).append(",");
+                            System.out.print(line[i]+",");
+                        }
+
+                    }
+                    System.out.println();
+
+                }
+
+
+            } catch (FileNotFoundException e) {
+                throw new IOException("File CSV non trovato: " + filePath);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//--------------------------------
+
+        File file = new File(filePath);
+        try (FileWriter writer = new FileWriter(file)) {
+            try (CSVReader reader = new CSVReader(new FileReader(filePath2))) {
+                String[] line;
+
+                while ((line = reader.readNext()) != null) {
+                   for(int i=0;i<line.length;i++){
+                       if(i== line.length-1){
+                           writer.append(line[i]).append("\n");
+                           System.out.print(line[i]);
+                       }else {
+                           writer.append(line[i]).append(",");
+                           System.out.print(line[i]+",");
+                       }
+                   }
+
+                }
+
+
+            } catch (FileNotFoundException e) {
+                throw new IOException("File CSV non trovato: " + filePath);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    // -----------------cambio stage gamesHome--------------------
+    fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
+}
+
+
+
+
+
 
 }

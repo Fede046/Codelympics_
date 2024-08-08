@@ -15,7 +15,7 @@ public class transAbbandonaGame extends ChangeStage{
     @FXML
     private Button btn_Conferma;
 
-    //DataSingleton data = DataSingleton.getInstance();
+    DataSingleton data = DataSingleton.getInstance();
 
     @FXML
     void func_AnnullaConferma(MouseEvent event) throws Exception{
@@ -37,7 +37,8 @@ public class transAbbandonaGame extends ChangeStage{
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
-       // data.setNumEsercizio(0);
+       data.setNumEsercizio(0);
+        System.out.println(data.getNumEsercizio());
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
     }
