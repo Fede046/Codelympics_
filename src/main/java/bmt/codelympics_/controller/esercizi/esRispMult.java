@@ -19,9 +19,6 @@ public class esRispMult extends ChangeStage {
     private ToggleGroup RM;
 
     @FXML
-    private ScrollPane boh;
-
-    @FXML
     private Button btn_Conferma;
 
     @FXML

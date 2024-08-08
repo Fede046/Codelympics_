@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
@@ -43,14 +44,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="lb_domanda" alignment="CENTER" maxHeight="150.0" maxWidth="800.0" mnemonicParsing="false" style="-fx-background-color: rgba(255,255,255,.7); -fx-background-radius: 6;" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod &#10;tempor incididunt " textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-               </GridPane.margin>
-            </Button>
             <Button maxHeight="80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-radius: 6; -fx-background-color: white;" text="VERO" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets bottom="25.0" left="200.0" right="200.0" top="25.0" />
@@ -80,6 +73,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </RadioButton>
+            <Label fx:id="lb_domanda" alignment="CENTER" contentDisplay="CENTER" maxHeight="80.0" maxWidth="800.0" style="-fx-background-color: rgba(255,255,255,.7); -fx-background-radius: 6;" text="Scegli la risposta corretta per completare il codice, digitato Codelympics&#10;&#10;&#10;" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </center>
@@ -104,11 +108,14 @@
                   <Insets bottom="5.0" left="10.0" right="60.0" top="10.0" />
                </GridPane.margin>
             </Button>
-            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="title" style="-fx-background-color: transparent;" text="Vero o Falso" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="title" text="Vero o Falso" textAlignment="RIGHT" textFill="WHITE" GridPane.columnIndex="1">
                <font>
-                  <Font name="Verdana Pro Black" size="26.0" />
+                  <Font name="Verdana Pro Black" size="30.0" />
                </font>
-            </Button>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </top>

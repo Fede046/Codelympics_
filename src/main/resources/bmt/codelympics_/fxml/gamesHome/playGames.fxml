@@ -224,14 +224,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="title" text="CODELYMPICS GAMES" textFill="WHITE" GridPane.columnIndex="2">
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="title" text="Codelympic Games" textAlignment="RIGHT" textFill="WHITE" GridPane.columnIndex="2">
                <font>
-                  <Font name="Verdana Pro Black" size="26.0" />
+                  <Font name="Verdana Pro Black" size="30.0" />
                </font>
                <GridPane.margin>
-                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                  <Insets right="10.0" />
                </GridPane.margin>
-            </Button>
+            </Label>
          </children>
       </GridPane>
    </top>

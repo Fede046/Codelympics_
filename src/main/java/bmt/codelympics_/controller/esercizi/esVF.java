@@ -9,7 +9,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 
-public class esVF extends ChangeStage{
+public class esVF extends ChangeStage {
 
     @FXML
     private ToggleGroup VF;
@@ -21,7 +21,7 @@ public class esVF extends ChangeStage{
     private Button btn_ConfermaExit;
 
     @FXML
-    private Button lb_domanda;
+    private Label lb_domanda;
 
     @FXML
     private RadioButton rb_falso;
@@ -32,28 +32,29 @@ public class esVF extends ChangeStage{
     DataSingleton data = DataSingleton.getInstance();
 
     @FXML
-    void func_ConfermaExit(MouseEvent event) throws Exception{
-    // -----------------cambio stage AbbandonaGame--------------------
-    fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
+    void func_ConfermaExit(MouseEvent event) throws Exception {
+        // -----------------cambio stage AbbandonaGame--------------------
+        fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
-    void Risposta(){
-        data.setNumEsercizio(data.getNumEsercizio()+1);
+    void Risposta() {
+        data.setNumEsercizio(data.getNumEsercizio() + 1);
         int temp = 0;
 
-        if(rb_vero.isSelected())  temp=1;
-        if(rb_falso.isSelected())  temp=2;
+        if (rb_vero.isSelected())
+            temp = 1;
+        if (rb_falso.isSelected())
+            temp = 2;
 
-        int[] risp = new int[]{temp};
-        data.addarrayDirisposte(data.risposta(data.getNumEsercizio(),risp));
+        int[] risp = new int[] { temp };
+        data.addarrayDirisposte(data.risposta(data.getNumEsercizio(), risp));
     }
+
     @FXML
-    void func_Conferma(MouseEvent event)throws Exception {
+    void func_Conferma(MouseEvent event) throws Exception {
         Risposta();
-    // -----------------cambio stage ConfermaEs--------------------
-    fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        // -----------------cambio stage ConfermaEs--------------------
+        fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
-
-   
 
 }
