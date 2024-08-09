@@ -77,7 +77,7 @@
                      </GridPane.margin></CheckBox>
                   <TextField fx:id="txtField_psw" alignment="CENTER" maxHeight="50.0" maxWidth="400.0" promptText="password" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                      <GridPane.margin>
-                        <Insets left="50.0" right="50.0" top="20.0" />
+                        <Insets left="50.0" right="50.0" top="22.0" />
                      </GridPane.margin>
                   </TextField>
                   <PasswordField fx:id="hiddentxtField_psw" alignment="CENTER" maxHeight="50.0" maxWidth="400.0" promptText="password" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
