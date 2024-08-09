@@ -4,6 +4,7 @@ import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,11 +42,14 @@ public class esVF extends ChangeStage implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         ObjectMapper objectMapper = new ObjectMapper();
+    //--------aggiunto per leggere il file quando uso il .jar (InputStream serve per leggere un file all'interno del .jar)
+        try (InputStream inputStream = getClass().getResourceAsStream("/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json")) {
+            if (inputStream == null) {
+                throw new IOException("File JSON non trovato!");
+            }
 
-        try {
-            // Leggi il file JSON
-            JsonNode rootNode = objectMapper.readTree(new File(
-                    "src/main/resources/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json"));
+            JsonNode rootNode = objectMapper.readTree(inputStream);
+
             switch (data.getStringaMedaglia()) {
                 case 10:
                     JsonNode baseNode = rootNode.path("base");
@@ -75,8 +79,16 @@ public class esVF extends ChangeStage implements Initializable {
         data.setNumEsercizio(data.getNumEsercizio() + 1);
         boolean temp = false;
         ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode rootNode = objectMapper.readTree(new File(
-                "src/main/resources/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json"));
+
+        //------------------- aggiunto
+
+        try (InputStream inputStream = getClass().getResourceAsStream("/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json")) {
+            if (inputStream == null) {
+                throw new IOException("File JSON non trovato!");
+            }
+
+            JsonNode rootNode = objectMapper.readTree(inputStream);
+
 
         switch (data.getStringaMedaglia()) {
             case 10:
@@ -111,6 +123,8 @@ public class esVF extends ChangeStage implements Initializable {
         // int[] risp = new int[] { temp };
         data.addarrayDirisposte(temp);
         // data.risposta(data.getNumEsercizio(), risp));
+    }
+        //---------------------
     }
 
     @FXML

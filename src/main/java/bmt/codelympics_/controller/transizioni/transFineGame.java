@@ -62,8 +62,8 @@ public class transFineGame extends ChangeStage implements Initializable {
         // "C:\\playproj\\props.csv
         String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
-        File file2 = new File(filePath2);
 
+        File file2 = new File(filePath2);
         try (FileWriter writer = new FileWriter(file2)) {
             try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
                 String[] line;
