@@ -36,9 +36,6 @@ public class RegoleGioco extends ChangeStage implements Initializable {
 
     DataSingleton data = DataSingleton.getInstance();
 
-    void cambiaLabel() {
-
-    }
 
     @FXML
     void func_Difficile(MouseEvent event) throws Exception {

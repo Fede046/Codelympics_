@@ -7,7 +7,6 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -162,11 +161,7 @@
                      <center>
                         <ScrollPane fx:id="boh" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <content>
-                              <ImageView id="img_RM" fx:id="img_RM" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../../../../../../../../Downloads/RM_difficile22.png" />
-                                 </image>
-                              </ImageView>
+                              <ImageView id="img_RM" fx:id="img_RM" pickOnBounds="true" preserveRatio="true" />
                            </content>
                            <BorderPane.margin>
                               <Insets />
