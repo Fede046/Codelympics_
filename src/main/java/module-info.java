@@ -6,6 +6,7 @@ module bmt.codelympics_ {
     requires org.kordamp.bootstrapfx.core;
     requires javafx.graphics;
     requires com.opencsv;
+    requires com.fasterxml.jackson.databind;
 
     exports bmt.codelympics_.controller.homes;
     opens bmt.codelympics_.controller.homes to javafx.fxml;

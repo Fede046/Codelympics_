@@ -1,6 +1,7 @@
 package bmt.codelympics_.controller.esercizi;
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,7 +32,7 @@ public class esVF extends ChangeStage {
     DataSingleton data = DataSingleton.getInstance();
 
     public void gameVF(){
-       // ObjectMapper objectMapper = new ObjectMapper();
+       ObjectMapper objectMapper = new ObjectMapper();
 
     }
 
