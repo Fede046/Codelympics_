@@ -3,21 +3,12 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bodySfondo" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bmt.codelympics_.controller.transizioni.transFineGame">
-   <top>
-      <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="CONGRATULAZIONI!" textFill="WHITE" BorderPane.alignment="BOTTOM_CENTER">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-         <BorderPane.margin>
-            <Insets top="15.0" />
-         </BorderPane.margin>
-      </Button>
-   </top>
    <bottom>
       <Button fx:id="btn_GoHome" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="600.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#func_Home" prefHeight="52.0" prefWidth="240.0" styleClass="bottoni" text="HOME" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -31,25 +22,35 @@
    <center>
       <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_CENTER">
          <children>
-            <Button fx:id="lb_punti1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" style="-fx-background-color: transparent;" text="Hai fatto n risposte giuste su 5." textFill="WHITE">
+            <Label fx:id="lb_punti1" text="Hai fatto n risposte giuste su 5." textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Verdana" size="24.0" />
                </font>
-            </Button>
-            <Button fx:id="lb_punti2" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" style="-fx-background-color: transparent;" text="HAI OTTENUTO &#10;n*100 PUNTI!" textAlignment="CENTER" textFill="WHITE">
+            </Label>
+            <Label fx:id="lb_punti2" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="HAI OTTENUTO &#10;n*100 PUNTI!" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Button>
-            <Button alignment="BOTTOM_CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" style="-fx-background-color: transparent;" text="Ora sei pronto per passare al prossimo livello. &#10;Che l'avventura continui!" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
+                  <Font name="Verdana Pro Black" size="24.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="10.0" />
+                  <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
-            </Button>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="70.0" prefWidth="600.0" text="Ora sei pronto per passare al prossimo livello. &#10;Che l'avventura continui!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana" size="22.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
    </center>
+   <top>
+      <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="CONGRATULAZIONI!" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Verdana Pro Black" size="30.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
 </BorderPane>

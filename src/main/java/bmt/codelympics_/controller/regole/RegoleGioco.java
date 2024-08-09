@@ -24,10 +24,7 @@ public class RegoleGioco extends ChangeStage {
     private Button btn_princ;
 
     @FXML
-    private Button btn_txtNome;
-
-    @FXML
-    private Button btn_txtRegole;
+    private Label lb_txtRegole;
 
     DataSingleton data = DataSingleton.getInstance();
 

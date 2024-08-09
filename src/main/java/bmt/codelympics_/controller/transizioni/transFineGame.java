@@ -17,13 +17,12 @@ public class transFineGame extends ChangeStage {
     private Button btn_GoHome;
 
     @FXML
-    private Button lb_punti1;
+    private Label lb_punti1;
 
     @FXML
-    private Button lb_punti2;
+    private Label lb_punti2;
 
     DataSingleton data = DataSingleton.getInstance();
-
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
@@ -42,12 +41,11 @@ public class transFineGame extends ChangeStage {
         }
         nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(nuovaMedaglia);
 
-        int nuovoPunteggio = (nuovaMedaglia * 200)+700;
-        //aggiungere la variabile tempo se si vuole
+        int nuovoPunteggio = (nuovaMedaglia * 200) + 700;
+        // aggiungere la variabile tempo se si vuole
 
         nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio);
-//--------------------------------------------------------------------------------
-
+        // --------------------------------------------------------------------------------
 
         String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
@@ -61,24 +59,23 @@ public class transFineGame extends ChangeStage {
                 while ((line = reader.readNext()) != null) {
                     System.out.println(line[0]);
 
-                    for(int i=0;i<line.length;i++){
-                        if(line[0].equals(nuovoArrayUtente[0])){
-                            if(i== line.length-1){
+                    for (int i = 0; i < line.length; i++) {
+                        if (line[0].equals(nuovoArrayUtente[0])) {
+                            if (i == line.length - 1) {
                                 writer.append(nuovoArrayUtente[i]).append("\n");
                                 System.out.print(nuovoArrayUtente[i]);
-                            }else {
+                            } else {
                                 writer.append(nuovoArrayUtente[i]).append(",");
-                                System.out.print(nuovoArrayUtente[i]+",");
+                                System.out.print(nuovoArrayUtente[i] + ",");
                             }
                         }
 
-
-                        else if(i== line.length-1){
+                        else if (i == line.length - 1) {
                             writer.append(line[i]).append("\n");
                             System.out.print(line[i]);
-                        }else {
+                        } else {
                             writer.append(line[i]).append(",");
-                            System.out.print(line[i]+",");
+                            System.out.print(line[i] + ",");
                         }
 
                     }
@@ -86,7 +83,6 @@ public class transFineGame extends ChangeStage {
 
                 }
 
-
             } catch (FileNotFoundException e) {
                 throw new IOException("File CSV non trovato: " + filePath);
             }
@@ -94,7 +90,7 @@ public class transFineGame extends ChangeStage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//--------------------------------
+        // --------------------------------
 
         File file = new File(filePath);
         try (FileWriter writer = new FileWriter(file)) {
@@ -102,18 +98,17 @@ public class transFineGame extends ChangeStage {
                 String[] line;
 
                 while ((line = reader.readNext()) != null) {
-                   for(int i=0;i<line.length;i++){
-                       if(i== line.length-1){
-                           writer.append(line[i]).append("\n");
-                           System.out.print(line[i]);
-                       }else {
-                           writer.append(line[i]).append(",");
-                           System.out.print(line[i]+",");
-                       }
-                   }
+                    for (int i = 0; i < line.length; i++) {
+                        if (i == line.length - 1) {
+                            writer.append(line[i]).append("\n");
+                            System.out.print(line[i]);
+                        } else {
+                            writer.append(line[i]).append(",");
+                            System.out.print(line[i] + ",");
+                        }
+                    }
 
                 }
-
 
             } catch (FileNotFoundException e) {
                 throw new IOException("File CSV non trovato: " + filePath);
@@ -123,14 +118,8 @@ public class transFineGame extends ChangeStage {
             e.printStackTrace();
         }
 
-
-    // -----------------cambio stage gamesHome--------------------
-    fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
-}
-
-
-
-
-
+        // -----------------cambio stage gamesHome--------------------
+        fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
+    }
 
 }

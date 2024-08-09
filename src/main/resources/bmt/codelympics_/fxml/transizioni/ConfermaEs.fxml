@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -36,16 +37,16 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="lbl_risultato" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="54.0" prefWidth="198.0" style="-fx-background-color: transparent;" text="CORRETTO!" textAlignment="CENTER" textFill="#008614">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Button>
                   <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
                         <AnchorPane id="img_gif" fx:id="img_gif" maxHeight="200.0" maxWidth="350.0" prefHeight="159.0" prefWidth="290.0" />
                      </children>
                   </StackPane>
+                  <Label fx:id="lbl_risultato" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="CORRETTO!" textFill="#008129" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </GridPane>
          </center>
