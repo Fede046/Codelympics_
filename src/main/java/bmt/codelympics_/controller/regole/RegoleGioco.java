@@ -7,11 +7,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegoleGioco extends ChangeStage implements Initializable {
+
+    @FXML
+    private BorderPane bp_img;
 
     @FXML
     private Button btn_GoHome;
@@ -32,12 +36,10 @@ public class RegoleGioco extends ChangeStage implements Initializable {
 
     DataSingleton data = DataSingleton.getInstance();
 
-    void cambiaLabel(){
-
-
+    void cambiaLabel() {
 
     }
-    
+
     @FXML
     void func_Difficile(MouseEvent event) throws Exception {
         // risp mult
@@ -102,7 +104,6 @@ public class RegoleGioco extends ChangeStage implements Initializable {
     void func_Princ(MouseEvent event) throws Exception {
         switch (data.getStringaMedaglia()) {
             case 4:
-
                 // -----------------cambio stage esRispMult princ--------------------
                 fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
                 break;
@@ -126,42 +127,47 @@ public class RegoleGioco extends ChangeStage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-            switch (data.getStringaMedaglia()){
-                case 4:
-                    lb_nameGame.setText("Risposta Multipla");
-                    lb_txtRegole.setText("Ti verrà posta una domanda e dovrai scegliere la risposta corretta tra le opzioni disponibili.\n" +
-                            " Solo una è quella giusta!\n" +
-                            " Conferma la tua scelta e scopri subito se hai indovinato.\n" +
-                            " Attenzione, non c'è possibilità di tornare indietro.\n " +
-                            "Preparati a dimostrare quanto sei bravo!");
-                    break;
-                case 10:
-                    lb_nameGame.setText("Vero o Falso");
-                    lb_txtRegole.setText("Il gioco ti presenterà una serie di affermazioni.\n" +
-                            " Dovrai decidere se ciascuna è vera o falsa.\n" +
-                            "Conferma la tua scelta e scopri se hai risposto correttamente.\n" +
-                            " Ricorda, una volta fatta la tua scelta,non potrai cambiare idea.\n " +
-                            "Pronto a mettere alla prova la tua conoscenza?");
-                    break;
-                case 16:
-                    lb_nameGame.setText("Trova l'Errore");
-                    lb_txtRegole.setText("Il gioco ti mostrerà 4 codici, ma solo uno di essi \n" +
-                            "è sbagliato, trovalo!\n" +
-                            "Conferma la tua scelta e scopri se hai risposto corretto. \n" +
-                            "Attenzione, non si torna indietro. \n" +
-                            "Che la sfida abbia inizio!");
-                    break;
-                case 22:
-                    lb_nameGame.setText("Riordinamento");
-                    lb_txtRegole.setText("Il gioco ti mostrerà una serie di linee di codice disordinate.\n " +
-                            "Il tuo compito è rimetterle nell'ordine corretto.\n " +
-                            "Quando pensi di aver trovato la sequenza giusta, conferma la tua scelta.\n " +
-                            "Scopri subito se hai ricomposto il codice correttamente.\n " +
-                            "Non si può tornare indietro, quindi pensa bene prima di confermare. \n" +
-                            "Inizia la sfida!");
-                    break;
+        switch (data.getStringaMedaglia()) {
+            case 4:
+                bp_img.setId("bodyRegolePesi");
+                lb_nameGame.setText("Risposta Multipla");
+                lb_txtRegole.setText(
+                        "Ti verrà posta una domanda e dovrai scegliere la risposta corretta tra le opzioni disponibili.\n"
+                                +
+                                " Solo una è quella giusta!\n" +
+                                " Conferma la tua scelta e scopri subito se hai indovinato.\n" +
+                                " Attenzione, non c'è possibilità di tornare indietro.\n " +
+                                "Preparati a dimostrare quanto sei bravo!");
+                break;
+            case 10:
+                bp_img.setId("bodyRegoleBoxe");
+                lb_nameGame.setText("Vero o Falso");
+                lb_txtRegole.setText("Il gioco ti presenterà una serie di affermazioni.\n" +
+                        " Dovrai decidere se ciascuna è vera o falsa.\n" +
+                        "Conferma la tua scelta e scopri se hai risposto correttamente.\n" +
+                        " Ricorda, una volta fatta la tua scelta,non potrai cambiare idea.\n " +
+                        "Pronto a mettere alla prova la tua conoscenza?");
+                break;
+            case 16:
+                bp_img.setId("bodyRegoleScherma");
+                lb_nameGame.setText("Trova l'Errore");
+                lb_txtRegole.setText("Il gioco ti mostrerà 4 codici, ma solo uno di essi \n" +
+                        "è sbagliato, trovalo!\n" +
+                        "Conferma la tua scelta e scopri se hai risposto corretto. \n" +
+                        "Attenzione, non si torna indietro. \n" +
+                        "Che la sfida abbia inizio!");
+                break;
+            case 22:
+                bp_img.setId("bodyRegoleArco");
+                lb_nameGame.setText("Riordinamento");
+                lb_txtRegole.setText("Il gioco ti mostrerà una serie di linee di codice disordinate.\n " +
+                        "Il tuo compito è rimetterle nell'ordine corretto.\n " +
+                        "Quando pensi di aver trovato la sequenza giusta, conferma la tua scelta.\n " +
+                        "Scopri subito se hai ricomposto il codice correttamente.\n " +
+                        "Non si può tornare indietro, quindi pensa bene prima di confermare. \n" +
+                        "Inizia la sfida!");
+                break;
 
-
-            }
+        }
     }
 }
