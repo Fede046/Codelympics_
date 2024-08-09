@@ -14,40 +14,34 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Home extends ChangeStage implements Initializable {
-     
+
     @FXML
     private Button btn_accedi;
 
     @FXML
     private Button btn_iscriviti;
 
-
-
-
     @FXML
     void func_accedi(MouseEvent event) throws Exception {
 
+        // -----------------cambio stage accedi--------------------
+        fuc_changeStage(btn_accedi, "/bmt/codelympics_/fxml/log/accedi.fxml");
 
-         // -----------------cambio stage accedi--------------------
-         fuc_changeStage(btn_accedi, "/bmt/codelympics_/fxml/log/accedi.fxml");
-        
     }
 
     @FXML
     void func_iscriviti(MouseEvent event) throws Exception {
-         // -----------------cambio stage iscriviti--------------------
-         fuc_changeStage(btn_iscriviti, "/bmt/codelympics_/fxml/log/iscriviti.fxml");
-        
-    }
+        // -----------------cambio stage iscriviti--------------------
+        fuc_changeStage(btn_iscriviti, "/bmt/codelympics_/fxml/log/iscriviti.fxml");
 
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       
 
-
-        //String directoryPath =System.getProperty("user.home") + "/playproj/props.csv";
-        //String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        // String directoryPath =System.getProperty("user.home") +
+        // "/playproj/props.csv";
+        // String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
         String directoryPath = "C:\\playproj";
         String filePath = directoryPath + "\\props.csv";
@@ -63,9 +57,11 @@ public class Home extends ChangeStage implements Initializable {
         if (!file.exists()) {
             try (FileWriter writer = new FileWriter(file)) {
                 // Scrivi l'intestazione del CSV (ad esempio, se serve)
-                writer.append("ale,f7a3803365a55b197a3b43bc64aacc13,ale,0xffffffff,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100\n");
+                writer.append(
+                        "ale,f7a3803365a55b197a3b43bc64aacc13,ale,0xffffffff,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100\n");
                 // Scrivi i dati iniziali (se necessario)
-                writer.append(",d41d8cd98f00b204e9800998ecf8427e,,0xffffffff,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100\n");
+                writer.append(
+                        ",d41d8cd98f00b204e9800998ecf8427e,,0xffffffff,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }

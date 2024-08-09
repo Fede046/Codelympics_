@@ -43,7 +43,7 @@
 
 	},
 	{
-		"domanda":"In Java, una variabile di tipo superclasse può fare riferimento a un'istanza di una sua sottoclasse, e quando si chiama un metodo sovrascritto, viene eseguito il metodo della sottoclasse.",
+		"domanda":"In Java, una variabile di tipo superclasse può fare riferimento a un'istanza di una sua sottoclasse,\n e quando si chiama un metodo sovrascritto, viene eseguito il metodo della sottoclasse.",
 		"sol":"vero"
 
 	}
@@ -52,16 +52,16 @@
 
 	"difficile":[
 	{
-		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, ovvero se due oggetti sono uguali secondo equals, devono avere lo stesso valore di hashCode.",
+		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, ovvero se due oggetti sono uguali \n secondo equals, devono avere lo stesso valore di hashCode.",
 		"sol":"vero"
 	},
 	{
-		"domanda":"In Java, una classe astratta può implementare dei metodi definiti in un'interfaccia senza dover implementare tutti i metodi dell'interfaccia.",
+		"domanda":"In Java, una classe astratta può implementare dei metodi definiti in un'interfaccia senza dover implementare \n tutti i metodi dell'interfaccia.",
 		"sol":"vero"
 
 	},
 	{
-		"domanda":"In Java, l'utilizzo dei generics con le collezioni può migliorare le prestazioni eliminando il bisogno di cast espliciti e consentendo il controllo del tipo a compile-time.",
+		"domanda":"In Java, l'utilizzo dei generics con le collezioni può migliorare le prestazioni eliminando il bisogno di cast \n espliciti e consentendo il controllo del tipo a compile-time.",
 		"sol":"vero"
 	},
 	{

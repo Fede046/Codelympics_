@@ -104,6 +104,7 @@ public class RegoleGioco extends ChangeStage implements Initializable {
     void func_Princ(MouseEvent event) throws Exception {
         switch (data.getStringaMedaglia()) {
             case 4:
+
                 // -----------------cambio stage esRispMult princ--------------------
                 fuc_changeStage(btn_princ, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
                 break;
