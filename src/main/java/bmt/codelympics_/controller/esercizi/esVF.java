@@ -82,7 +82,8 @@ public class esVF extends ChangeStage implements Initializable {
             case 10:
                 System.out.println(data.getNumEsercizio() + " veropooodoapod");
                 JsonNode baseNode = rootNode.path("base");
-                String c = baseNode.get(data.getNumEsercizio()).path("sol").asText();
+                String c = baseNode.get(data.getNumEsercizio()-1).path("sol").asText();
+                System.out.println("Certo che vaadasadsadasdasasd");
                 if ((rb_vero.isSelected() && c == "true") || (rb_falso.isSelected() && c == "falso"))
                     temp = true;
                 else
@@ -90,7 +91,7 @@ public class esVF extends ChangeStage implements Initializable {
                 break;
             case 11:
                 JsonNode baseNode2 = rootNode.path("intermedio");
-                String c2 = baseNode2.get(data.getNumEsercizio()).path("sol").asText();
+                String c2 = baseNode2.get(data.getNumEsercizio()-1).path("sol").asText();
                 if (rb_vero.isSelected() && c2 == "true" || rb_falso.isSelected() && c2 == "falso")
                     temp = true;
                 else
@@ -98,7 +99,7 @@ public class esVF extends ChangeStage implements Initializable {
                 break;
             case 12:
                 JsonNode baseNode3 = rootNode.path("difficile");
-                String c3 = baseNode3.get(data.getNumEsercizio()).path("sol").asText();
+                String c3 = baseNode3.get(data.getNumEsercizio()-1).path("sol").asText();
                 if (rb_vero.isSelected() && c3 == "true" || rb_falso.isSelected() && c3 == "falso")
                     temp = true;
                 else
