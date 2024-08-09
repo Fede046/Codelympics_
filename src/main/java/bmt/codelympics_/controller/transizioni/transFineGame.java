@@ -4,14 +4,17 @@ import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import com.opencsv.CSVReader;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 import java.io.*;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 
-public class transFineGame extends ChangeStage {
+public class transFineGame extends ChangeStage implements Initializable {
 
     @FXML
     private Button btn_GoHome;
@@ -24,6 +27,20 @@ public class transFineGame extends ChangeStage {
 
     DataSingleton data = DataSingleton.getInstance();
 
+    int nRisposteCorrette() {
+        int temp = 0;
+        for (boolean e : data.getArrayRisposte()) {
+            if (e) {
+                temp++;
+            }
+        }
+        return temp;
+    }
+
+    int nuovoPunteggio() {
+        return (nRisposteCorrette() * 200) + 700;
+    }
+
     @FXML
     void func_Home(MouseEvent event) throws Exception {
         String[] nuovoArrayUtente = data.getArrayUtente();
@@ -33,23 +50,16 @@ public class transFineGame extends ChangeStage {
         System.out.println(data.getArrayUtente()[stringaPunti]);
         System.out.println();
 
-        int nuovaMedaglia = 0;
-        for (boolean e : data.getArrayRisposte()) {
-            if (e) {
-                nuovaMedaglia++;
-            }
-        }
-        nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(nuovaMedaglia);
+        nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(nRisposteCorrette());
 
-        int nuovoPunteggio = (nuovaMedaglia * 200) + 700;
         // aggiungere la variabile tempo se si vuole
 
-        nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio);
+        nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio());
         // --------------------------------------------------------------------------------
 
-        //String filePath2 = System.getProperty("user.home") + "/playproj/props.csv";
-        //String filePath = System.getProperty("user.home") + "/playproj/props.csv";
-        //"C:\\playproj\\props.csv
+        // String filePath2 = System.getProperty("user.home") + "/playproj/props.csv";
+        // String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        // "C:\\playproj\\props.csv
         String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
         File file2 = new File(filePath2);
@@ -122,6 +132,12 @@ public class transFineGame extends ChangeStage {
 
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        lb_punti1.setText("Hai fatto " + nRisposteCorrette() + " risposte giuste su 5.");
+        lb_punti2.setText("HAI OTTENUTO\n" + nuovoPunteggio() + " PUNTI!");
     }
 
 }

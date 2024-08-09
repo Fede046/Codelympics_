@@ -1,24 +1,24 @@
 {"base":[
 	{
 		"domanda":"Java è un linguaggio di programmazione orientato agli oggetti",
-		"sol":"vero"
+		"sol":"true"
 	},
 	{
 		"domanda":"In Java, una variabile dichiarata come final può essere modificata dopo l'inizializzazione.",
-		"sol":"falso"
+		"sol":"false"
 
 	},
 	{
 		"domanda":"Il garbage collector di Java si occupa automaticamente della gestione della memoria.",
-		"sol":"vero"
+		"sol":"true"
 	},
 	{
 		"domanda":"In Java, la parola chiave this si usa per fare riferimento alla variabile di classe.",
-		"sol":"falso"
+		"sol":"false"
 	},
 	{
 		"domanda":"Java supporta l'ereditarietà multipla tramite l'uso delle classi.",
-		"sol":"falso"
+		"sol":"false"
 
 	}
 	],
@@ -26,25 +26,25 @@
 	"intermedio":[
 	{
 		"domanda":"Un metodo statico in Java può accedere direttamente ai membri di istanza della classe.",
-		"sol":"falso"
+		"sol":"false"
 	},
 	{
 		"domanda":"Il costruttore di una classe in Java può essere sovraccaricato.",
-		"sol":"vero"
+		"sol":"true"
 
 	},
 	{
 		"domanda":"In Java, la classe String è mutabile.",
-		"sol":"falso"
+		"sol":"false"
 	},
 	{
 		"domanda":"Un metodo astratto in una classe astratta può avere un corpo in Java",
-		"sol":"falso"
+		"sol":"false"
 
 	},
 	{
 		"domanda":"In Java, una variabile di tipo superclasse può fare riferimento a un'istanza di una sua sottoclasse,\n e quando si chiama un metodo sovrascritto, viene eseguito il metodo della sottoclasse.",
-		"sol":"vero"
+		"sol":"true"
 
 	}
 	
@@ -52,26 +52,26 @@
 
 	"difficile":[
 	{
-		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, ovvero se due oggetti sono uguali \n secondo equals, devono avere lo stesso valore di hashCode.",
-		"sol":"vero"
+		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, o true se due oggetti sono uguali \nsecondo equals, devono avere lo stesso valore di hashCode.",
+		"sol":"true"
 	},
 	{
-		"domanda":"In Java, una classe astratta può implementare dei metodi definiti in un'interfaccia senza dover implementare \n tutti i metodi dell'interfaccia.",
-		"sol":"vero"
+		"domanda":"In Java, una classe astratta può implementare dei metodi definiti in un'interfaccia, senza dover implementare \ntutti i metodi dell'interfaccia.",
+		"sol":"true"
 
 	},
 	{
-		"domanda":"In Java, l'utilizzo dei generics con le collezioni può migliorare le prestazioni eliminando il bisogno di cast \n espliciti e consentendo il controllo del tipo a compile-time.",
-		"sol":"vero"
+		"domanda":"In Java, l'utilizzo dei generics con le collezioni può migliorare le prestazioni eliminando il bisogno di cast \nespliciti e consentendo il controllo del tipo a compile-time.",
+		"sol":"true"
 	},
 	{
-		"domanda":"In Java, l'implementazione di una HashMap è basata su una tabella hash che ridimensiona automaticamente la sua capacità quando viene superata una soglia di carico (load factor) specifica.",
-		"sol":"vero"
+		"domanda":"In Java, l'implementazione di una HashMap è basata su una tabella hash che ridimensiona automaticamente\n la sua capacità quando viene superata una soglia di carico (load factor) specifica.",
+		"sol":"true"
 
 	},
 	{
-		"domanda":"In Java, l'allocazione di memoria per un oggetto avviene nello heap, mentre la memoria per le variabili locali e i riferimenti agli oggetti avviene nello stack.",
-		"sol":"vero"
+		"domanda":"In Java, l'allocazione di memoria per un oggetto avviene nello heap, mentre la memoria per le variabili locali \ne i riferimenti agli oggetti avviene nello stack.",
+		"sol":"true"
 
 	}
 	

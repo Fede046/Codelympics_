@@ -73,7 +73,7 @@ public class esVF extends ChangeStage implements Initializable {
 
     void Risposta() throws Exception {
         data.setNumEsercizio(data.getNumEsercizio() + 1);
-        boolean temp = true;
+        boolean temp = false;
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(new File(
                 "src/main/resources/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json"));
@@ -82,28 +82,29 @@ public class esVF extends ChangeStage implements Initializable {
             case 10:
                 System.out.println(data.getNumEsercizio() + " veropooodoapod");
                 JsonNode baseNode = rootNode.path("base");
-                String c = baseNode.get(data.getNumEsercizio()-1).path("sol").asText();
+                String c = baseNode.get(data.getNumEsercizio() - 1).path("sol").asText();
                 System.out.println("Certo che vaadasadsadasdasasd");
-                if ((rb_vero.isSelected() && c == "true") || (rb_falso.isSelected() && c == "falso"))
+                if (rb_vero.isSelected() && c.equals("true"))
                     temp = true;
-                else
-                    temp = false;
+                if (rb_falso.isSelected() && c.equals("false"))
+                    temp = true;
+
                 break;
             case 11:
                 JsonNode baseNode2 = rootNode.path("intermedio");
-                String c2 = baseNode2.get(data.getNumEsercizio()-1).path("sol").asText();
-                if (rb_vero.isSelected() && c2 == "true" || rb_falso.isSelected() && c2 == "falso")
+                String c2 = baseNode2.get(data.getNumEsercizio() - 1).path("sol").asText();
+                if (rb_vero.isSelected() && c2.equals("true"))
                     temp = true;
-                else
-                    temp = false;
+                if (rb_falso.isSelected() && c2.equals("false"))
+                    temp = true;
                 break;
             case 12:
                 JsonNode baseNode3 = rootNode.path("difficile");
-                String c3 = baseNode3.get(data.getNumEsercizio()-1).path("sol").asText();
-                if (rb_vero.isSelected() && c3 == "true" || rb_falso.isSelected() && c3 == "falso")
+                String c3 = baseNode3.get(data.getNumEsercizio() - 1).path("sol").asText();
+                if (rb_vero.isSelected() && c3.equals("true"))
                     temp = true;
-                else
-                    temp = false;
+                if (rb_falso.isSelected() && c3.equals("false"))
+                    temp = true;
                 break;
         }
 
