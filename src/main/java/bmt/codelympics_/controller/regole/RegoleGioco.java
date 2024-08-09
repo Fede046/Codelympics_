@@ -3,11 +3,12 @@ package bmt.codelympics_.controller.regole;
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
-public class RegoleGioco extends ChangeStage {
+public class RegoleGioco extends ChangeStage implements Initializable {
 
     @FXML
     private Button btn_GoHome;
@@ -28,6 +29,12 @@ public class RegoleGioco extends ChangeStage {
 
     DataSingleton data = DataSingleton.getInstance();
 
+    void cambiaLabel(){
+
+
+
+    }
+    
     @FXML
     void func_Difficile(MouseEvent event) throws Exception {
         // risp mult

@@ -47,9 +47,11 @@ public class transFineGame extends ChangeStage {
         nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio);
         // --------------------------------------------------------------------------------
 
+        //String filePath2 = System.getProperty("user.home") + "/playproj/props.csv";
+        //String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        //"C:\\playproj\\props.csv
         String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
-
         File file2 = new File(filePath2);
 
         try (FileWriter writer = new FileWriter(file2)) {

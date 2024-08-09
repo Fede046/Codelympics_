@@ -61,6 +61,7 @@ public class PageAccedi extends ChangeStage {
 
     @FXML
     void func_goPlayHome(MouseEvent event) throws Exception {
+        //String filePath = System.getProperty("user.home") + "/playproj/props.csv";
         String filePath = "C:\\playproj\\props.csv";
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();

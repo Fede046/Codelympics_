@@ -1,5 +1,4 @@
 package bmt.codelympics_.controller.esercizi;
-
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import javafx.fxml.FXML;
@@ -31,14 +30,22 @@ public class esVF extends ChangeStage {
 
     DataSingleton data = DataSingleton.getInstance();
 
+    public void gameVF(){
+       // ObjectMapper objectMapper = new ObjectMapper();
+
+    }
+
+
+
+
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception {
         // -----------------cambio stage AbbandonaGame--------------------
         fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
-    void Risposta() {
-        data.setNumEsercizio(data.getNumEsercizio() + 1);
+  /*  void Risposta() {
+       data.setNumEsercizio(data.getNumEsercizio() + 1);
         int temp = 0;
 
         if (rb_vero.isSelected())
@@ -49,10 +56,11 @@ public class esVF extends ChangeStage {
         int[] risp = new int[] { temp };
         data.addarrayDirisposte(data.risposta(data.getNumEsercizio(), risp));
     }
+*/
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
-        Risposta();
+        //Risposta();
         // -----------------cambio stage ConfermaEs--------------------
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }

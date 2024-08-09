@@ -45,6 +45,10 @@ public class Home extends ChangeStage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
        
 
+
+        //String directoryPath =System.getProperty("user.home") + "/playproj/props.csv";
+        //String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+
         String directoryPath = "C:\\playproj";
         String filePath = directoryPath + "\\props.csv";
 
