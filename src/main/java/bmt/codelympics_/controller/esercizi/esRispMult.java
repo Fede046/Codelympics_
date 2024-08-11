@@ -1,20 +1,30 @@
 
 package bmt.codelympics_.controller.esercizi;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 
-public class esRispMult extends ChangeStage {
+public class esRispMult extends ChangeStage implements Initializable {
 
     @FXML
     private ToggleGroup RM;
@@ -57,27 +67,144 @@ public class esRispMult extends ChangeStage {
 
     DataSingleton data = DataSingleton.getInstance();
 
+    public void initialize(URL location, ResourceBundle resources) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
+        // per leggere un file all'interno del .jar)
+        try (InputStream inputStream = getClass()
+                .getResourceAsStream("/bmt/codelympics_/EserciziDoc/RisposteMultiple/RisposteRM.json")) {
+            if (inputStream == null) {
+                throw new IOException("File JSON non trovato!");
+            }
+
+            JsonNode rootNode = objectMapper.readTree(inputStream);
+
+            switch (data.getStringaMedaglia()) {
+                case 4:
+                    JsonNode baseNode = rootNode.path("base");
+                    String c = baseNode.get(data.getNumEsercizio()).path("domanda").asText();
+                    lb_domanda.setText(c);
+
+                    btn_r1.setText(baseNode.get(data.getNumEsercizio()).path("r1").asText());
+                    btn_r2.setText(baseNode.get(data.getNumEsercizio()).path("r2").asText());
+                    btn_r3.setText(baseNode.get(data.getNumEsercizio()).path("r3").asText());
+                    btn_r4.setText(baseNode.get(data.getNumEsercizio()).path("r4").asText());
+
+                    String image = baseNode.get(data.getNumEsercizio()).path("img").asText();
+                    InputStream inStream = getClass()
+                            .getResourceAsStream("/bmt/codelympics_/EserciziDoc/RisposteMultiple/base/" + image);
+                    Image imageObject = new Image(inStream);
+                    ImageView image2 = new ImageView(imageObject);
+                    img_RM.setImage(imageObject);
+
+                    break;
+                case 5:
+                    JsonNode baseNode2 = rootNode.path("intermedio");
+                    String c2 = baseNode2.get(data.getNumEsercizio()).path("domanda").asText();
+                    lb_domanda.setText(c2);
+                    btn_r1.setText(baseNode2.get(data.getNumEsercizio()).path("r1").asText());
+                    btn_r2.setText(baseNode2.get(data.getNumEsercizio()).path("r2").asText());
+                    btn_r3.setText(baseNode2.get(data.getNumEsercizio()).path("r3").asText());
+                    btn_r4.setText(baseNode2.get(data.getNumEsercizio()).path("r4").asText());
+
+                    String image21 = baseNode2.get(data.getNumEsercizio()).path("img").asText();
+                    InputStream inStream2 = getClass().getResourceAsStream(
+                            "/bmt/codelympics_/EserciziDoc/RisposteMultiple/Intermedio/" + image21);
+                    Image imageObject2 = new Image(inStream2);
+                    ImageView image22 = new ImageView(imageObject2);
+                    img_RM.setImage(imageObject2);
+                    break;
+                case 6:
+                    JsonNode baseNode3 = rootNode.path("difficile");
+                    String c3 = baseNode3.get(data.getNumEsercizio()).path("domanda").asText();
+                    lb_domanda.setText(c3);
+                    btn_r1.setText(baseNode3.get(data.getNumEsercizio()).path("r1").asText());
+                    btn_r2.setText(baseNode3.get(data.getNumEsercizio()).path("r2").asText());
+                    btn_r3.setText(baseNode3.get(data.getNumEsercizio()).path("r3").asText());
+                    btn_r4.setText(baseNode3.get(data.getNumEsercizio()).path("r4").asText());
+
+                    String image23 = baseNode3.get(data.getNumEsercizio()).path("img").asText();
+                    InputStream inStream3 = getClass()
+                            .getResourceAsStream("/bmt/codelympics_/EserciziDoc/RisposteMultiple/Difficile/" + image23);
+                    Image imageObject3 = new Image(inStream3);
+                    ImageView image24 = new ImageView(imageObject3);
+                    img_RM.setImage(imageObject3);
+                    break;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception {
         // -----------------cambio stage AbbandonaGame--------------------
         fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
-    void Risposta() {
+    void Risposta() throws Exception {
         data.setNumEsercizio(data.getNumEsercizio() + 1);
-        int temp = 0;
+        boolean temp = false;
+        ObjectMapper objectMapper = new ObjectMapper();
 
-        if (rb_r1.isSelected())
-            temp = 1;
-        if (rb_r2.isSelected())
-            temp = 2;
-        if (rb_r3.isSelected())
-            temp = 3;
-        if (rb_r4.isSelected())
-            temp = 4;
+        // ------------------- aggiunto
 
-        int[] risp = new int[] { temp };
-        data.addarrayDirisposte(data.risposta(data.getNumEsercizio(), risp));
+        try (InputStream inputStream = getClass().getResourceAsStream(
+                "/bmt/codelympics_/EserciziDoc/RisposteMultiple/RisposteRM.json")) {
+            if (inputStream == null) {
+                throw new IOException("File JSON non trovato!");
+            }
+
+            JsonNode rootNode = objectMapper.readTree(inputStream);
+
+            switch (data.getStringaMedaglia()) {
+                case 4:
+                    JsonNode baseNode = rootNode.path("base");
+                    String c = baseNode.get(data.getNumEsercizio() - 1).path("sol").asText();
+
+                    if (rb_r1.isSelected() && c.equals(btn_r1.getText()))
+                        temp = true;
+                    if (rb_r2.isSelected() && c.equals(btn_r2.getText()))
+                        temp = true;
+                    if (rb_r3.isSelected() && c.equals(btn_r3.getText()))
+                        temp = true;
+                    if (rb_r4.isSelected() && c.equals(btn_r4.getText()))
+                        temp = true;
+                    System.err.println(temp);
+                    break;
+                case 5:
+                    JsonNode baseNode2 = rootNode.path("intermedio");
+                    String c2 = baseNode2.get(data.getNumEsercizio() - 1).path("sol").asText();
+                    if (rb_r1.isSelected() && c2.equals(btn_r1.getText()))
+                        temp = true;
+                    if (rb_r2.isSelected() && c2.equals(btn_r2.getText()))
+                        temp = true;
+                    if (rb_r3.isSelected() && c2.equals(btn_r3.getText()))
+                        temp = true;
+                    if (rb_r4.isSelected() && c2.equals(btn_r4.getText()))
+                        temp = true;
+                    break;
+                case 6:
+                    JsonNode baseNode3 = rootNode.path("difficile");
+                    String c3 = baseNode3.get(data.getNumEsercizio() - 1).path("sol").asText();
+                    if (rb_r1.isSelected() && c3.equals(btn_r1.getText()))
+                        temp = true;
+                    if (rb_r2.isSelected() && c3.equals(btn_r2.getText()))
+                        temp = true;
+                    if (rb_r3.isSelected() && c3.equals(btn_r3.getText()))
+                        temp = true;
+                    if (rb_r4.isSelected() && c3.equals(btn_r4.getText()))
+                        temp = true;
+                    break;
+            }
+
+            // int[] risp = new int[] { temp };
+            data.addarrayDirisposte(temp);
+            // data.risposta(data.getNumEsercizio(), risp));
+        }
+
     }
 
     @FXML
