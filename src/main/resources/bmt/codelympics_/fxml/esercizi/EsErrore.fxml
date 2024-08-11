@@ -7,7 +7,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -84,7 +84,7 @@
                   <Insets bottom="5.0" left="20.0" right="30.0" top="5.0" />
                </GridPane.margin>
                <content>
-                  <AnchorPane fx:id="p_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="126.0" prefWidth="231.0" />
+                  <ImageView fx:id="img_1" pickOnBounds="true" preserveRatio="true" />
                </content>
             </ScrollPane>
             <ScrollPane maxHeight="300.0" maxWidth="600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -92,7 +92,7 @@
                   <Insets bottom="5.0" left="20.0" right="30.0" top="5.0" />
                </GridPane.margin>
                <content>
-                  <AnchorPane fx:id="p_2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="126.0" prefWidth="231.0" />
+                  <ImageView fx:id="img_2" pickOnBounds="true" preserveRatio="true" />
                </content>
             </ScrollPane>
             <ScrollPane maxHeight="300.0" maxWidth="600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.rowIndex="2">
@@ -100,7 +100,7 @@
                   <Insets bottom="5.0" left="20.0" right="30.0" top="5.0" />
                </GridPane.margin>
                <content>
-                  <AnchorPane fx:id="p_3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="126.0" prefWidth="231.0" />
+                  <ImageView fx:id="img_3" pickOnBounds="true" preserveRatio="true" />
                </content>
             </ScrollPane>
             <ScrollPane maxHeight="300.0" maxWidth="600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
@@ -108,7 +108,7 @@
                   <Insets bottom="5.0" left="20.0" right="30.0" top="5.0" />
                </GridPane.margin>
                <content>
-                  <AnchorPane fx:id="p_4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="126.0" prefWidth="231.0" />
+                  <ImageView fx:id="img_4" pickOnBounds="true" preserveRatio="true" />
                </content>
             </ScrollPane>
             <RadioButton fx:id="rb_r1" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -147,6 +147,9 @@
                </GridPane.margin>
             </RadioButton>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
       </GridPane>
    </center>
 </BorderPane>

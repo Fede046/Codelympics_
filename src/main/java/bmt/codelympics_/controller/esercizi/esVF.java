@@ -42,8 +42,10 @@ public class esVF extends ChangeStage implements Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         ObjectMapper objectMapper = new ObjectMapper();
-    //--------aggiunto per leggere il file quando uso il .jar (InputStream serve per leggere un file all'interno del .jar)
-        try (InputStream inputStream = getClass().getResourceAsStream("/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json")) {
+        // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
+        // per leggere un file all'interno del .jar)
+        try (InputStream inputStream = getClass()
+                .getResourceAsStream("/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json")) {
             if (inputStream == null) {
                 throw new IOException("File JSON non trovato!");
             }
@@ -80,51 +82,50 @@ public class esVF extends ChangeStage implements Initializable {
         boolean temp = false;
         ObjectMapper objectMapper = new ObjectMapper();
 
-        //------------------- aggiunto
+        // ------------------- aggiunto
 
-        try (InputStream inputStream = getClass().getResourceAsStream("/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json")) {
+        try (InputStream inputStream = getClass()
+                .getResourceAsStream("/bmt/codelympics_/EserciziDoc/VeroFalso/RisposteVF.json")) {
             if (inputStream == null) {
                 throw new IOException("File JSON non trovato!");
             }
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
 
+            switch (data.getStringaMedaglia()) {
+                case 10:
+                    System.out.println(data.getNumEsercizio());
+                    JsonNode baseNode = rootNode.path("base");
+                    String c = baseNode.get(data.getNumEsercizio() - 1).path("sol").asText();
+                    if (rb_vero.isSelected() && c.equals("true"))
+                        temp = true;
+                    if (rb_falso.isSelected() && c.equals("false"))
+                        temp = true;
 
-        switch (data.getStringaMedaglia()) {
-            case 10:
-                System.out.println(data.getNumEsercizio() + " veropooodoapod");
-                JsonNode baseNode = rootNode.path("base");
-                String c = baseNode.get(data.getNumEsercizio() - 1).path("sol").asText();
-                System.out.println("Certo che vaadasadsadasdasasd");
-                if (rb_vero.isSelected() && c.equals("true"))
-                    temp = true;
-                if (rb_falso.isSelected() && c.equals("false"))
-                    temp = true;
+                    break;
+                case 11:
+                    JsonNode baseNode2 = rootNode.path("intermedio");
+                    String c2 = baseNode2.get(data.getNumEsercizio() - 1).path("sol").asText();
+                    if (rb_vero.isSelected() && c2.equals("true"))
+                        temp = true;
+                    if (rb_falso.isSelected() && c2.equals("false"))
+                        temp = true;
+                    break;
+                case 12:
+                    JsonNode baseNode3 = rootNode.path("difficile");
+                    String c3 = baseNode3.get(data.getNumEsercizio() - 1).path("sol").asText();
+                    if (rb_vero.isSelected() && c3.equals("true"))
+                        temp = true;
+                    if (rb_falso.isSelected() && c3.equals("false"))
+                        temp = true;
+                    break;
+            }
 
-                break;
-            case 11:
-                JsonNode baseNode2 = rootNode.path("intermedio");
-                String c2 = baseNode2.get(data.getNumEsercizio() - 1).path("sol").asText();
-                if (rb_vero.isSelected() && c2.equals("true"))
-                    temp = true;
-                if (rb_falso.isSelected() && c2.equals("false"))
-                    temp = true;
-                break;
-            case 12:
-                JsonNode baseNode3 = rootNode.path("difficile");
-                String c3 = baseNode3.get(data.getNumEsercizio() - 1).path("sol").asText();
-                if (rb_vero.isSelected() && c3.equals("true"))
-                    temp = true;
-                if (rb_falso.isSelected() && c3.equals("false"))
-                    temp = true;
-                break;
+            // int[] risp = new int[] { temp };
+            data.addarrayDirisposte(temp);
+            // data.risposta(data.getNumEsercizio(), risp));
         }
-
-        // int[] risp = new int[] { temp };
-        data.addarrayDirisposte(temp);
-        // data.risposta(data.getNumEsercizio(), risp));
-    }
-        //---------------------
+        // ---------------------
     }
 
     @FXML
