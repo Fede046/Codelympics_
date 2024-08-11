@@ -93,32 +93,83 @@ public class esOrdinamento extends ChangeStage implements Initializable {
         // ------------------- aggiunto
 
         try (InputStream inputStream = getClass().getResourceAsStream(
-                "/bmt/codelympics_/EserciziDoc/RisposteMultiple/RisposteRM.json")) {
+                "/bmt/codelympics_/EserciziDoc/Ordinamento/RisposteO.json")) {
             if (inputStream == null) {
                 throw new IOException("File JSON non trovato!");
             }
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
-
+            List<String> st;
             switch (data.getStringaMedaglia()) {
                 case 22:
+
                     JsonNode baseNode = rootNode.path("base");
                     String c = baseNode.get(data.getNumEsercizio() - 1).path("sol").asText();
+                    st = new ArrayList<>();
+                    for (int i = 0; i < 6; i++) {
+                        if ((int) sp_1.getValue() == i) {
+                            st.add(btn_1.getText());
+                        }
+                        if ((int) sp_2.getValue() == i) {
+                            st.add(btn_2.getText());
+                        }
+                        if ((int) sp_3.getValue() == i) {
+                            st.add(btn_3.getText());
+                        }
+                        if ((int) sp_4.getValue() == i) {
+                            st.add(btn_4.getText());
+                        }
+                    }
+                    if (String.join(" ", st).equals(c))
+                        temp = true;
+                    System.out.println(temp);
 
-                    System.err.println(temp);
                     break;
                 case 23:
                     JsonNode baseNode2 = rootNode.path("intermedio");
                     String c2 = baseNode2.get(data.getNumEsercizio() - 1).path("sol").asText();
-
+                    st = new ArrayList<>();
+                    for (int i = 0; i < 6; i++) {
+                        if ((int) sp_1.getValue() == i) {
+                            st.add(btn_1.getText());
+                        }
+                        if ((int) sp_2.getValue() == i) {
+                            st.add(btn_2.getText());
+                        }
+                        if ((int) sp_3.getValue() == i) {
+                            st.add(btn_3.getText());
+                        }
+                        if ((int) sp_4.getValue() == i) {
+                            st.add(btn_4.getText());
+                        }
+                    }
+                    if (String.join(" ", st).equals(c2))
+                        temp = true;
+                    System.out.println(temp);
                     break;
                 case 24:
                     JsonNode baseNode3 = rootNode.path("difficile");
                     String c3 = baseNode3.get(data.getNumEsercizio() - 1).path("sol").asText();
-
+                    st = new ArrayList<>();
+                    for (int i = 0; i < 6; i++) {
+                        if ((int) sp_1.getValue() == i) {
+                            st.add(btn_1.getText());
+                        }
+                        if ((int) sp_2.getValue() == i) {
+                            st.add(btn_2.getText());
+                        }
+                        if ((int) sp_3.getValue() == i) {
+                            st.add(btn_3.getText());
+                        }
+                        if ((int) sp_4.getValue() == i) {
+                            st.add(btn_4.getText());
+                        }
+                    }
+                    if (String.join(" ", st).equals(c3))
+                        temp = true;
+                    System.out.println(temp);
                     break;
             }
-
             data.addarrayDirisposte(temp);
         }
 
