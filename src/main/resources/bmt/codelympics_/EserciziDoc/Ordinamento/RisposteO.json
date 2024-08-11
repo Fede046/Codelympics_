@@ -2,9 +2,10 @@
 	{
 		"id":1,
 		"r1":"public static void main(String[] args) {",
-		"r2":"if(5<2) \n System.out.println('è minore');",
+		"r2":"if(5<2) \n System.out.println('è maggiore');",
 		"r3":"else",
-		"r4":"System.out.println('è maggiore');}"
+		"r4":"System.out.println('è minore');}",
+		"sol":"public static void main(String[] args) {if(5<2) \n System.out.println('è maggiore');elseSystem.out.println('è minore');}"
 	},
 	{
 		"id":2,
