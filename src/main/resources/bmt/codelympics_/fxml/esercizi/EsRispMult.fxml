@@ -102,6 +102,9 @@
                            <GridPane.margin>
                               <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
                            </GridPane.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
                         </Button>
                         <RadioButton fx:id="rb_r1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.halignment="RIGHT">
                            <cursor>
@@ -118,6 +121,9 @@
                            <GridPane.margin>
                               <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
                            </GridPane.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
                         </Button>
                         <RadioButton fx:id="rb_r2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                            <cursor>
@@ -131,6 +137,9 @@
                            <GridPane.margin>
                               <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
                            </GridPane.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
                         </Button>
                         <RadioButton fx:id="rb_r3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                            <cursor>
@@ -144,6 +153,9 @@
                            <GridPane.margin>
                               <Insets bottom="8.0" left="50.0" right="25.0" top="8.0" />
                            </GridPane.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
                         </Button>
                         <RadioButton fx:id="rb_r4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" toggleGroup="$RM" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                            <cursor>
