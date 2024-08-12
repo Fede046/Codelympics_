@@ -113,59 +113,64 @@ public class GamesHome extends ChangeStage implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String[] arrayUtente = data.getArrayUtente();
+        prgbar_VF.setStyle("-fx-accent:gold");
+        prgbar_errore.setStyle("-fx-accent:gold");
+        prgbar_multiple.setStyle("-fx-accent:gold");
+        prgbar_riordinamento.setStyle("-fx-accent:gold");
+
         Double pVF = 0.0;
         Double pRM = 0.0;
         Double pE = 0.0;
         Double pO = 0.0;
 
-        if (arrayUtente[4] != "0") {
+        if (!arrayUtente[4].equals("0")) {
             pRM += 0.33;
             prgbar_multiple.setProgress(pRM);
         }
-        if (arrayUtente[5] != "0") {
+        if (!arrayUtente[5].equals("0")) {
             pRM += 0.33;
             prgbar_multiple.setProgress(pRM);
         }
-        if (arrayUtente[6] != "0") {
+        if (!arrayUtente[6].equals("0")) {
             pRM += 0.33;
             prgbar_multiple.setProgress(pRM);
         }
 
-        if (arrayUtente[10] != "0") {
+        if (!arrayUtente[10].equals("0")) {
             pVF += 0.33;
             prgbar_VF.setProgress(pVF);
         }
-        if (arrayUtente[11] != "0") {
+        if (!arrayUtente[11].equals("0")) {
             pVF += 0.33;
             prgbar_VF.setProgress(pVF);
         }
-        if (arrayUtente[12] != "0") {
+        if (!arrayUtente[12].equals("0")) {
             pVF += 0.33;
             prgbar_VF.setProgress(pVF);
         }
 
-        if (arrayUtente[16] != "0") {
+        if (!arrayUtente[16].equals("0")) {
             pE += 0.33;
             prgbar_errore.setProgress(pE);
         }
-        if (arrayUtente[17] != "0") {
+        if (!arrayUtente[17].equals("0")) {
             pE += 0.33;
             prgbar_errore.setProgress(pE);
         }
-        if (arrayUtente[18] != "0") {
+        if (!arrayUtente[18].equals("0")) {
             pE += 0.33;
             prgbar_errore.setProgress(pE);
         }
 
-        if (arrayUtente[22] != "0") {
+        if (!arrayUtente[22].equals("0")) {
             pO += 0.33;
             prgbar_riordinamento.setProgress(pO);
         }
-        if (arrayUtente[23] != "0") {
+        if (!arrayUtente[23].equals("0")) {
             pO += 0.33;
             prgbar_riordinamento.setProgress(pO);
         }
-        if (arrayUtente[24] != "0") {
+        if (!arrayUtente[24].equals("0")) {
             pO += 0.33;
             prgbar_riordinamento.setProgress(pO);
         }
