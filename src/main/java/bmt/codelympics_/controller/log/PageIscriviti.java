@@ -25,7 +25,7 @@ import javafx.scene.shape.Circle;
 
 public class PageIscriviti extends ChangeStage {
 
-       @FXML
+    @FXML
     private Button btn_annullaAcc;
 
     @FXML
@@ -86,7 +86,7 @@ public class PageIscriviti extends ChangeStage {
         String username = txtField_username.getText();
         String mail = txtField_email.getText();
         String password = txtField_psw.getText();
-        if (controlEqualsUsernameAndMail(username, mail) /*&& ContrlUsPswMail(username, password, mail)*/) {
+        if (controlEqualsUsernameAndMail(username, mail) /* && ContrlUsPswMail(username, password, mail) */) {
             // ----------------cambio stage GamesHome-----------
             writeToFile();
             fuc_changeStage(btn_iscrivitiGo, "/bmt/codelympics_/fxml/log/accedi.fxml");
@@ -94,6 +94,7 @@ public class PageIscriviti extends ChangeStage {
         }
 
     }
+
     private void seeUsernameAndMail() throws Exception {
         String filePath = "C:\\playproj\\props.csv";
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
@@ -108,25 +109,27 @@ public class PageIscriviti extends ChangeStage {
             throw new IOException("File CSV non trovato: " + filePath);
         }
     }
-/*
-    private void seeUsernameAndMail() throws Exception {
 
-        InputStream is = getClass().getResourceAsStream("/bmt/codelympics_/data.csv");
-        if (is == null) {
-            throw new IOException("File CSV non trovato");
-        }
-        try (CSVReader reader = new CSVReader(new InputStreamReader(is))) {
-            loginInfo.clear();
-            String[] line;
-            while ((line = reader.readNext()) != null) {
-                if (line.length >= 2) {
-                    loginInfo.put(line[0], line[2]);
-                }
-            }
-        }
-
-    }
-*/
+    /*
+     * private void seeUsernameAndMail() throws Exception {
+     * 
+     * InputStream is =
+     * getClass().getResourceAsStream("/bmt/codelympics_/data.csv");
+     * if (is == null) {
+     * throw new IOException("File CSV non trovato");
+     * }
+     * try (CSVReader reader = new CSVReader(new InputStreamReader(is))) {
+     * loginInfo.clear();
+     * String[] line;
+     * while ((line = reader.readNext()) != null) {
+     * if (line.length >= 2) {
+     * loginInfo.put(line[0], line[2]);
+     * }
+     * }
+     * }
+     * 
+     * }
+     */
     // uso di GPT https://chatgpt.com/share/ce867cef-dde3-443a-bda8-0c0b41584602
     boolean ContrlUsPswMail(String username, String password, String mail) {
         if (!username.matches("[a-zA-Z0-9 ]*")) {
@@ -165,10 +168,14 @@ public class PageIscriviti extends ChangeStage {
         Paint colore = colorAvatar.getFill();
         String filePath = "C:\\playproj\\props.csv";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))){
-            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + ","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+","+"1"+","+"1"+","+"1"+","+"100"+","+"100"+","+"100"+"\n");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "," + "0"
+                    + "," + "0" + "," + "0" + "," + "100" + "," + "100" + "," + "100" + "," + "0" + "," + "0" + ","
+                    + "0" + "," + "100" + "," + "100" + "," + "100" + "," + "0" + "," + "0" + "," + "0" + "," + "100"
+                    + "," + "100" + "," + "100" + "," + "0" + "," + "0" + "," + "0" + "," + "100" + "," + "100" + ","
+                    + "100" + "\n");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getStackTrace();
         }
 

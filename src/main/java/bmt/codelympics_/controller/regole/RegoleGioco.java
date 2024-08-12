@@ -124,8 +124,18 @@ public class RegoleGioco extends ChangeStage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        String[] arrayUtente = data.getArrayUtente();
+
         switch (data.getStringaMedaglia()) {
             case 4:
+                if (arrayUtente[4].equals("0"))
+                    btn_int.setDisable(true);
+                else
+                    btn_int.setDisable(false);
+                if (arrayUtente[5].equals("0"))
+                    btn_difficile.setDisable(true);
+                else
+                    btn_difficile.setDisable(false);
                 bp_img.setId("bodyRegolePesi");
                 lb_nameGame.setText("Risposta Multipla");
                 lb_txtRegole.setText(
@@ -137,6 +147,14 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                                 "Preparati a dimostrare quanto sei bravo!");
                 break;
             case 10:
+                if (arrayUtente[10].equals("0"))
+                    btn_int.setDisable(true);
+                else
+                    btn_int.setDisable(false);
+                if (arrayUtente[11].equals("0"))
+                    btn_difficile.setDisable(true);
+                else
+                    btn_difficile.setDisable(false);
                 bp_img.setId("bodyRegoleBoxe");
                 lb_nameGame.setText("Vero o Falso");
                 lb_txtRegole.setText("Il gioco ti presenterà una serie di affermazioni.\n" +
@@ -146,6 +164,14 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                         "Pronto a mettere alla prova la tua conoscenza?");
                 break;
             case 16:
+                if (arrayUtente[16].equals("0"))
+                    btn_int.setDisable(true);
+                else
+                    btn_int.setDisable(false);
+                if (arrayUtente[17].equals("0"))
+                    btn_difficile.setDisable(true);
+                else
+                    btn_difficile.setDisable(false);
                 bp_img.setId("bodyRegoleScherma");
                 lb_nameGame.setText("Trova l'Errore");
                 lb_txtRegole.setText("Il gioco ti mostrerà 4 codici, ma solo uno di essi \n" +
@@ -155,6 +181,14 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                         "Che la sfida abbia inizio!");
                 break;
             case 22:
+                if (arrayUtente[21].equals("0"))
+                    btn_int.setDisable(true);
+                else
+                    btn_int.setDisable(false);
+                if (arrayUtente[21].equals("0"))
+                    btn_difficile.setDisable(true);
+                else
+                    btn_difficile.setDisable(false);
                 bp_img.setId("bodyRegoleArco");
                 lb_nameGame.setText("Riordinamento");
                 lb_txtRegole.setText("Il gioco ti mostrerà una serie di linee di codice disordinate.\n " +
