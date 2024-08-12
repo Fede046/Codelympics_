@@ -122,6 +122,7 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                     }
                     if (String.join(" ", st).equals(c))
                         temp = true;
+                    System.out.println(String.join(" ", st));
                     System.out.println(temp);
 
                     break;
@@ -142,16 +143,21 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                         if ((int) sp_4.getValue() == i) {
                             st.add(btn_4.getText());
                         }
+                        if ((int) sp_5.getValue() == i) {
+                            st.add(btn_5.getText());
+                        }
                     }
                     if (String.join(" ", st).equals(c2))
                         temp = true;
                     System.out.println(temp);
+                    System.out.println(String.join(" ", st));
+
                     break;
                 case 24:
                     JsonNode baseNode3 = rootNode.path("difficile");
                     String c3 = baseNode3.get(data.getNumEsercizio() - 1).path("sol").asText();
                     st = new ArrayList<>();
-                    for (int i = 0; i < 6; i++) {
+                    for (int i = 0; i < 7; i++) {
                         if ((int) sp_1.getValue() == i) {
                             st.add(btn_1.getText());
                         }
@@ -164,10 +170,18 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                         if ((int) sp_4.getValue() == i) {
                             st.add(btn_4.getText());
                         }
+                        if ((int) sp_5.getValue() == i) {
+                            st.add(btn_5.getText());
+                        }
+                        if ((int) sp_6.getValue() == i) {
+                            st.add(btn_6.getText());
+                        }
                     }
                     if (String.join(" ", st).equals(c3))
                         temp = true;
                     System.out.println(temp);
+                    System.out.println(String.join(" ", st));
+
                     break;
             }
             data.addarrayDirisposte(temp);
