@@ -131,21 +131,21 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image22);
                     Image imageObject22 = new Image(inStream22);
                     ImageView image222 = new ImageView(imageObject22);
-                    img_1.setImage(imageObject22);
+                    img_2.setImage(imageObject22);
 
                     InputStream inStream23 = getClass()
                             .getResourceAsStream(
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image23);
                     Image imageObject23 = new Image(inStream23);
                     ImageView image223 = new ImageView(imageObject23);
-                    img_1.setImage(imageObject23);
+                    img_3.setImage(imageObject23);
 
                     InputStream inStream24 = getClass()
                             .getResourceAsStream(
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image24);
                     Image imageObject24 = new Image(inStream24);
                     ImageView image224 = new ImageView(imageObject24);
-                    img_1.setImage(imageObject24);
+                    img_4.setImage(imageObject24);
                     break;
                 case 18:
                     JsonNode baseNode3 = rootNode.path("difficile");
@@ -165,19 +165,19 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image32);
                     Image imageObject32 = new Image(inStream32);
                     ImageView image322 = new ImageView(imageObject32);
-                    img_1.setImage(imageObject32);
+                    img_2.setImage(imageObject32);
 
                     InputStream inStream33 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image33);
                     Image imageObject33 = new Image(inStream33);
                     ImageView image233 = new ImageView(imageObject33);
-                    img_1.setImage(imageObject33);
+                    img_3.setImage(imageObject33);
 
                     InputStream inStream34 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image34);
                     Image imageObject34 = new Image(inStream34);
                     ImageView image234 = new ImageView(imageObject34);
-                    img_1.setImage(imageObject34);
+                    img_4.setImage(imageObject34);
                     break;
             }
 

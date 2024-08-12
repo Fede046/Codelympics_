@@ -181,11 +181,11 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                         "Che la sfida abbia inizio!");
                 break;
             case 22:
-                if (arrayUtente[21].equals("0"))
+                if (arrayUtente[22].equals("0"))
                     btn_int.setDisable(true);
                 else
                     btn_int.setDisable(false);
-                if (arrayUtente[21].equals("0"))
+                if (arrayUtente[23].equals("0"))
                     btn_difficile.setDisable(true);
                 else
                     btn_difficile.setDisable(false);
