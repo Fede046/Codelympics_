@@ -3,8 +3,8 @@ package bmt.codelympics_.controller.esercizi;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.time.Duration;
 import java.util.ResourceBundle;
+import javafx.util.Duration;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -72,10 +72,20 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
     private RadioButton rb_r4;
 
     DataSingleton data = DataSingleton.getInstance();
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1),
+                    e -> {
+
+                        time.oneSecondPassed();
+                        txt_timer.setText(time.getCurrentTime());
+                    }));
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        txt_timer.setText(time.getCurrentTime());
 
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         ObjectMapper objectMapper = new ObjectMapper();
         // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
         // per leggere un file all'interno del .jar)
