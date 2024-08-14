@@ -63,14 +63,14 @@
                      <children>
                         <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="574.0" style="-fx-background-radius: 6;">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Data" />
-                              <TableColumn prefWidth="75.0" text="User" />
-                              <TableColumn prefWidth="61.5999755859375" text="Esercizio" />
-                              <TableColumn prefWidth="50.0" style="-fx-background-color: gold;" />
-                              <TableColumn prefWidth="50.0" style="-fx-background-color: silver;" />
-                              <TableColumn prefWidth="50.0" style="-fx-background-color: brown;" />
-                              <TableColumn prefWidth="76.800048828125" text="Punteggio" />
-                              <TableColumn prefWidth="90.39990234375" text="Tempo" />
+                              <TableColumn fx:id="tbc_DataAll" prefWidth="75.0" text="Data" />
+                              <TableColumn fx:id="tbc_User" prefWidth="75.0" text="User" />
+                              <TableColumn fx:id="tbc_EsAll" prefWidth="61.5999755859375" text="Esercizio" />
+                              <TableColumn fx:id="tbc_oroAll" prefWidth="50.0" style="-fx-background-color: gold;" />
+                              <TableColumn fx:id="tbc_argAll" prefWidth="50.0" style="-fx-background-color: silver;" />
+                              <TableColumn fx:id="tbc_broAll" prefWidth="50.0" style="-fx-background-color: brown;" />
+                              <TableColumn fx:id="tbc_ptAll" prefWidth="76.800048828125" text="Punteggio" />
+                              <TableColumn fx:id="tbc_timeAll" prefWidth="90.39990234375" text="Tempo" />
                            </columns>
                         </TableView>
                      </children>
@@ -82,13 +82,13 @@
             </ScrollPane>
             <TableView fx:id="tb_User" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <columns>
-                  <TableColumn prefWidth="75.0" text="Data" />
-                  <TableColumn prefWidth="75.0" text="User" />
-                  <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: gold;" />
-                  <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: silver;" />
-                  <TableColumn prefWidth="61.5999755859375" style="-fx-background-color: brown;" />
-                  <TableColumn prefWidth="102.4000244140625" text="Punteggio" />
-                  <TableColumn prefWidth="111.99993896484375" text="Tempo" />
+                  <TableColumn fx:id="tbc_Data" prefWidth="75.0" text="Data" />
+                  <TableColumn fx:id="tbc_User" prefWidth="75.0" text="User" />
+                  <TableColumn fx:id="tbc_oro" prefWidth="61.5999755859375" style="-fx-background-color: gold;" />
+                  <TableColumn fx:id="tbc_arg" prefWidth="61.5999755859375" style="-fx-background-color: silver;" />
+                  <TableColumn fx:id="tbc_bro" prefWidth="61.5999755859375" style="-fx-background-color: brown;" />
+                  <TableColumn fx:id="tbc_pt" prefWidth="102.4000244140625" text="Punteggio" />
+                  <TableColumn fx:id="tbc_time" prefWidth="111.99993896484375" text="Tempo" />
                </columns>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

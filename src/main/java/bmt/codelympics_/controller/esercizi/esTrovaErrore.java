@@ -3,13 +3,23 @@ package bmt.codelympics_.controller.esercizi;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import bmt.codelympics_.model.Time;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -21,8 +31,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 public class esTrovaErrore extends ChangeStage implements Initializable {
+    @FXML
+    private Text txt_timer;
+    Time time = new Time("00:00:00");
 
     @FXML
     private ToggleGroup Errore;
@@ -59,13 +73,9 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
 
     DataSingleton data = DataSingleton.getInstance();
 
-    @FXML
-    void func_ConfermaExit(MouseEvent event) throws Exception {
-        // -----------------cambio stage AbbandonaGame--------------------
-        fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
-    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    public void initialize(URL location, ResourceBundle resources) {
         ObjectMapper objectMapper = new ObjectMapper();
         // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
         // per leggere un file all'interno del .jar)
@@ -256,4 +266,9 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
 
+    @FXML
+    void func_ConfermaExit(MouseEvent event) throws Exception {
+        // -----------------cambio stage AbbandonaGame--------------------
+        fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
+    }
 }
