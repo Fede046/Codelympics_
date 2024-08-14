@@ -40,8 +40,8 @@
       <GridPane prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="260.79998474121095" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="260.79998474121095" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="340.000015258789" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="154.59998779296876" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="273.0000122070313" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -66,7 +66,13 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </Label>
-            <Text fx:id="txt_timer" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Text fx:id="txt_timer" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="00.00.00" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Pro" size="30.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="15.0" top="10.0" />
+               </GridPane.margin></Text>
          </children>
       </GridPane>
    </top>
