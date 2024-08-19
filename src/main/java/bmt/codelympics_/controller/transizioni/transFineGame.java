@@ -2,6 +2,7 @@ package bmt.codelympics_.controller.transizioni;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import bmt.codelympics_.model.Time;
 import com.opencsv.CSVReader;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,6 +27,7 @@ public class transFineGame extends ChangeStage implements Initializable {
     private Label lb_punti2;
 
     DataSingleton data = DataSingleton.getInstance();
+    Time time = Time.getInstance();
 
     int nRisposteCorrette() {
         int temp = 0;
@@ -130,6 +132,7 @@ public class transFineGame extends ChangeStage implements Initializable {
             e.printStackTrace();
         }
 
+        time.setTime("0:0:0");
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
     }

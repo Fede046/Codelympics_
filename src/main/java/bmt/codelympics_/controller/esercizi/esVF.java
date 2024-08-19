@@ -28,7 +28,7 @@ import javafx.scene.text.Text;
 public class esVF extends ChangeStage implements Initializable {
     @FXML
     private Text txt_timer;
-    Time time = new Time("00:00:00");
+
 
     @FXML
     private ToggleGroup VF;
@@ -49,6 +49,8 @@ public class esVF extends ChangeStage implements Initializable {
     private RadioButton rb_vero;
 
     DataSingleton data = DataSingleton.getInstance();
+    Time time = Time.getInstance();
+
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1),
                     e -> {
@@ -152,13 +154,14 @@ public class esVF extends ChangeStage implements Initializable {
 
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception {
-
+        timeline.stop();
         // -----------------cambio stage AbbandonaGame--------------------
         fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
+        timeline.stop();
         Risposta();
         // -----------------cambio stage ConfermaEs--------------------
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
