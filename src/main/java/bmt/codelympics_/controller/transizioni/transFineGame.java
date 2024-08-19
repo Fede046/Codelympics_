@@ -61,9 +61,11 @@ public class transFineGame extends ChangeStage implements Initializable {
 
         // --------------------------------------------------------------------------------
         //metodi di scrittura/salvataggio dei nuovi dati
+        String filePath2 = System.getProperty("user.home") + "/playproj/props2.csv";
+        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
-        String filePath2 = "C:\\playproj\\props2.csv";
-        String filePath = "C:\\playproj\\props.csv";
+        //String filePath2 = "C:\\playproj\\props2.csv";
+        //String filePath = "C:\\playproj\\props.csv";
 
         File file2 = new File(filePath2);
         try (FileWriter writer = new FileWriter(file2)) {

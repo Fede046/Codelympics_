@@ -61,8 +61,9 @@ public class PageAccedi extends ChangeStage {
 
     @FXML
     void func_goPlayHome(MouseEvent event) throws Exception {
-        //String filePath = System.getProperty("user.home") + "/playproj/props.csv";
-        String filePath = "C:\\playproj\\props.csv";
+        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+
+       // String filePath = "C:\\playproj\\props.csv";
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();
         updateLoginUsernamesAndPasswords();
@@ -116,7 +117,8 @@ public class PageAccedi extends ChangeStage {
     }
 
     private void updateLoginUsernamesAndPasswords() throws Exception {
-        String filePath = "C:\\playproj\\props.csv";
+        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        //String filePath = "C:\\playproj\\props.csv";
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             loginInfo.clear();
             String[] line;
