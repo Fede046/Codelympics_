@@ -70,27 +70,42 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        boolean ris = true;
         System.out.println(data.getArrayRisposte()[data.getNumEsercizio() - 1]);
         if (data.getArrayRisposte()[data.getNumEsercizio() - 1]) {
             lbl_risultato.setText("CORRETTO!");
             lbl_risultato.setTextFill(Color.GREEN);
+            ris = true;
         } else {
             lbl_risultato.setText("SBAGLIATO!");
             lbl_risultato.setTextFill(Color.RED);
+            ris = false;
 
         }
         switch (data.getStringaMedaglia()) {
             case 4, 5, 6:
-                img_gif.setId("img_gif2");
+                if (ris)
+                    img_gif.setId("img_gifError");
+                else
+                    img_gif.setId("img_gif2");
                 break;
             case 10, 11, 12:
-                img_gif.setId("img_gif3");
+                if (ris)
+                    img_gif.setId("img_gifError");
+                else
+                    img_gif.setId("img_gif3");
                 break;
             case 16, 17, 18:
-                img_gif.setId("img_gif");
+                if (ris)
+                    img_gif.setId("img_gifError");
+                else
+                    img_gif.setId("img_gif");
                 break;
             case 22, 23, 24:
-                img_gif.setId("img_gif4");
+                if (ris)
+                    img_gif.setId("img_gifError");
+                else
+                    img_gif.setId("img_gif4");
                 break;
         }
     }

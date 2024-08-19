@@ -58,10 +58,10 @@ public class Home extends ChangeStage implements Initializable {
             try (FileWriter writer = new FileWriter(file)) {
                 // Scrivi l'intestazione del CSV (ad esempio, se serve)
                 writer.append(
-                        "ale,f7a3803365a55b197a3b43bc64aacc13,ale,0xffffffff,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100\n");
+                        "ale,f7a3803365a55b197a3b43bc64aacc13,ale,0xffffffff,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n");
                 // Scrivi i dati iniziali (se necessario)
                 writer.append(
-                        ",d41d8cd98f00b204e9800998ecf8427e,,0xffffffff,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100,1,1,1,100,100,100\n");
+                        ",d41d8cd98f00b204e9800998ecf8427e,,0xffffffff,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }

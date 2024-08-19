@@ -170,16 +170,14 @@ public class PageIscriviti extends ChangeStage {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "," + "0"
-                    + "," + "0" + "," + "0" + "," + "100" + "," + "100" + "," + "100" + "," + "0" + "," + "0" + ","
-                    + "0" + "," + "100" + "," + "100" + "," + "100" + "," + "0" + "," + "0" + "," + "0" + "," + "100"
-                    + "," + "100" + "," + "100" + "," + "0" + "," + "0" + "," + "0" + "," + "100" + "," + "100" + ","
-                    + "100" + "\n");
+                    + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + ","
+                    + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0"
+                    + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + ","
+                    + "0" + "\n");
 
         } catch (Exception e) {
             e.getStackTrace();
         }
-
-        System.out.print("FAttttttttto");
     }
 
     @FXML
