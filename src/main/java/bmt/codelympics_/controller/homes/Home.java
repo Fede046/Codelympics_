@@ -41,10 +41,11 @@ public class Home extends ChangeStage implements Initializable {
 
         // String directoryPath =System.getProperty("user.home") +
         // "/playproj/props.csv";
-        // String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        String directoryPath = System.getProperty("user.home") + "\\playproj";
+        String filePath = directoryPath+"\\props.csv";
 
-        String directoryPath = "C:\\playproj";
-        String filePath = directoryPath + "\\props.csv";
+       // String directoryPath = "C:\\playproj";
+       // String filePath = directoryPath + "\\props.csv";
 
         // Crea la cartella se non esiste
         File directory = new File(directoryPath);

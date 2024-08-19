@@ -89,6 +89,7 @@ public class esRispMult extends ChangeStage implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
         ObjectMapper objectMapper = new ObjectMapper();
+
         // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
         // per leggere un file all'interno del .jar)
         try (InputStream inputStream = getClass()
@@ -98,9 +99,11 @@ public class esRispMult extends ChangeStage implements Initializable {
             }
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
+//----------------------------------
 
             switch (data.getStringaMedaglia()) {
                 case 4:
+                    //--------------------------
                     JsonNode baseNode = rootNode.path("base");
                     String c = baseNode.get(data.getNumEsercizio()).path("domanda").asText();
                     lb_domanda.setText(c);
@@ -118,7 +121,9 @@ public class esRispMult extends ChangeStage implements Initializable {
                     img_RM.setImage(imageObject);
 
                     break;
+
                 case 5:
+
                     JsonNode baseNode2 = rootNode.path("intermedio");
                     String c2 = baseNode2.get(data.getNumEsercizio()).path("domanda").asText();
                     lb_domanda.setText(c2);
@@ -134,6 +139,8 @@ public class esRispMult extends ChangeStage implements Initializable {
                     ImageView image22 = new ImageView(imageObject2);
                     img_RM.setImage(imageObject2);
                     break;
+
+
                 case 6:
                     JsonNode baseNode3 = rootNode.path("difficile");
                     String c3 = baseNode3.get(data.getNumEsercizio()).path("domanda").asText();
@@ -151,6 +158,7 @@ public class esRispMult extends ChangeStage implements Initializable {
                     img_RM.setImage(imageObject3);
                     break;
             }
+
 
         } catch (IOException e) {
             e.printStackTrace();

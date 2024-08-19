@@ -96,7 +96,8 @@ public class PageIscriviti extends ChangeStage {
     }
 
     private void seeUsernameAndMail() throws Exception {
-        String filePath = "C:\\playproj\\props.csv";
+        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        //String filePath = "C:\\playproj\\props.csv";
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             loginInfo.clear();
             String[] line;
@@ -166,7 +167,8 @@ public class PageIscriviti extends ChangeStage {
         String password = hiddentxtField_psw.getText();
         String email = txtField_email.getText();
         Paint colore = colorAvatar.getFill();
-        String filePath = "C:\\playproj\\props.csv";
+        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
+        //String filePath = "C:\\playproj\\props.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "," + "0"
