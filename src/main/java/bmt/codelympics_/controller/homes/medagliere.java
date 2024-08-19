@@ -1,7 +1,13 @@
 package bmt.codelympics_.controller.homes;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
+
+import com.opencsv.CSVReader;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
@@ -79,8 +85,34 @@ public class medagliere extends ChangeStage implements Initializable {
 
     ObservableList<String> list2 = FXCollections.observableArrayList();
 
+    public String[] CatchUsers() throws Exception {
+        String filePath = "C:\\playproj\\props.csv";
+
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+
+            String[] line;
+
+            while ((line = reader.readNext()) != null) {
+                System.out.println(Arrays.toString(line));
+                data.setArrayUtenti(line);
+            }
+
+            return line;
+        } catch (FileNotFoundException e) {
+            throw new IOException("File CSV non trovato: " + filePath);
+        }
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            CatchUsers();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String[] utenti = data.getArrayUtenti();
+
         ObservableList<User> list = FXCollections.observableArrayList(
                 new User(arrayUtente[3], arrayUtente[0], arrayUtente[3], arrayUtente[4], arrayUtente[5],
                         arrayUtente[3]));
