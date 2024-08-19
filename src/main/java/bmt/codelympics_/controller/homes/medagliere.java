@@ -5,12 +5,17 @@ import java.util.ResourceBundle;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import bmt.codelympics_.model.User;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -23,52 +28,54 @@ public class medagliere extends ChangeStage implements Initializable {
     private AnchorPane p_1;
 
     @FXML
-    private TableView<String> tb_User;
+    private TableView<DataSingleton> tb_User;
 
     @FXML
-    private TableView<String> tb_allUsers;
+    private TableView<User> tb_allUsers;
 
     @FXML
-    private TableColumn<DataSingleton, String> tbc_Data;
+    private TableColumn<String, String> tbc_Data;
 
     @FXML
-    private TableColumn<?, ?> tbc_DataAll;
+    private TableColumn<User, String> tbc_DataAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_EsAll;
+    private TableColumn<User, String> tbc_EsAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_User;
+    private TableColumn<String, String> tbc_User;
+    @FXML
+    private TableColumn<User, String> tbc_UserAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_arg;
+    private TableColumn<String, String> tbc_arg;
 
     @FXML
-    private TableColumn<?, ?> tbc_argAll;
+    private TableColumn<User, String> tbc_argAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_bro;
+    private TableColumn<String, String> tbc_bro;
 
     @FXML
-    private TableColumn<?, ?> tbc_broAll;
+    private TableColumn<User, String> tbc_broAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_oro;
+    private TableColumn<String, String> tbc_oro;
 
     @FXML
-    private TableColumn<?, ?> tbc_oroAll;
+    private TableColumn<User, String> tbc_oroAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_pt;
+    private TableColumn<String, String> tbc_pt;
 
     @FXML
-    private TableColumn<?, ?> tbc_ptAll;
+    private TableColumn<User, String> tbc_ptAll;
 
     @FXML
-    private TableColumn<?, ?> tbc_time;
+    private TableColumn<String, String> tbc_time;
 
     @FXML
-    private TableColumn<?, ?> tbc_timeAll;
+    private TableColumn<User, String> tbc_timeAll;
 
     DataSingleton data = DataSingleton.getInstance();
 
@@ -78,13 +85,29 @@ public class medagliere extends ChangeStage implements Initializable {
         fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
     }
 
+    String[] arrayUtente = data.getArrayUtente();
+
+    ObservableList<String> list2 = FXCollections.observableArrayList();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        String[] arrayUtente = data.getArrayUtente();
+        ObservableList<User> list2 = FXCollections.observableArrayList(
+                new User(arrayUtente[0], arrayUtente[1], arrayUtente[2],
+                        arrayUtente[3], arrayUtente[4], arrayUtente[5],
+                        arrayUtente[6], arrayUtente[7]));
 
-        // String[] newArray= new
-        // String[]{arrayUtente[0],arrayUtente[4],arrayUtente[2],arrayUtente[0],arrayUtente[4],arrayUtente[2]};
-        // tb_User.setItems(newArray);
+        // Configurazione delle colonne
+        tbc_UserAll.setCellValueFactory(new PropertyValueFactory<>("user"));
+        tbc_ptAll.setCellValueFactory(new PropertyValueFactory<>("pt"));
+        tbc_argAll.setCellValueFactory(new PropertyValueFactory<>("arg"));
+        tbc_broAll.setCellValueFactory(new PropertyValueFactory<>("bro"));
+        tbc_oroAll.setCellValueFactory(new PropertyValueFactory<>("oro"));
+        tbc_timeAll.setCellValueFactory(new PropertyValueFactory<>("time"));
+        tbc_DataAll.setCellValueFactory(new PropertyValueFactory<>("data"));
+        tbc_EsAll.setCellValueFactory(new PropertyValueFactory<>("es"));
+
+        // Imposta gli elementi nella TableView
+        tb_allUsers.setItems(list2);
     }
 
 }
