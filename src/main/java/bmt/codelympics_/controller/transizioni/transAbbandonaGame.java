@@ -22,19 +22,19 @@ public class transAbbandonaGame extends ChangeStage{
     @FXML
     void func_AnnullaConferma(MouseEvent event) throws Exception{
 
-      //  if(data.getnumMacroEsercizio()<20) {
+        if (data.getStringaMedaglia() < 7) {
             // -----------------cambio stage esercizio Multipla--------------------
             fuc_changeStage(btn_AnnullaConferma, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
-      //  }else if(data.getnumMacroEsercizio()<30){
+        } else if (data.getStringaMedaglia() < 13) {
             // -----------------cambio stage esercizio VF--------------------
-      /*      fuc_changeStage(btn_AnnullaConferma, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
-        }else if(data.getnumMacroEsercizio()<40){
+            fuc_changeStage(btn_AnnullaConferma, "/bmt/codelympics_/fxml/esercizi/EsVF.fxml");
+        } else if (data.getStringaMedaglia() < 19) {
             // -----------------cambio stage esercizioTrovaErrore--------------------
             fuc_changeStage(btn_AnnullaConferma, "/bmt/codelympics_/fxml/esercizi/EsErrore.fxml");
-        }else {
+        } else {
             // -----------------cambio stage esercizio Ordine--------------------
             fuc_changeStage(btn_AnnullaConferma, "/bmt/codelympics_/fxml/esercizi/EsOrdinamento.fxml");
-        }*/
+        }
     }
 
     @FXML
