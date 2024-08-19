@@ -9,6 +9,7 @@ public class Time {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
+
     }
 
     public Time(String currentTime) {

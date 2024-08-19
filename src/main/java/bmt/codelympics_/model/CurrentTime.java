@@ -5,13 +5,18 @@ import java.time.format.DateTimeFormatter;
 
 public class CurrentTime {
 
+    private static final CurrentTime instance = new CurrentTime();
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
     LocalDateTime now = LocalDateTime.now();
 
-    public CurrentTime(){
+    public CurrentTime() {
     }
 
-    public String currentTime(){
+    public static CurrentTime getInstance() {
+        return instance;
+    }
+
+    public String currentTime() {
         return dtf.format(now);
     }
 }

@@ -1,5 +1,7 @@
 package bmt.codelympics_.controller.esercizi;
 
+import javafx.util.Duration;
+
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import java.io.File;
@@ -7,9 +9,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import bmt.codelympics_.model.Time;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -17,8 +23,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 public class esVF extends ChangeStage implements Initializable {
+    @FXML
+    private Text txt_timer;
+    Time time = new Time("00:00:00");
 
     @FXML
     private ToggleGroup VF;
@@ -39,8 +49,20 @@ public class esVF extends ChangeStage implements Initializable {
     private RadioButton rb_vero;
 
     DataSingleton data = DataSingleton.getInstance();
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1),
+                    e -> {
 
-    public void initialize(URL location, ResourceBundle resources) {
+                        time.oneSecondPassed();
+                        txt_timer.setText(time.getCurrentTime());
+                    }));
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        txt_timer.setText(time.getCurrentTime());
+
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         ObjectMapper objectMapper = new ObjectMapper();
         // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
         // per leggere un file all'interno del .jar)

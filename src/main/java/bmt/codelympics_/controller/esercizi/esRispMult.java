@@ -8,9 +8,13 @@ import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.util.Duration;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import bmt.codelympics_.model.Time;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -23,9 +27,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 
 public class esRispMult extends ChangeStage implements Initializable {
-
+    @FXML
+    private Text txt_timer;
+    Time time = new Time("00:00:00");
     @FXML
     private ToggleGroup RM;
 
@@ -67,7 +74,19 @@ public class esRispMult extends ChangeStage implements Initializable {
 
     DataSingleton data = DataSingleton.getInstance();
 
-    public void initialize(URL location, ResourceBundle resources) {
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1), e -> {
+
+                time.oneSecondPassed();
+                txt_timer.setText(time.getCurrentTime());
+            }));
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        txt_timer.setText(time.getCurrentTime());
+
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         ObjectMapper objectMapper = new ObjectMapper();
         // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
         // per leggere un file all'interno del .jar)

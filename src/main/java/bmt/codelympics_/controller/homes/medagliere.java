@@ -29,7 +29,7 @@ public class medagliere extends ChangeStage implements Initializable {
     private TableView<String> tb_allUsers;
 
     @FXML
-    private TableColumn<?, ?> tbc_Data;
+    private TableColumn<DataSingleton, String> tbc_Data;
 
     @FXML
     private TableColumn<?, ?> tbc_DataAll;
@@ -81,6 +81,7 @@ public class medagliere extends ChangeStage implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String[] arrayUtente = data.getArrayUtente();
+
         // String[] newArray= new
         // String[]{arrayUtente[0],arrayUtente[4],arrayUtente[2],arrayUtente[0],arrayUtente[4],arrayUtente[2]};
         // tb_User.setItems(newArray);

@@ -31,7 +31,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 
 public class esTrovaErrore extends ChangeStage implements Initializable {
     @FXML

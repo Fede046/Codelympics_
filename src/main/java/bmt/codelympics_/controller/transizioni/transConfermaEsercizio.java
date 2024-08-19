@@ -84,25 +84,25 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
         }
         switch (data.getStringaMedaglia()) {
             case 4, 5, 6:
-                if (ris)
+                if (!ris)
                     img_gif.setId("img_gifError");
                 else
                     img_gif.setId("img_gif2");
                 break;
             case 10, 11, 12:
-                if (ris)
+                if (!ris)
                     img_gif.setId("img_gifError");
                 else
                     img_gif.setId("img_gif3");
                 break;
             case 16, 17, 18:
-                if (ris)
+                if (!ris)
                     img_gif.setId("img_gifError");
                 else
                     img_gif.setId("img_gif");
                 break;
             case 22, 23, 24:
-                if (ris)
+                if (!ris)
                     img_gif.setId("img_gifError");
                 else
                     img_gif.setId("img_gif4");

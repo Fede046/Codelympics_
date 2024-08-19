@@ -2,6 +2,8 @@ package bmt.codelympics_.controller.esercizi;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -11,6 +13,8 @@ import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
+import bmt.codelympics_.model.Time;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,6 +27,7 @@ import java.util.ResourceBundle;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.scene.text.Text;
 
 public class esOrdinamento extends ChangeStage implements Initializable {
 
@@ -67,6 +72,9 @@ public class esOrdinamento extends ChangeStage implements Initializable {
 
     @FXML
     private Spinner<?> sp_6;
+    @FXML
+    private Text txt_timer;
+    Time time = new Time("00:00:00");
 
     DataSingleton data = DataSingleton.getInstance();
 
@@ -189,8 +197,19 @@ public class esOrdinamento extends ChangeStage implements Initializable {
 
     }
 
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.seconds(1), e -> {
+
+                time.oneSecondPassed();
+                txt_timer.setText(time.getCurrentTime());
+            }));
+
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        txt_timer.setText(time.getCurrentTime());
+
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
         int max = 0;
         List<String> solution = new ArrayList<>(Arrays.asList("r1", "r2", "r3", "r4", "r5", "r6"));
 
