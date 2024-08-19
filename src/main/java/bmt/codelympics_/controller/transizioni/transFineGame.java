@@ -40,7 +40,8 @@ public class transFineGame extends ChangeStage implements Initializable {
     }
 
     int nuovoPunteggio() {
-        return (nRisposteCorrette() * 200) + 700;
+
+        return (nRisposteCorrette() * 200) + 700;//varia secondo quanto tempo ci metto -------------------------------------------
     }
 
     @FXML
@@ -51,17 +52,16 @@ public class transFineGame extends ChangeStage implements Initializable {
         System.out.println(data.getArrayUtente()[data.getStringaMedaglia()]);
         System.out.println(data.getArrayUtente()[stringaPunti]);
         System.out.println();
-
+        //il nuomero di risposte giuste corrisponde alla medaglia (5=oro,4=aregento,3=bronzo)
         nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(nRisposteCorrette());
 
-        // aggiungere la variabile tempo se si vuole
+
 
         nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio());
-        // --------------------------------------------------------------------------------
 
-        // String filePath2 = System.getProperty("user.home") + "/playproj/props.csv";
-        // String filePath = System.getProperty("user.home") + "/playproj/props.csv";
-        // "C:\\playproj\\props.csv
+        // --------------------------------------------------------------------------------
+        //metodi di scrittura/salvataggio dei nuovi dati
+
         String filePath2 = "C:\\playproj\\props2.csv";
         String filePath = "C:\\playproj\\props.csv";
 
@@ -131,7 +131,7 @@ public class transFineGame extends ChangeStage implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        //stoppa timer
         time.setTime("0:0:0");
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
@@ -140,7 +140,7 @@ public class transFineGame extends ChangeStage implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         lb_punti1.setText("Hai fatto " + nRisposteCorrette() + " risposte giuste su 5.");
-        lb_punti2.setText("HAI OTTENUTO\n" + nuovoPunteggio() + " PUNTI!");
+        lb_punti2.setText("HAI OTTENUTO\n" + nuovoPunteggio() + " PUNTI!\n"+"TEMPO\n"+time.getCurrentTime());
     }
 
 }
