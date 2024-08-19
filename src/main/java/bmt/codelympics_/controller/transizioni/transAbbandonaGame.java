@@ -2,6 +2,7 @@ package  bmt.codelympics_.controller.transizioni;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
+import bmt.codelympics_.model.Time;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
@@ -16,6 +17,7 @@ public class transAbbandonaGame extends ChangeStage{
     private Button btn_Conferma;
 
     DataSingleton data = DataSingleton.getInstance();
+    Time time = Time.getInstance();
 
     @FXML
     void func_AnnullaConferma(MouseEvent event) throws Exception{
@@ -37,6 +39,7 @@ public class transAbbandonaGame extends ChangeStage{
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception{
+        time.setTime("0:0:0");
        data.setNumEsercizio(0);
         System.out.println(data.getNumEsercizio());
         // -----------------cambio stage gamesHome--------------------

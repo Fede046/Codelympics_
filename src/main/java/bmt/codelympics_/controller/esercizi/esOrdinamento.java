@@ -74,12 +74,14 @@ public class esOrdinamento extends ChangeStage implements Initializable {
     private Spinner<?> sp_6;
     @FXML
     private Text txt_timer;
-    Time time = new Time("00:00:00");
+
 
     DataSingleton data = DataSingleton.getInstance();
+    Time time = Time.getInstance();
 
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception {
+        timeline.stop();
         // -----------------cambio stage AbbandonaGame--------------------
         fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
@@ -87,6 +89,7 @@ public class esOrdinamento extends ChangeStage implements Initializable {
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
 
+        timeline.stop();
         Risposta();
 
         // -----------------cambio stage ConfermaEs--------------------

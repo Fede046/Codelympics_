@@ -1,24 +1,26 @@
 package bmt.codelympics_.model;
 
 public class Time {
-    private int hour;
-    private int minute;
-    private int second;
+    private static final Time instance = new Time();
+    private int hour=0;
+    private int minute=0;
+    private int second=0;
 
-    public Time(int hour, int minute, int second) {
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+    public Time() {
 
     }
 
-    public Time(String currentTime) {
-        String[] time = currentTime.split(":");
-        hour = Integer.parseInt(time[0]);
-        minute = Integer.parseInt(time[1]);
-        second = Integer.parseInt(time[2]);
+    public static Time getInstance() {
+        return instance;
     }
 
+    public void setTime(String stringa){
+        String[] time = stringa.split(":");
+        this.hour = Integer.parseInt(time[0]);
+        this.minute = Integer.parseInt(time[1]);
+        this.second = Integer.parseInt(time[2]);
+
+    }
     public String getCurrentTime() {
         return hour + ":" + minute + ":" + second;
     }

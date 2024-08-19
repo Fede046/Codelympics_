@@ -32,7 +32,7 @@ import javafx.scene.text.Text;
 public class esRispMult extends ChangeStage implements Initializable {
     @FXML
     private Text txt_timer;
-    Time time = new Time("00:00:00");
+
     @FXML
     private ToggleGroup RM;
 
@@ -73,6 +73,7 @@ public class esRispMult extends ChangeStage implements Initializable {
     private RadioButton rb_r4;
 
     DataSingleton data = DataSingleton.getInstance();
+    Time time = Time.getInstance();
 
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1), e -> {
@@ -159,6 +160,7 @@ public class esRispMult extends ChangeStage implements Initializable {
 
     @FXML
     void func_ConfermaExit(MouseEvent event) throws Exception {
+        timeline.stop();
         // -----------------cambio stage AbbandonaGame--------------------
         fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
@@ -229,7 +231,7 @@ public class esRispMult extends ChangeStage implements Initializable {
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
         Risposta();
-
+        timeline.stop();
         // -----------------cambio stage ConfermaEs--------------------
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
