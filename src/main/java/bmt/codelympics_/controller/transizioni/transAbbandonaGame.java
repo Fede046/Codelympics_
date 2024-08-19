@@ -41,6 +41,7 @@ public class transAbbandonaGame extends ChangeStage{
     void func_Conferma(MouseEvent event) throws Exception{
         time.setTime("0:0:0");
        data.setNumEsercizio(0);
+       data.setValue(0);
         System.out.println(data.getNumEsercizio());
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
