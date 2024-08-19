@@ -20,7 +20,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 public class medagliere extends ChangeStage implements Initializable {
-
     @FXML
     private Button btn_GoHome;
 
@@ -28,54 +27,45 @@ public class medagliere extends ChangeStage implements Initializable {
     private AnchorPane p_1;
 
     @FXML
-    private TableView<DataSingleton> tb_User;
+    private TableView<User> tb_User;
 
     @FXML
     private TableView<User> tb_allUsers;
-
     @FXML
-    private TableColumn<String, String> tbc_Data;
-
+    private TableColumn<User, String> tbc_idAll;
     @FXML
-    private TableColumn<User, String> tbc_DataAll;
-
+    private TableColumn<User, String> tbc_AvatarAll;
     @FXML
-    private TableColumn<User, String> tbc_EsAll;
-
+    private TableColumn<User, String> tbc_Avatar;
     @FXML
-    private TableColumn<String, String> tbc_User;
+    private TableColumn<User, String> tbc_User;
+
     @FXML
     private TableColumn<User, String> tbc_UserAll;
 
     @FXML
-    private TableColumn<String, String> tbc_arg;
+    private TableColumn<User, String> tbc_arg;
 
     @FXML
     private TableColumn<User, String> tbc_argAll;
 
     @FXML
-    private TableColumn<String, String> tbc_bro;
+    private TableColumn<User, String> tbc_bro;
 
     @FXML
     private TableColumn<User, String> tbc_broAll;
 
     @FXML
-    private TableColumn<String, String> tbc_oro;
+    private TableColumn<User, String> tbc_oro;
 
     @FXML
     private TableColumn<User, String> tbc_oroAll;
 
     @FXML
-    private TableColumn<String, String> tbc_pt;
+    private TableColumn<User, String> tbc_pt;
 
     @FXML
     private TableColumn<User, String> tbc_ptAll;
-
-    @FXML
-    private TableColumn<String, String> tbc_time;
-
-    @FXML
-    private TableColumn<User, String> tbc_timeAll;
 
     DataSingleton data = DataSingleton.getInstance();
 
@@ -91,23 +81,34 @@ public class medagliere extends ChangeStage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<User> list = FXCollections.observableArrayList(
+                new User(arrayUtente[3], arrayUtente[0], arrayUtente[3], arrayUtente[4], arrayUtente[5],
+                        arrayUtente[3]));
         ObservableList<User> list2 = FXCollections.observableArrayList(
-                new User(arrayUtente[0], arrayUtente[1], arrayUtente[2],
-                        arrayUtente[3], arrayUtente[4], arrayUtente[5],
-                        arrayUtente[6], arrayUtente[7]));
+                new User(1, arrayUtente[3], arrayUtente[0], arrayUtente[6], arrayUtente[4], arrayUtente[5],
+                        arrayUtente[3]));
 
         // Configurazione delle colonne
+        tbc_idAll.setCellValueFactory(new PropertyValueFactory<>("id"));
+        tbc_AvatarAll.setCellValueFactory(new PropertyValueFactory<>("avatar"));
         tbc_UserAll.setCellValueFactory(new PropertyValueFactory<>("user"));
         tbc_ptAll.setCellValueFactory(new PropertyValueFactory<>("pt"));
         tbc_argAll.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_broAll.setCellValueFactory(new PropertyValueFactory<>("bro"));
         tbc_oroAll.setCellValueFactory(new PropertyValueFactory<>("oro"));
-        tbc_timeAll.setCellValueFactory(new PropertyValueFactory<>("time"));
-        tbc_DataAll.setCellValueFactory(new PropertyValueFactory<>("data"));
-        tbc_EsAll.setCellValueFactory(new PropertyValueFactory<>("es"));
+
+        // -------------------
+        tbc_Avatar.setCellValueFactory(new PropertyValueFactory<>("avatar"));
+        tbc_User.setCellValueFactory(new PropertyValueFactory<>("user"));
+        tbc_pt.setCellValueFactory(new PropertyValueFactory<>("pt"));
+        tbc_arg.setCellValueFactory(new PropertyValueFactory<>("arg"));
+        tbc_bro.setCellValueFactory(new PropertyValueFactory<>("bro"));
+        tbc_oro.setCellValueFactory(new PropertyValueFactory<>("oro"));
 
         // Imposta gli elementi nella TableView
+        tb_User.setItems(list);
         tb_allUsers.setItems(list2);
+
     }
 
 }
