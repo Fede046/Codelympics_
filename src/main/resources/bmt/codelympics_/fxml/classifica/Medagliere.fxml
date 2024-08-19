@@ -64,7 +64,7 @@
                         <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="574.0" style="-fx-background-radius: 6;">
                            <columns>
                               <TableColumn fx:id="tbc_DataAll" prefWidth="75.0" text="Data" />
-                              <TableColumn fx:id="tbc_User" prefWidth="75.0" text="User" />
+                              <TableColumn fx:id="tbc_UserAll" prefWidth="75.0" text="User" />
                               <TableColumn fx:id="tbc_EsAll" prefWidth="61.5999755859375" text="Esercizio" />
                               <TableColumn fx:id="tbc_oroAll" prefWidth="50.0" style="-fx-background-color: gold;" />
                               <TableColumn fx:id="tbc_argAll" prefWidth="50.0" style="-fx-background-color: silver;" />
