@@ -1,8 +1,12 @@
 
 package bmt.codelympics_.controller.transizioni;
 
+import java.io.File;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
@@ -12,10 +16,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+
+
 
 public class transConfermaEsercizio extends ChangeStage implements Initializable {
 
+    MediaPlayer mediaPlayer;
     @FXML
     private Button btn_Avanti;
 
@@ -29,6 +38,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
 
     @FXML
     void func_Avanti(MouseEvent event) throws Exception {
+
         System.out.println(data.getNumEsercizio());
         for (boolean e : data.getArrayRisposte())
             System.out.print(e + " ");
@@ -43,6 +53,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
     }
 
     void ContinuaEsercizio() throws Exception {
+
         if (data.getStringaMedaglia() < 7) {
             // -----------------cambio stage esercizio Multipla--------------------
             fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
@@ -58,6 +69,8 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
         }
     }
 
+
+
     void TerminaMacroEsercizio() throws Exception {
 
         data.setNumEsercizio(0);
@@ -68,15 +81,40 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
 
     }
 
+
+    private void playHitSound(String fileName) {
+        URL resource = getClass().getResource("/bmt/codelympics_/" + fileName);
+        if (resource == null) {
+            System.err.println("File not found: " + fileName);
+            return;
+        }
+
+        String path = resource.toExternalForm();
+        Media media = new Media(path);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setCycleCount(1);
+        mediaPlayer.play();
+
+
+
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         boolean ris = true;
         System.out.println(data.getArrayRisposte()[data.getNumEsercizio() - 1]);
         if (data.getArrayRisposte()[data.getNumEsercizio() - 1]) {
+        //aggiungo qua il sound
+            //String fileName = "sound/soundVince.mp3";
+            //playHitSound(fileName);
             lbl_risultato.setText("CORRETTO!");
             lbl_risultato.setTextFill(Color.GREEN);
             ris = true;
         } else {
+            //aggiungo qua il sound
+            //String fileName = "sound/soundPerde.mp3";
+            //playHitSound(fileName);
             lbl_risultato.setText("SBAGLIATO!");
             lbl_risultato.setTextFill(Color.RED);
             ris = false;
