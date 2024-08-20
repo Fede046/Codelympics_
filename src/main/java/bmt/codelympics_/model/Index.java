@@ -17,6 +17,7 @@ public class Index extends Application {
         Parent root = loader.load();
         Home.setTitle("CODELYMPICS");
 
+        
         Double[] dimensions = new Double[] { 900.0, 600.0 };
         Home.setScene(new Scene(root, dimensions[0], dimensions[1]));
         Home.show();
