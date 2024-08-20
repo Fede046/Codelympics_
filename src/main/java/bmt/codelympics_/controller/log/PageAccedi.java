@@ -3,6 +3,7 @@ package bmt.codelympics_.controller.log;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -75,12 +76,14 @@ public class PageAccedi extends ChangeStage {
             try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
 
                 String[] line;
+                
                 while ((line = reader.readNext()) != null) {
+                    System.out.println(Arrays.toString(line));
+
                     if(line[0].equals(username)){
                         data.setArrayUtente(line);
                         for(String a: line) System.out.print(a+" ");
                     }
-
 
                 }
 
