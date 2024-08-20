@@ -72,6 +72,8 @@ public class esOrdinamento extends ChangeStage implements Initializable {
 
     @FXML
     private Spinner<?> sp_6;
+
+    
     @FXML
     private Text txt_timer;
 
