@@ -166,21 +166,28 @@ public class PageIscriviti extends ChangeStage {
         String username = txtField_username.getText();
         String password = hiddentxtField_psw.getText();
         String email = txtField_email.getText();
-        Paint colore = colorAvatar.getFill();
+        Color colore = (Color) colorAvatar.getFill(); // Ottieni il colore del cerchio
+
+        // Converti il colore in formato esadecimale
+        String coloreHex = String.format("#%02X%02X%02X",
+                (int) (colore.getRed() * 255),
+                (int) (colore.getGreen() * 255),
+                (int) (colore.getBlue() * 255));
+        System.out.println(colore);
         String filePath = System.getProperty("user.home") + "/playproj/props.csv";
-        //String filePath = "C:\\playproj\\props.csv";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
-            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + colore + "," + "0"
+            writer.write(username + "," + encryptor.encryptString(password) + "," + email + "," + coloreHex + "," + "0"
                     + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + ","
                     + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0"
                     + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + "," + "0" + ","
                     + "0" + "\n");
 
         } catch (Exception e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
+
 
     @FXML
     void setColor(ActionEvent event) {
