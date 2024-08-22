@@ -83,10 +83,10 @@ public class medagliere extends ChangeStage implements Initializable {
 
     String[] arrayUtente = data.getArrayUtente();
 
-    ObservableList<String> list2 = FXCollections.observableArrayList();
+    ObservableList<User> list2 = FXCollections.observableArrayList();
 
     public String[] CatchUsers() throws Exception {
-        String filePath = "C:\\playproj\\props.csv";
+        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
 
@@ -104,6 +104,20 @@ public class medagliere extends ChangeStage implements Initializable {
 
     }
 
+    public int calcolaPunti(String[] array) {
+        System.out.println(array[0]);
+        int tot = 0;
+        int[] n = { 7, 8, 9, 13, 14, 15, 19, 20, 21, 25, 26, 27 };
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] < array.length) { // Assicurati che l'indice sia valido
+                tot += Integer.parseInt(array[n[i]]);
+            }
+        }
+        return tot;
+    }
+
+    /*********************************************************************************************/
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -112,14 +126,21 @@ public class medagliere extends ChangeStage implements Initializable {
             e.printStackTrace();
         }
         String[] utenti = data.getArrayUtenti();
+        String[] arrayUtente = data.getArrayUtente();
 
         ObservableList<User> list = FXCollections.observableArrayList(
-                new User(arrayUtente[3], arrayUtente[0], arrayUtente[3], arrayUtente[4], arrayUtente[5],
+                new User(arrayUtente[3], arrayUtente[0], calcolaPunti(arrayUtente), arrayUtente[4], arrayUtente[5],
                         arrayUtente[3]));
-        ObservableList<User> list2 = FXCollections.observableArrayList(
-                new User(1, arrayUtente[3], arrayUtente[0], arrayUtente[6], arrayUtente[4], arrayUtente[5],
-                        arrayUtente[3]));
+        for (int i = 0; i < utenti.length; i++) {
+            String[] array2 = utenti[i].split(",");
+            System.out.println(utenti);
 
+            ObservableList<User> list2 = FXCollections.observableArrayList(
+                    new User(1, arrayUtente[3], arrayUtente[0], calcolaPunti(array2),
+                            arrayUtente[4], arrayUtente[5],
+                            arrayUtente[3]));
+
+        }
         // Configurazione delle colonne
         tbc_idAll.setCellValueFactory(new PropertyValueFactory<>("id"));
         tbc_AvatarAll.setCellValueFactory(new PropertyValueFactory<>("avatar"));

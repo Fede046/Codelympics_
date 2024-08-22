@@ -4,12 +4,12 @@ public class User {
     private int id;
     private String avatar;
     private String user;
-    private String pt;
+    private int pt;
     private String arg;
     private String bro;
     private String oro;
 
-    public User(String avatar, String user, String pt, String arg, String bro, String oro) {
+    public User(String avatar, String user, int pt, String arg, String bro, String oro) {
         this.avatar = avatar;
         this.user = user;
         this.oro = oro;
@@ -18,7 +18,7 @@ public class User {
         this.pt = pt;
     }
 
-    public User(int id, String avatar, String user, String pt, String arg, String bro, String oro) {
+    public User(int id, String avatar, String user, int pt, String arg, String bro, String oro) {
         this.id = id;
         this.avatar = avatar;
         this.user = user;
@@ -40,7 +40,7 @@ public class User {
         return user;
     }
 
-    public String getPt() {
+    public int getPt() {
         return pt;
     }
 

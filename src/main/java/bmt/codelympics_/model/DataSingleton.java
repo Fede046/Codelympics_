@@ -13,8 +13,7 @@ public class DataSingleton {
     private int numEsercizio;
 
     private String[] arrayUtente = new String[12];
-    private String[] arrayUtenti = new String[50];
-
+    private String[] arrayUtenti = new String[100];
 
     private DataSingleton() {
     }
@@ -53,7 +52,7 @@ public class DataSingleton {
     }
 
     public String[] getArrayUtenti() {
-        return arrayUtente;
+        return arrayUtenti;
     }
 
     public void setArrayUtenti(String[] arrayUtenti) {

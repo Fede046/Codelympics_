@@ -141,7 +141,6 @@ public class PageAccedi extends ChangeStage {
             updateLoginUsernamesAndPasswords();
         } catch (Exception e) {
             e.printStackTrace();
-            lbl_error.setText("Errore nel caricamento dei dati di login");
             lbl_error.setVisible(true);
         }
     }
