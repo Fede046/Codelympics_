@@ -4,10 +4,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -49,37 +47,18 @@
    </top>
    <center>
       <GridPane alignment="CENTER" maxHeight="500.0" maxWidth="800.0" style="-fx-background-color: rgba(255,255,255,.7); -fx-background-radius: 6;" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="161.20001831054688" minHeight="10.0" prefHeight="83.60001220703126" valignment="CENTER" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="253.19998779296876" minHeight="10.0" prefHeight="253.19998779296876" valignment="CENTER" vgrow="SOMETIMES" />
-        </rowConstraints>
+         <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="161.20001831054688" minHeight="10.0" prefHeight="83.60001220703126" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="253.19998779296876" minHeight="10.0" prefHeight="253.19998779296876" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </BorderPane.margin>
          <children>
-            <ScrollPane maxHeight="300.0" maxWidth="600.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-               <content>
-                  <AnchorPane fx:id="p_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="232.0" prefWidth="534.0">
-                     <children>
-                        <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="574.0" style="-fx-background-radius: 6;" styleClass="tabelle">
-                           <columns>
-                              <TableColumn fx:id="tbc_idAll" prefWidth="75.0" text="Id" />
-                              <TableColumn fx:id="tbc_AvatarAll" prefWidth="75.0" text="Avatar" />
-                              <TableColumn fx:id="tbc_UserAll" prefWidth="75.0" text="User" />
-                              <TableColumn id="tbc_oroAll" fx:id="tbc_oroAll" prefWidth="50.0" text="Oro" />
-                              <TableColumn id="tbc_argAll" fx:id="tbc_argAll" prefWidth="50.0" text="Argento" />
-                              <TableColumn id="tbc_broAll" fx:id="tbc_broAll" prefWidth="50.0" text="Bronzo" />
-                              <TableColumn fx:id="tbc_ptAll" prefWidth="147.20001220703125" text="Punteggio" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-               </content>
-               <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
-               </GridPane.margin>
-            </ScrollPane>
-            <TableView fx:id="tb_User" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <TableView fx:id="tb_User" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <columns>
                   <TableColumn fx:id="tbc_Avatar" prefWidth="75.0" text="Avatar" />
                   <TableColumn fx:id="tbc_User" prefWidth="75.0" text="User" />
@@ -89,13 +68,24 @@
                   <TableColumn fx:id="tbc_pt" prefWidth="204.00006103515625" text="Punteggio" />
                </columns>
                <GridPane.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets />
+               </GridPane.margin>
+            </TableView>
+            <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="544.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="tbc_idAll" prefWidth="75.0" text="Id" />
+                  <TableColumn fx:id="tbc_AvatarAll" prefWidth="75.0" text="Avatar" />
+                  <TableColumn fx:id="tbc_UserAll" prefWidth="75.0" text="User" />
+                  <TableColumn id="tbc_oroAll" fx:id="tbc_oroAll" prefWidth="50.0" text="Oro" />
+                  <TableColumn id="tbc_argAll" fx:id="tbc_argAll" prefWidth="50.0" text="Argento" />
+                  <TableColumn id="tbc_broAll" fx:id="tbc_broAll" prefWidth="50.0" text="Bronzo" />
+                  <TableColumn fx:id="tbc_ptAll" prefWidth="147.20001220703125" text="Punteggio" />
+               </columns>
+               <GridPane.margin>
+                  <Insets top="50.0" />
                </GridPane.margin>
             </TableView>
          </children>
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
-         </BorderPane.margin>
       </GridPane>
    </center>
 </BorderPane>

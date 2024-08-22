@@ -20,8 +20,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 
-
-
 public class transConfermaEsercizio extends ChangeStage implements Initializable {
 
     MediaPlayer mediaPlayer;
@@ -69,8 +67,6 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
         }
     }
 
-
-
     void TerminaMacroEsercizio() throws Exception {
 
         data.setNumEsercizio(0);
@@ -80,7 +76,6 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
         fuc_changeStage(btn_Avanti, "/bmt/codelympics_/fxml/transizioni/FineGame.fxml");
 
     }
-
 
     private void playHitSound(String fileName) {
         URL resource = getClass().getResource("/bmt/codelympics_/" + fileName);
@@ -95,26 +90,23 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
         mediaPlayer.setCycleCount(1);
         mediaPlayer.play();
 
-
-
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         boolean ris = true;
         System.out.println(data.getArrayRisposte()[data.getNumEsercizio() - 1]);
         if (data.getArrayRisposte()[data.getNumEsercizio() - 1]) {
-        //aggiungo qua il sound
-            //String fileName = "sound/soundVince.mp3";
-            //playHitSound(fileName);
+            // aggiungo qua il sound
+            String fileName = "sound/soundVince.mp3";
+            playHitSound(fileName);
             lbl_risultato.setText("CORRETTO!");
             lbl_risultato.setTextFill(Color.GREEN);
             ris = true;
         } else {
-            //aggiungo qua il sound
-            //String fileName = "sound/soundPerde.mp3";
-            //playHitSound(fileName);
+            // aggiungo qua il sound
+            String fileName = "sound/soundPerde.mp3";
+            playHitSound(fileName);
             lbl_risultato.setText("SBAGLIATO!");
             lbl_risultato.setTextFill(Color.RED);
             ris = false;
