@@ -21,6 +21,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -158,7 +160,29 @@ public class medagliere extends ChangeStage implements Initializable {
         return tot;
     }
 
-    /*********************************************************************************************/
+    /**********************************************************************************************/
+    public void bubbleSort(String[][] matrice) {
+        int n = matrice.length;
+        boolean scambiato;
+
+        // Bubble sort sulla seconda colonna (indice 1)
+        for (int i = 0; i < n - 1; i++) {
+            scambiato = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (calcolaPunti(matrice[j]) < calcolaPunti(matrice[j + 1])) {
+                    // Scambia le righe
+                    String[] temp = matrice[j];
+                    matrice[j] = matrice[j + 1];
+                    matrice[j + 1] = temp;
+                    scambiato = true;
+                }
+            }
+            // Se non ci sono stati scambi, l'array è già ordinato
+            if (!scambiato) {
+                break;
+            }
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -178,6 +202,8 @@ public class medagliere extends ChangeStage implements Initializable {
         for (String[] utente : utentiArray) {
             System.out.println(Arrays.toString(utente));
         }
+        // ordina matroice in base al punteggio
+        bubbleSort(utentiArray);
         // contatore per id progressivo
         int idCounter = 1;
 
@@ -192,6 +218,12 @@ public class medagliere extends ChangeStage implements Initializable {
                             calcolaMedaglieOro(utentiArray[i]),
                             calcolaMedaglieArg(utentiArray[i]), calcolaMedaglieBro(utentiArray[i])));
         }
+        tbc_oroAll.getStyleClass().add("oro-header");
+        tbc_argAll.getStyleClass().add("argento-header");
+        tbc_broAll.getStyleClass().add("bronzo-header");
+        tbc_oro.getStyleClass().add("oro-header");
+        tbc_arg.getStyleClass().add("argento-header");
+        tbc_bro.getStyleClass().add("bronzo-header");
 
         // Configurazione delle colonne
         tbc_idAll.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -201,9 +233,6 @@ public class medagliere extends ChangeStage implements Initializable {
         tbc_oroAll.setCellValueFactory(new PropertyValueFactory<>("oro"));
         tbc_argAll.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_broAll.setCellValueFactory(new PropertyValueFactory<>("bro"));
-        tbc_oroAll.setStyle("-fx-background-color: gold; -fx-text-fill: black;");
-        tbc_argAll.setStyle("-fx-background-color: silver; -fx-text-fill: black;");
-        tbc_broAll.setStyle("-fx-background-color: #cd7f32; -fx-text-fill: black;");
 
         // -------------------
         tbc_Avatar.setCellValueFactory(new PropertyValueFactory<>("avatar"));
@@ -212,14 +241,67 @@ public class medagliere extends ChangeStage implements Initializable {
         tbc_oro.setCellValueFactory(new PropertyValueFactory<>("oro"));
         tbc_arg.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_bro.setCellValueFactory(new PropertyValueFactory<>("bro"));
-        tbc_oro.setStyle("-fx-background-color: gold; -fx-text-fill: black;");
-        tbc_arg.setStyle("-fx-background-color: silver; -fx-text-fill: black;");
-        tbc_bro.setStyle("-fx-background-color: #cd7f32; -fx-text-fill: black;");
 
         // Imposta gli elementi nella TableView
         tb_User.setItems(list);
         tb_allUsers.setItems(list2);
 
+        tbc_AvatarAll.setCellFactory(column -> new TableCell<User, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(item);
+                    // Converte il formato ARGB in RGB hex
+                    try {
+                        if (item.startsWith("0x")) {
+                            String hexColor = item.substring(2);
+                            String rgbColor = hexColor.substring(2); // Rimuove i primi 2 caratteri (Alpha)
+                            setStyle("-fx-background-color: #" + rgbColor + ";" + "-fx-text-fill: #" + rgbColor + ";");
+                        } else {
+                            javafx.scene.paint.Color color = javafx.scene.paint.Color.web(item);
+                            setStyle("-fx-background-color: " + item + ";" + "-fx-text-fill:" + item + ";");
+                        }
+                    } catch (IllegalArgumentException e) {
+                        setStyle("");
+                    }
+                }
+            }
+        });
+        tbc_Avatar.setCellFactory(column -> new TableCell<User, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(item);
+
+                    // Converte il formato ARGB in RGB hex
+                    try {
+                        if (item.startsWith("0x")) {
+                            // Rimuove il prefisso "0x" e aggiunge "#" all'inizio
+                            String hexColor = item.substring(2);
+                            // Converti l'ARGB in RGB
+                            String rgbColor = hexColor.substring(2); // Rimuove i primi 2 caratteri (Alpha)
+                            setStyle("-fx-background-color: #" + rgbColor + ";" + "-fx-text-fill: #" + rgbColor + ";");
+                        } else {
+                            // Gestisce i colori nel formato esadecimale normale
+                            javafx.scene.paint.Color color = javafx.scene.paint.Color.web(item);
+                            setStyle("-fx-background-color: " + item + ";" + "-fx-text-fill:" + item + ";");
+
+                        }
+                    } catch (IllegalArgumentException e) {
+                        // Se il codice colore non è valido, non applicare alcun colore
+                        setStyle("");
+                    }
+                }
+            }
+        });
     }
 
     @FXML

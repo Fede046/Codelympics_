@@ -66,9 +66,9 @@
                               <TableColumn fx:id="tbc_idAll" prefWidth="75.0" text="Id" />
                               <TableColumn fx:id="tbc_AvatarAll" prefWidth="75.0" text="Avatar" />
                               <TableColumn fx:id="tbc_UserAll" prefWidth="75.0" text="User" />
-                              <TableColumn id="tbc_oroAll" fx:id="tbc_oroAll" prefWidth="50.0" />
-                              <TableColumn id="tbc_argAll" fx:id="tbc_argAll" prefWidth="50.0" />
-                              <TableColumn id="tbc_broAll" fx:id="tbc_broAll" prefWidth="50.0" />
+                              <TableColumn id="tbc_oroAll" fx:id="tbc_oroAll" prefWidth="50.0" text="Oro" />
+                              <TableColumn id="tbc_argAll" fx:id="tbc_argAll" prefWidth="50.0" text="Argento" />
+                              <TableColumn id="tbc_broAll" fx:id="tbc_broAll" prefWidth="50.0" text="Bronzo" />
                               <TableColumn fx:id="tbc_ptAll" prefWidth="147.20001220703125" text="Punteggio" />
                            </columns>
                         </TableView>
@@ -83,9 +83,9 @@
                <columns>
                   <TableColumn fx:id="tbc_Avatar" prefWidth="75.0" text="Avatar" />
                   <TableColumn fx:id="tbc_User" prefWidth="75.0" text="User" />
-                  <TableColumn id="tbc_oro" fx:id="tbc_oro" prefWidth="61.5999755859375" />
-                  <TableColumn id="tbc_arg" fx:id="tbc_arg" prefWidth="61.5999755859375" />
-                  <TableColumn id="tbc_bro" fx:id="tbc_bro" prefWidth="61.5999755859375" />
+                  <TableColumn id="tbc_oro" fx:id="tbc_oro" prefWidth="61.5999755859375" text="Oro" />
+                  <TableColumn id="tbc_arg" fx:id="tbc_arg" prefWidth="61.5999755859375" text="Argento" />
+                  <TableColumn id="tbc_bro" fx:id="tbc_bro" prefWidth="61.5999755859375" text="Bronzo" />
                   <TableColumn fx:id="tbc_pt" prefWidth="204.00006103515625" text="Punteggio" />
                </columns>
                <GridPane.margin>

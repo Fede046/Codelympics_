@@ -126,7 +126,24 @@
 	-fx-background-color: rgb(75, 75, 75);
 
 }
-.tabelle{
-	-fx-alignment: CENTER;}
+.table-column-header {
+    -fx-background-color: transparent;
+}
+
+.oro-header .label {
+    -fx-background-color: gold;
+    -fx-alignment: center;
+}
+
+.argento-header .label {
+    -fx-background-color: silver;
+    -fx-alignment: center;
+}
+
+.bronzo-header .label {
+    -fx-background-color: #cd7f32; /* Colore bronzo */
+    -fx-alignment: center;
+}
+
 /*********************************************************************/
 
