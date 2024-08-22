@@ -40,8 +40,11 @@ public class transFineGame extends ChangeStage implements Initializable {
     }
 
     int nuovoPunteggio() {
-
-        return (nRisposteCorrette() * 200) + 700;//varia secondo quanto tempo ci metto -------------------------------------------
+        String[] array = time.getCurrentTime().split(":");
+        int variabileTempoINT = Integer.parseInt(array[0])*200+Integer.parseInt(array[1])*25+Integer.parseInt(array[2])/2;
+        if(nRisposteCorrette()*200-variabileTempoINT<0) return 0;
+        System.out.println(nRisposteCorrette() * 200-variabileTempoINT);
+        return nRisposteCorrette() * 200-variabileTempoINT ;//varia secondo quanto tempo ci metto -------------------------------------------
     }
 
     @FXML
