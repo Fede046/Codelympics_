@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import com.opencsv.CSVReader;
@@ -75,42 +77,82 @@ public class medagliere extends ChangeStage implements Initializable {
 
     DataSingleton data = DataSingleton.getInstance();
 
-    @FXML
-    void btn_GoHome(MouseEvent event) throws Exception {
-        // -----------------cambio stage gamesHome--------------------
-        fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
-    }
+    private List<String[]> utenti = new ArrayList<>();
 
     String[] arrayUtente = data.getArrayUtente();
 
     ObservableList<User> list2 = FXCollections.observableArrayList();
 
-    public String[] CatchUsers() throws Exception {
+    public void CatchUsers() throws Exception {
         String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
-
             String[] line;
-
             while ((line = reader.readNext()) != null) {
-                System.out.println(Arrays.toString(line));
-                data.setArrayUtenti(line);
+                utenti.add(line); // Aggiungi la riga all'array di array
             }
 
-            return line;
+            // Stampa per verifica
+            for (String[] utente : utenti) {
+                System.out.println(Arrays.toString(utente));
+            }
+
         } catch (FileNotFoundException e) {
             throw new IOException("File CSV non trovato: " + filePath);
         }
-
     }
 
-    public int calcolaPunti(String[] array) {
+    public String[][] getArrayUtenti() {
+        // Converte la List in un array bidimensionale
+        return utenti.toArray(new String[0][]);
+    }
+
+    int calcolaPunti(String[] array) {
         System.out.println(array[0]);
         int tot = 0;
         int[] n = { 7, 8, 9, 13, 14, 15, 19, 20, 21, 25, 26, 27 };
         for (int i = 0; i < n.length; i++) {
-            if (n[i] < array.length) { // Assicurati che l'indice sia valido
+            if (n[i] < array.length) {
                 tot += Integer.parseInt(array[n[i]]);
+            }
+        }
+        return tot;
+    }
+
+    int calcolaMedaglieOro(String[] array) {
+        System.out.println(array[0]);
+        int tot = 0;
+        int[] n = { 4, 5, 6, 10, 11, 12, 16, 17, 18, 22, 23, 24 };
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] < array.length) {
+                if (Integer.parseInt(array[n[i]]) == 5)
+                    tot++;
+            }
+        }
+        return tot;
+    }
+
+    int calcolaMedaglieArg(String[] array) {
+        System.out.println(array[0]);
+        int tot = 0;
+        int[] n = { 4, 5, 6, 10, 11, 12, 16, 17, 18, 22, 23, 24 };
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] < array.length) {
+                if (Integer.parseInt(array[n[i]]) == 4)
+                    tot++;
+            }
+        }
+        return tot;
+    }
+
+    int calcolaMedaglieBro(String[] array) {
+        System.out.println(array[0]);
+        int tot = 0;
+        int[] n = { 4, 5, 6, 10, 11, 12, 16, 17, 18, 22, 23, 24 };
+        for (int i = 0; i < n.length; i++) {
+            if (n[i] < array.length) {
+                if (Integer.parseInt(array[n[i]]) == 3)
+                    tot++;
             }
         }
         return tot;
@@ -120,43 +162,50 @@ public class medagliere extends ChangeStage implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        // metodo per prendere tutti gli utenti iscritti
         try {
             CatchUsers();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        String[] utenti = data.getArrayUtenti();
+        String[][] utentiArray = getArrayUtenti();
         String[] arrayUtente = data.getArrayUtente();
 
-        ObservableList<User> list = FXCollections.observableArrayList(
-                new User(arrayUtente[3], arrayUtente[0], calcolaPunti(arrayUtente), arrayUtente[4], arrayUtente[5],
-                        arrayUtente[3]));
-        for (int i = 0; i < utenti.length; i++) {
-            String[] array2 = utenti[i].split(",");
-            System.out.println(utenti);
-
-            ObservableList<User> list2 = FXCollections.observableArrayList(
-                    new User(1, arrayUtente[3], arrayUtente[0], calcolaPunti(array2),
-                            arrayUtente[4], arrayUtente[5],
-                            arrayUtente[3]));
-
+        for (String[] utente : utentiArray) {
+            System.out.println(Arrays.toString(utente));
         }
+        // contatore per id progressivo
+        int idCounter = 1;
+
+        ObservableList<User> list = FXCollections.observableArrayList(
+                new User(arrayUtente[3], arrayUtente[0], calcolaPunti(arrayUtente), calcolaMedaglieOro(arrayUtente),
+                        calcolaMedaglieArg(arrayUtente),
+                        calcolaMedaglieBro(arrayUtente)));
+
+        for (int i = 0; i < utentiArray.length; i++) {
+            list2.add(
+                    new User(idCounter++, utentiArray[i][0], utentiArray[i][0], calcolaPunti(utentiArray[i]),
+                            calcolaMedaglieOro(utentiArray[i]),
+                            calcolaMedaglieArg(utentiArray[i]), calcolaMedaglieBro(utentiArray[i])));
+        }
+        
         // Configurazione delle colonne
         tbc_idAll.setCellValueFactory(new PropertyValueFactory<>("id"));
         tbc_AvatarAll.setCellValueFactory(new PropertyValueFactory<>("avatar"));
         tbc_UserAll.setCellValueFactory(new PropertyValueFactory<>("user"));
         tbc_ptAll.setCellValueFactory(new PropertyValueFactory<>("pt"));
+        tbc_oroAll.setCellValueFactory(new PropertyValueFactory<>("oro"));
         tbc_argAll.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_broAll.setCellValueFactory(new PropertyValueFactory<>("bro"));
-        tbc_oroAll.setCellValueFactory(new PropertyValueFactory<>("oro"));
 
         // -------------------
         tbc_Avatar.setCellValueFactory(new PropertyValueFactory<>("avatar"));
         tbc_User.setCellValueFactory(new PropertyValueFactory<>("user"));
         tbc_pt.setCellValueFactory(new PropertyValueFactory<>("pt"));
+        tbc_oro.setCellValueFactory(new PropertyValueFactory<>("oro"));
         tbc_arg.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_bro.setCellValueFactory(new PropertyValueFactory<>("bro"));
-        tbc_oro.setCellValueFactory(new PropertyValueFactory<>("oro"));
 
         // Imposta gli elementi nella TableView
         tb_User.setItems(list);
@@ -164,4 +213,9 @@ public class medagliere extends ChangeStage implements Initializable {
 
     }
 
+    @FXML
+    void btn_GoHome(MouseEvent event) throws Exception {
+        // -----------------cambio stage gamesHome--------------------
+        fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
+    }
 }
