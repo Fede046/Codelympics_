@@ -128,11 +128,11 @@ public class RegoleGioco extends ChangeStage implements Initializable {
 
         switch (data.getStringaMedaglia()) {
             case 4:
-                if (Integer.parseInt(arrayUtente[4]) >= 3)
+                if (Integer.parseInt(arrayUtente[4]) < 3)
                     btn_int.setDisable(true);
                 else
                     btn_int.setDisable(false);
-                if (Integer.parseInt(arrayUtente[5]) >= 3)
+                if (Integer.parseInt(arrayUtente[5]) < 3)
                     btn_difficile.setDisable(true);
                 else
                     btn_difficile.setDisable(false);
@@ -147,11 +147,11 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                                 "Preparati a dimostrare quanto sei bravo!");
                 break;
             case 10:
-                if (Integer.parseInt(arrayUtente[10]) >= 3)
+                if (Integer.parseInt(arrayUtente[10]) < 3)
                     btn_int.setDisable(true);
                 else
                     btn_int.setDisable(false);
-                if (Integer.parseInt(arrayUtente[11]) >= 3)
+                if (Integer.parseInt(arrayUtente[11]) < 3)
                     btn_difficile.setDisable(true);
                 else
                     btn_difficile.setDisable(false);
@@ -164,11 +164,11 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                         "Pronto a mettere alla prova la tua conoscenza?");
                 break;
             case 16:
-                if (Integer.parseInt(arrayUtente[16]) >= 3)
+                if (Integer.parseInt(arrayUtente[16]) < 3)
                     btn_int.setDisable(true);
                 else
                     btn_int.setDisable(false);
-                if (Integer.parseInt(arrayUtente[17]) >= 3)
+                if (Integer.parseInt(arrayUtente[17]) < 3)
                     btn_difficile.setDisable(true);
                 else
                     btn_difficile.setDisable(false);
@@ -181,11 +181,11 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                         "Che la sfida abbia inizio!");
                 break;
             case 22:
-                if (Integer.parseInt(arrayUtente[22]) >= 3)
+                if (Integer.parseInt(arrayUtente[22]) < 3)
                     btn_int.setDisable(true);
                 else
                     btn_int.setDisable(false);
-                if (Integer.parseInt(arrayUtente[23]) >= 3)
+                if (Integer.parseInt(arrayUtente[23]) < 3)
                     btn_difficile.setDisable(true);
                 else
                     btn_difficile.setDisable(false);

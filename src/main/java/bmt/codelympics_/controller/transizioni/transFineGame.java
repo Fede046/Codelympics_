@@ -42,7 +42,17 @@ public class transFineGame extends ChangeStage implements Initializable {
     DataSingleton data = DataSingleton.getInstance();
     Time time = Time.getInstance();
 
-    int pt = data.nRisposteCorrette();
+    public int nRisposteCorrette() {
+        int temp = 0;
+        for (boolean e : data.getArrayRisposte()) {
+            if (e) {
+                temp++;
+            }
+        }
+        return temp;
+    }
+
+    int pt = nRisposteCorrette();
 
     int nuovoPunteggio() {
         String[] array = time.getCurrentTime().split(":");

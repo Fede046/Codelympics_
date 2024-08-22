@@ -72,13 +72,5 @@ public class DataSingleton {
     public void setStringaMedaglia(int stringaMedaglia) {
         this.stringaMedaglia = stringaMedaglia;
     }
-    public int nRisposteCorrette() {
-        int temp = 0;
-        for (boolean e : data.getArrayRisposte()) {
-            if (e) {
-                temp++;
-            }
-        }
-        return temp;
-    }
+    
 }
