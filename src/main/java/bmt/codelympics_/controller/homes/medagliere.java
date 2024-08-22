@@ -169,7 +169,10 @@ public class medagliere extends ChangeStage implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        // array All
         String[][] utentiArray = getArrayUtenti();
+
+        // array personale
         String[] arrayUtente = data.getArrayUtente();
 
         for (String[] utente : utentiArray) {
@@ -185,11 +188,11 @@ public class medagliere extends ChangeStage implements Initializable {
 
         for (int i = 0; i < utentiArray.length; i++) {
             list2.add(
-                    new User(idCounter++, utentiArray[i][0], utentiArray[i][0], calcolaPunti(utentiArray[i]),
+                    new User(idCounter++, utentiArray[i][3], utentiArray[i][0], calcolaPunti(utentiArray[i]),
                             calcolaMedaglieOro(utentiArray[i]),
                             calcolaMedaglieArg(utentiArray[i]), calcolaMedaglieBro(utentiArray[i])));
         }
-        
+
         // Configurazione delle colonne
         tbc_idAll.setCellValueFactory(new PropertyValueFactory<>("id"));
         tbc_AvatarAll.setCellValueFactory(new PropertyValueFactory<>("avatar"));
@@ -198,6 +201,9 @@ public class medagliere extends ChangeStage implements Initializable {
         tbc_oroAll.setCellValueFactory(new PropertyValueFactory<>("oro"));
         tbc_argAll.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_broAll.setCellValueFactory(new PropertyValueFactory<>("bro"));
+        tbc_oroAll.setStyle("-fx-background-color: gold; -fx-text-fill: black;");
+        tbc_argAll.setStyle("-fx-background-color: silver; -fx-text-fill: black;");
+        tbc_broAll.setStyle("-fx-background-color: #cd7f32; -fx-text-fill: black;");
 
         // -------------------
         tbc_Avatar.setCellValueFactory(new PropertyValueFactory<>("avatar"));
@@ -206,6 +212,9 @@ public class medagliere extends ChangeStage implements Initializable {
         tbc_oro.setCellValueFactory(new PropertyValueFactory<>("oro"));
         tbc_arg.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_bro.setCellValueFactory(new PropertyValueFactory<>("bro"));
+        tbc_oro.setStyle("-fx-background-color: gold; -fx-text-fill: black;");
+        tbc_arg.setStyle("-fx-background-color: silver; -fx-text-fill: black;");
+        tbc_bro.setStyle("-fx-background-color: #cd7f32; -fx-text-fill: black;");
 
         // Imposta gli elementi nella TableView
         tb_User.setItems(list);

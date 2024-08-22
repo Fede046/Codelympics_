@@ -61,15 +61,15 @@
                <content>
                   <AnchorPane fx:id="p_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="232.0" prefWidth="534.0">
                      <children>
-                        <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="574.0" style="-fx-background-radius: 6;">
+                        <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="232.0" prefWidth="574.0" style="-fx-background-radius: 6;" styleClass="tabelle">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="Id" fx:id="tbc_idAll"/>
-                              <TableColumn prefWidth="75.0" text="Avatar" fx:id="tbc_AvatarAll" />
+                              <TableColumn fx:id="tbc_idAll" prefWidth="75.0" text="Id" />
+                              <TableColumn fx:id="tbc_AvatarAll" prefWidth="75.0" text="Avatar" />
                               <TableColumn fx:id="tbc_UserAll" prefWidth="75.0" text="User" />
-                              <TableColumn fx:id="tbc_oroAll" prefWidth="50.0" style="-fx-background-color: gold;" />
-                              <TableColumn fx:id="tbc_argAll" prefWidth="50.0" style="-fx-background-color: silver;" />
-                              <TableColumn fx:id="tbc_broAll" prefWidth="50.0" style="-fx-background-color: brown;" />
-                              <TableColumn fx:id="tbc_ptAll" prefWidth="76.800048828125" text="Punteggio" />
+                              <TableColumn id="tbc_oroAll" fx:id="tbc_oroAll" prefWidth="50.0" />
+                              <TableColumn id="tbc_argAll" fx:id="tbc_argAll" prefWidth="50.0" />
+                              <TableColumn id="tbc_broAll" fx:id="tbc_broAll" prefWidth="50.0" />
+                              <TableColumn fx:id="tbc_ptAll" prefWidth="147.20001220703125" text="Punteggio" />
                            </columns>
                         </TableView>
                      </children>
@@ -79,14 +79,14 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
                </GridPane.margin>
             </ScrollPane>
-            <TableView fx:id="tb_User" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <TableView fx:id="tb_User" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                <columns>
-                  <TableColumn prefWidth="75.0" text="Avatar" fx:id="tbc_Avatar"/>
+                  <TableColumn fx:id="tbc_Avatar" prefWidth="75.0" text="Avatar" />
                   <TableColumn fx:id="tbc_User" prefWidth="75.0" text="User" />
-                  <TableColumn fx:id="tbc_oro" prefWidth="61.5999755859375" style="-fx-background-color: gold;" />
-                  <TableColumn fx:id="tbc_arg" prefWidth="61.5999755859375" style="-fx-background-color: silver;" />
-                  <TableColumn fx:id="tbc_bro" prefWidth="61.5999755859375" style="-fx-background-color: brown;" />
-                  <TableColumn fx:id="tbc_pt" prefWidth="102.4000244140625" text="Punteggio" />
+                  <TableColumn id="tbc_oro" fx:id="tbc_oro" prefWidth="61.5999755859375" />
+                  <TableColumn id="tbc_arg" fx:id="tbc_arg" prefWidth="61.5999755859375" />
+                  <TableColumn id="tbc_bro" fx:id="tbc_bro" prefWidth="61.5999755859375" />
+                  <TableColumn fx:id="tbc_pt" prefWidth="204.00006103515625" text="Punteggio" />
                </columns>
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
