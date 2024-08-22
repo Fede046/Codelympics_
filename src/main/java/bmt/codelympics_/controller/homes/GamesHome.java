@@ -122,55 +122,54 @@ public class GamesHome extends ChangeStage implements Initializable {
         Double pRM = 0.0;
         Double pE = 0.0;
         Double pO = 0.0;
-
-        if (!arrayUtente[7].equals("0")) {
+        if (Integer.parseInt(arrayUtente[4]) >= 3) {
             pRM += 0.33;
             prgbar_multiple.setProgress(pRM);
         }
-        if (!arrayUtente[8].equals("0")) {
+        if (Integer.parseInt(arrayUtente[5]) >= 3) {
             pRM += 0.33;
             prgbar_multiple.setProgress(pRM);
         }
-        if (!arrayUtente[9].equals("0")) {
+        if (Integer.parseInt(arrayUtente[6]) >= 3) {
             pRM += 0.33;
             prgbar_multiple.setProgress(pRM);
         }
 
-        if (!arrayUtente[13].equals("0")) {
+        if (Integer.parseInt(arrayUtente[10]) >= 3) {
             pVF += 0.33;
             prgbar_VF.setProgress(pVF);
         }
-        if (!arrayUtente[14].equals("0")) {
+        if (Integer.parseInt(arrayUtente[11]) >= 3) {
             pVF += 0.33;
             prgbar_VF.setProgress(pVF);
         }
-        if (!arrayUtente[15].equals("0")) {
+        if (Integer.parseInt(arrayUtente[12]) >= 3) {
             pVF += 0.33;
             prgbar_VF.setProgress(pVF);
         }
 
-        if (!arrayUtente[19].equals("0")) {
+        if (Integer.parseInt(arrayUtente[16]) >= 3) {
             pE += 0.33;
             prgbar_errore.setProgress(pE);
         }
-        if (!arrayUtente[20].equals("0")) {
+        if (Integer.parseInt(arrayUtente[17]) >= 3) {
             pE += 0.33;
             prgbar_errore.setProgress(pE);
         }
-        if (!arrayUtente[21].equals("0")) {
+        if (Integer.parseInt(arrayUtente[18]) >= 3) {
             pE += 0.33;
             prgbar_errore.setProgress(pE);
         }
 
-        if (!arrayUtente[25].equals("0")) {
+        if (Integer.parseInt(arrayUtente[22]) >= 3) {
             pO += 0.33;
             prgbar_riordinamento.setProgress(pO);
         }
-        if (!arrayUtente[26].equals("0")) {
+        if (Integer.parseInt(arrayUtente[23]) >= 3) {
             pO += 0.33;
             prgbar_riordinamento.setProgress(pO);
         }
-        if (!arrayUtente[27].equals("0")) {
+        if (Integer.parseInt(arrayUtente[24]) >= 3) {
             pO += 0.33;
             prgbar_riordinamento.setProgress(pO);
         }

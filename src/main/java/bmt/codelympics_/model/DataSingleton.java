@@ -14,6 +14,8 @@ public class DataSingleton {
 
     private String[] arrayUtente = new String[12];
     private String[] arrayUtenti = new String[100];
+    DataSingleton data = DataSingleton.getInstance();
+
 
     private DataSingleton() {
     }
@@ -69,5 +71,14 @@ public class DataSingleton {
 
     public void setStringaMedaglia(int stringaMedaglia) {
         this.stringaMedaglia = stringaMedaglia;
+    }
+    public int nRisposteCorrette() {
+        int temp = 0;
+        for (boolean e : data.getArrayRisposte()) {
+            if (e) {
+                temp++;
+            }
+        }
+        return temp;
     }
 }
