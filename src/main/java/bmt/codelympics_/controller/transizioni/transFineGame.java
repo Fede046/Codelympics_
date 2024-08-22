@@ -67,91 +67,98 @@ public class transFineGame extends ChangeStage implements Initializable {
 
     @FXML
     void func_Home(MouseEvent event) throws Exception {
+
         String[] nuovoArrayUtente = data.getArrayUtente();
+
         int stringaPunti = data.getStringaMedaglia() + 3;
+        System.out.println(Integer.parseInt(nuovoArrayUtente[stringaPunti]) - nuovoPunteggio());
+        if(Integer.parseInt(nuovoArrayUtente[stringaPunti]) < nuovoPunteggio()) {
 
-        System.out.println(data.getArrayUtente()[data.getStringaMedaglia()]);
-        System.out.println(data.getArrayUtente()[stringaPunti]);
-        System.out.println();
-        // il nuomero di risposte giuste corrisponde alla medaglia
-        // (5=oro,4=aregento,3=bronzo)
-        nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(pt);
 
-        nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio());
 
-        // --------------------------------------------------------------------------------
-        // metodi di scrittura/salvataggio dei nuovi dati
-        String filePath2 = System.getProperty("user.home") + "/playproj/props2.csv";
-        String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
-        // String filePath2 = "C:\\playproj\\props2.csv";
-        // String filePath = "C:\\playproj\\props.csv";
+            System.out.println(data.getArrayUtente()[data.getStringaMedaglia()]);
+            System.out.println(data.getArrayUtente()[stringaPunti]);
+            System.out.println();
+            // il nuomero di risposte giuste corrisponde alla medaglia
+            // (5=oro,4=aregento,3=bronzo)
+            nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(pt);
 
-        File file2 = new File(filePath2);
-        try (FileWriter writer = new FileWriter(file2)) {
-            try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
-                String[] line;
+            nuovoArrayUtente[stringaPunti] = Integer.toString(nuovoPunteggio());
 
-                while ((line = reader.readNext()) != null) {
-                    System.out.println(line[0]);
+            // --------------------------------------------------------------------------------
+            // metodi di scrittura/salvataggio dei nuovi dati
+            String filePath2 = System.getProperty("user.home") + "/playproj/props2.csv";
+            String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
-                    for (int i = 0; i < line.length; i++) {
-                        if (line[0].equals(nuovoArrayUtente[0])) {
-                            if (i == line.length - 1) {
-                                writer.append(nuovoArrayUtente[i]).append("\n");
-                                System.out.print(nuovoArrayUtente[i]);
+            // String filePath2 = "C:\\playproj\\props2.csv";
+            // String filePath = "C:\\playproj\\props.csv";
+
+
+            File file2 = new File(filePath2);
+            try (FileWriter writer = new FileWriter(file2)) {
+                try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+                    String[] line;
+
+                    while ((line = reader.readNext()) != null) {
+                        System.out.println(line[0]);
+
+                        for (int i = 0; i < line.length; i++) {
+                            if (line[0].equals(nuovoArrayUtente[0])) {
+                                if (i == line.length - 1) {
+                                    writer.append(nuovoArrayUtente[i]).append("\n");
+                                    System.out.print(nuovoArrayUtente[i]);
+                                } else {
+                                    writer.append(nuovoArrayUtente[i]).append(",");
+                                    System.out.print(nuovoArrayUtente[i] + ",");
+                                }
+                            } else if (i == line.length - 1) {
+                                writer.append(line[i]).append("\n");
+                                System.out.print(line[i]);
                             } else {
-                                writer.append(nuovoArrayUtente[i]).append(",");
-                                System.out.print(nuovoArrayUtente[i] + ",");
+                                writer.append(line[i]).append(",");
+                                System.out.print(line[i] + ",");
+                            }
+
+                        }
+                        System.out.println();
+
+                    }
+
+                } catch (FileNotFoundException e) {
+                    throw new IOException("File CSV non trovato: " + filePath);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            // --------------------------------
+
+            File file = new File(filePath);
+            try (FileWriter writer = new FileWriter(file)) {
+                try (CSVReader reader = new CSVReader(new FileReader(filePath2))) {
+                    String[] line;
+
+                    while ((line = reader.readNext()) != null) {
+                        for (int i = 0; i < line.length; i++) {
+                            if (i == line.length - 1) {
+                                writer.append(line[i]).append("\n");
+                                System.out.print(line[i]);
+                            } else {
+                                writer.append(line[i]).append(",");
+                                System.out.print(line[i] + ",");
                             }
                         }
 
-                        else if (i == line.length - 1) {
-                            writer.append(line[i]).append("\n");
-                            System.out.print(line[i]);
-                        } else {
-                            writer.append(line[i]).append(",");
-                            System.out.print(line[i] + ",");
-                        }
-
-                    }
-                    System.out.println();
-
-                }
-
-            } catch (FileNotFoundException e) {
-                throw new IOException("File CSV non trovato: " + filePath);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // --------------------------------
-
-        File file = new File(filePath);
-        try (FileWriter writer = new FileWriter(file)) {
-            try (CSVReader reader = new CSVReader(new FileReader(filePath2))) {
-                String[] line;
-
-                while ((line = reader.readNext()) != null) {
-                    for (int i = 0; i < line.length; i++) {
-                        if (i == line.length - 1) {
-                            writer.append(line[i]).append("\n");
-                            System.out.print(line[i]);
-                        } else {
-                            writer.append(line[i]).append(",");
-                            System.out.print(line[i] + ",");
-                        }
                     }
 
+                } catch (FileNotFoundException e) {
+                    throw new IOException("File CSV non trovato: " + filePath);
                 }
 
-            } catch (FileNotFoundException e) {
-                throw new IOException("File CSV non trovato: " + filePath);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
         // stoppa timer
         time.setTime("0:0:0");
