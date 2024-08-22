@@ -238,10 +238,11 @@ public class esRispMult extends ChangeStage implements Initializable {
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
+        if(rb_r1.isSelected() || rb_r2.isSelected() ||rb_r3.isSelected() ||rb_r4.isSelected()){
         Risposta();
         timeline.stop();
         // -----------------cambio stage ConfermaEs--------------------
-        fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");}}
     }
 
-}
+

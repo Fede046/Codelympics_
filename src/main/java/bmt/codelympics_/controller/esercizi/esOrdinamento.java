@@ -75,7 +75,6 @@ public class esOrdinamento extends ChangeStage implements Initializable {
     @FXML
     private Text txt_timer;
 
-
     DataSingleton data = DataSingleton.getInstance();
     Time time = Time.getInstance();
 
@@ -279,30 +278,3 @@ public class esOrdinamento extends ChangeStage implements Initializable {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

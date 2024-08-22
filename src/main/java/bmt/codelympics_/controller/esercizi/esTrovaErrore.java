@@ -271,10 +271,13 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
-        timeline.stop();
-        Risposta();
-        // -----------------cambio stage ConfermaEs--------------------
-        fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        if (rb_r1.isSelected() || rb_r2.isSelected() || rb_r3.isSelected() || rb_r4.isSelected()) {
+
+            timeline.stop();
+            Risposta();
+            // -----------------cambio stage ConfermaEs--------------------
+            fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        }
     }
 
     @FXML

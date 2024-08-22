@@ -29,7 +29,6 @@ public class esVF extends ChangeStage implements Initializable {
     @FXML
     private Text txt_timer;
 
-
     @FXML
     private ToggleGroup VF;
 
@@ -161,10 +160,12 @@ public class esVF extends ChangeStage implements Initializable {
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
-        timeline.stop();
-        Risposta();
-        // -----------------cambio stage ConfermaEs--------------------
-        fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        if (rb_falso.isSelected() || rb_vero.isSelected()) {
+            timeline.stop();
+            Risposta();
+            // -----------------cambio stage ConfermaEs--------------------
+            fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        }
     }
 
 }
