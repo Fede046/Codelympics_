@@ -104,7 +104,7 @@
 	-fx-background-position:center;
 }
 #img_gifError{
-	-fx-background-image:url(img/esercizi/emojicrying.gif);
+	-fx-background-image:url(img/esercizi/img_errore.png);
 	-fx-background-size: cover;
 	-fx-background-repeat:no-repeat;
 	-fx-background-position:center;
