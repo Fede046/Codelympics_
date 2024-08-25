@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import com.opencsv.CSVReader;
 
@@ -250,7 +251,7 @@ public class medagliere extends ChangeStage implements Initializable {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
-                if (item == null || empty) {
+                if (item == null || item.trim().isEmpty()) {
                     setText(null);
                     setStyle("");
                 } else {
