@@ -1,12 +1,9 @@
 
 package bmt.codelympics_.controller.transizioni;
 
-import java.io.File;
 import java.net.URL;
-import java.net.URLDecoder;
+
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
@@ -45,9 +42,6 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
         else
             ContinuaEsercizio();
 
-        // -----------------cambio stage esercizio Multipla--------------------
-        // fuc_changeStage(btn_Avanti,
-        // "/bmt/codelympics_/fxml/esercizi/EsRispMult.fxml");
     }
 
     void ContinuaEsercizio() throws Exception {
@@ -77,6 +71,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
 
     }
 
+    // impostazione del suono
     private void playHitSound(String fileName) {
         URL resource = getClass().getResource("/bmt/codelympics_/" + fileName);
         if (resource == null) {
@@ -92,6 +87,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
 
     }
 
+    // ------------------------------------------------
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         boolean ris = true;
@@ -112,6 +108,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
             ris = false;
 
         }
+        // impostazioni delle gif
         switch (data.getStringaMedaglia()) {
             case 4, 5, 6:
                 if (!ris)

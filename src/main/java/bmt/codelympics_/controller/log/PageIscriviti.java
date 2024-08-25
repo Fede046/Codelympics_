@@ -2,7 +2,7 @@ package bmt.codelympics_.controller.log;
 
 import bmt.codelympics_.model.ChangeStage;
 import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,15 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-
 import bmt.codelympics_.model.Encryptor;
-
-import java.io.*;
-import java.nio.file.Paths;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
-
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 // Classe controller per la schermata di registrazione degli utenti
@@ -138,10 +137,12 @@ public class PageIscriviti extends ChangeStage {
     boolean controlEqualsUsernameAndMail(String username, String mail) throws Exception {
         seeUsernameAndMail(); // Carica i dati dal file
         if (loginInfo.containsKey(username)) { // Controlla se l'username esiste già
+            lbl_error.setText("Errore username già in uso");
             lbl_error.setVisible(true);
             return false;
         }
         if (loginInfo.containsValue(mail)) { // Controlla se l'email esiste già
+            lbl_error.setText("Errore mail già in uso");
             lbl_error.setVisible(true);
             return false;
         }

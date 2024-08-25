@@ -9,6 +9,7 @@ public class User {
     private int bro;
     private int oro;
 
+    // costruttori
     public User(String avatar, String user, int pt, int oro, int arg, int bro) {
         this.avatar = avatar;
         this.user = user;
@@ -28,6 +29,7 @@ public class User {
         this.pt = pt;
     }
 
+    // get e set
     public int getId() {
         return id;
     }

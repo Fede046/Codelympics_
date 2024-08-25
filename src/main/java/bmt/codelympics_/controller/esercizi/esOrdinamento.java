@@ -7,11 +7,11 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
+
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 import bmt.codelympics_.model.Time;
@@ -76,6 +76,8 @@ public class esOrdinamento extends ChangeStage implements Initializable {
     private Text txt_timer;
 
     DataSingleton data = DataSingleton.getInstance();
+
+    // impostazione del timer
     Time time = Time.getInstance();
 
     @FXML
@@ -87,20 +89,17 @@ public class esOrdinamento extends ChangeStage implements Initializable {
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
-
         timeline.stop();
         Risposta();
-
         // -----------------cambio stage ConfermaEs--------------------
         fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
     }
 
+    // metodo di risposta
     void Risposta() throws Exception {
         data.setNumEsercizio(data.getNumEsercizio() + 1);
         boolean temp = false;
         ObjectMapper objectMapper = new ObjectMapper();
-
-        // ------------------- aggiunto
 
         try (InputStream inputStream = getClass().getResourceAsStream(
                 "/bmt/codelympics_/EserciziDoc/Ordinamento/RisposteO.json")) {
@@ -206,6 +205,7 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                 txt_timer.setText(time.getCurrentTime());
             }));
 
+    // ---------------------------------------------------------------------------------------
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         txt_timer.setText(time.getCurrentTime());
@@ -226,6 +226,7 @@ public class esOrdinamento extends ChangeStage implements Initializable {
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
 
+            // impostazione del gioco
             switch (data.getStringaMedaglia()) {
                 case 22:
                     solution.remove(5);

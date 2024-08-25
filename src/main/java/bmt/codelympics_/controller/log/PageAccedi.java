@@ -3,9 +3,9 @@ package bmt.codelympics_.controller.log;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
+
 import java.util.HashMap;
-import java.util.Scanner;
+
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
@@ -19,7 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.image.ImageView;
+
 
 // Classe controller per la schermata di login
 public class PageAccedi extends ChangeStage {

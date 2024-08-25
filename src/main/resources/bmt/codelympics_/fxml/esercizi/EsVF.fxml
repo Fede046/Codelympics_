@@ -55,7 +55,7 @@
                   <Insets bottom="25.0" left="200.0" right="200.0" top="25.0" />
                </GridPane.margin>
             </Button>
-            <RadioButton fx:id="rb_vero" mnemonicParsing="false" GridPane.rowIndex="1">
+            <RadioButton fx:id="rb_vero" maxWidth="800.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="245.0" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="170.0" />
                </GridPane.margin>

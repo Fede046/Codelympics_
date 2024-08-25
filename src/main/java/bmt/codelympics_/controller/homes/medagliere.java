@@ -8,21 +8,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
+
 
 import com.opencsv.CSVReader;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import bmt.codelympics_.model.User;
-import javafx.beans.property.ReadOnlyStringWrapper;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Labeled;
+
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -190,11 +189,17 @@ public class medagliere extends ChangeStage implements Initializable {
         for (String[] utente : utentiArray) {
             System.out.println(Arrays.toString(utente));
         }
-        // ordina matroice in base al punteggio
+
+        // ordina matrice in base al punteggio
         bubbleSort(utentiArray);
+
         // contatore per id progressivo
         int idCounter = 1;
-
+        // ObservableList è una lista che è osservabile per i cambiamenti, quando gli
+        // elementi in questa lista vengono aggiunti, rimossi o modificati, la TableView
+        // si aggiorna automaticamente per riflettere questi cambiamenti.
+        // FXCollections.observableArrayList è un metodo statico che crea un'istanza di
+        // ObservableList
         ObservableList<User> list = FXCollections.observableArrayList(
                 new User(arrayUtente[3], arrayUtente[0], calcolaPunti(arrayUtente), calcolaMedaglieOro(arrayUtente),
                         calcolaMedaglieArg(arrayUtente),
@@ -206,6 +211,8 @@ public class medagliere extends ChangeStage implements Initializable {
                             calcolaMedaglieOro(utentiArray[i]),
                             calcolaMedaglieArg(utentiArray[i]), calcolaMedaglieBro(utentiArray[i])));
         }
+
+        // impostazione delle classi
         tbc_oroAll.getStyleClass().add("oro-header");
         tbc_argAll.getStyleClass().add("argento-header");
         tbc_broAll.getStyleClass().add("bronzo-header");
@@ -222,7 +229,6 @@ public class medagliere extends ChangeStage implements Initializable {
         tbc_argAll.setCellValueFactory(new PropertyValueFactory<>("arg"));
         tbc_broAll.setCellValueFactory(new PropertyValueFactory<>("bro"));
 
-        // -------------------
         tbc_Avatar.setCellValueFactory(new PropertyValueFactory<>("avatar"));
         tbc_User.setCellValueFactory(new PropertyValueFactory<>("user"));
         tbc_pt.setCellValueFactory(new PropertyValueFactory<>("pt"));
@@ -234,6 +240,7 @@ public class medagliere extends ChangeStage implements Initializable {
         tb_User.setItems(list);
         tb_allUsers.setItems(list2);
 
+        // impostazione del colore delle celle
         tbc_AvatarAll.setCellFactory(column -> new TableCell<User, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -250,7 +257,6 @@ public class medagliere extends ChangeStage implements Initializable {
                             String rgbColor = hexColor.substring(2); // Rimuove i primi 2 caratteri (Alpha)
                             setStyle("-fx-background-color: #" + rgbColor + ";" + "-fx-text-fill: #" + rgbColor + ";");
                         } else {
-                            javafx.scene.paint.Color color = javafx.scene.paint.Color.web(item);
                             setStyle("-fx-background-color: " + item + ";" + "-fx-text-fill:" + item + ";");
                         }
                     } catch (IllegalArgumentException e) {
@@ -259,6 +265,7 @@ public class medagliere extends ChangeStage implements Initializable {
                 }
             }
         });
+
         tbc_Avatar.setCellFactory(column -> new TableCell<User, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -279,7 +286,7 @@ public class medagliere extends ChangeStage implements Initializable {
                             setStyle("-fx-background-color: #" + rgbColor + ";" + "-fx-text-fill: #" + rgbColor + ";");
                         } else {
                             // Gestisce i colori nel formato esadecimale normale
-                            javafx.scene.paint.Color color = javafx.scene.paint.Color.web(item);
+                            
                             setStyle("-fx-background-color: " + item + ";" + "-fx-text-fill:" + item + ";");
 
                         }

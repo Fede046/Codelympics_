@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.*;
 import java.net.URL;
-import java.util.HashMap;
+
 import java.util.ResourceBundle;
 
 public class transFineGame extends ChangeStage implements Initializable {
@@ -60,7 +60,7 @@ public class transFineGame extends ChangeStage implements Initializable {
                 + Integer.parseInt(array[2]) / 2;
         if (pt * 200 - variabileTempoINT < 0)
             return 0;
-        System.out.println(pt * 200 - variabileTempoINT);
+
         return pt * 200 - variabileTempoINT;// varia secondo quanto tempo ci metto
                                             // -------------------------------------------
     }
@@ -71,15 +71,8 @@ public class transFineGame extends ChangeStage implements Initializable {
         String[] nuovoArrayUtente = data.getArrayUtente();
 
         int stringaPunti = data.getStringaMedaglia() + 3;
-        System.out.println(Integer.parseInt(nuovoArrayUtente[stringaPunti]) - nuovoPunteggio());
-        if(Integer.parseInt(nuovoArrayUtente[stringaPunti]) < nuovoPunteggio()) {
+        if (Integer.parseInt(nuovoArrayUtente[stringaPunti]) < nuovoPunteggio()) {
 
-
-
-
-            System.out.println(data.getArrayUtente()[data.getStringaMedaglia()]);
-            System.out.println(data.getArrayUtente()[stringaPunti]);
-            System.out.println();
             // il nuomero di risposte giuste corrisponde alla medaglia
             // (5=oro,4=aregento,3=bronzo)
             nuovoArrayUtente[data.getStringaMedaglia()] = Integer.toString(pt);
@@ -91,37 +84,31 @@ public class transFineGame extends ChangeStage implements Initializable {
             String filePath2 = System.getProperty("user.home") + "/playproj/props2.csv";
             String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
-            // String filePath2 = "C:\\playproj\\props2.csv";
-            // String filePath = "C:\\playproj\\props.csv";
-
-
             File file2 = new File(filePath2);
             try (FileWriter writer = new FileWriter(file2)) {
                 try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
                     String[] line;
 
                     while ((line = reader.readNext()) != null) {
-                        System.out.println(line[0]);
 
                         for (int i = 0; i < line.length; i++) {
                             if (line[0].equals(nuovoArrayUtente[0])) {
                                 if (i == line.length - 1) {
                                     writer.append(nuovoArrayUtente[i]).append("\n");
-                                    System.out.print(nuovoArrayUtente[i]);
+
                                 } else {
                                     writer.append(nuovoArrayUtente[i]).append(",");
-                                    System.out.print(nuovoArrayUtente[i] + ",");
+
                                 }
                             } else if (i == line.length - 1) {
                                 writer.append(line[i]).append("\n");
-                                System.out.print(line[i]);
+
                             } else {
                                 writer.append(line[i]).append(",");
-                                System.out.print(line[i] + ",");
+
                             }
 
                         }
-                        System.out.println();
 
                     }
 
@@ -143,10 +130,10 @@ public class transFineGame extends ChangeStage implements Initializable {
                         for (int i = 0; i < line.length; i++) {
                             if (i == line.length - 1) {
                                 writer.append(line[i]).append("\n");
-                                System.out.print(line[i]);
+
                             } else {
                                 writer.append(line[i]).append(",");
-                                System.out.print(line[i] + ",");
+
                             }
                         }
 
@@ -160,7 +147,7 @@ public class transFineGame extends ChangeStage implements Initializable {
                 e.printStackTrace();
             }
         }
-        // stoppa timer
+        // stop timer
         time.setTime("0:0:0");
         // -----------------cambio stage gamesHome--------------------
         fuc_changeStage(btn_GoHome, "/bmt/codelympics_/fxml/gamesHome/playGames.fxml");
@@ -178,6 +165,7 @@ public class transFineGame extends ChangeStage implements Initializable {
                         new Image(getClass().getResourceAsStream("/bmt/codelympics_/img/home/medagliaBronzo.png")));
                 img_medal2.setImage(
                         new Image(getClass().getResourceAsStream("/bmt/codelympics_/img/home/medagliaBronzo.png")));
+                StringaFinale();
                 break;
             case 4:
                 lbl_textUp.setText("Medaglia d'Argento!");
@@ -185,19 +173,31 @@ public class transFineGame extends ChangeStage implements Initializable {
                         new Image(getClass().getResourceAsStream("/bmt/codelympics_/img/home/medagliaArgento.png")));
                 img_medal2.setImage(
                         new Image(getClass().getResourceAsStream("/bmt/codelympics_/img/home/medagliaArgento.png")));
+                StringaFinale();
                 break;
+
             case 5:
                 lbl_textUp.setText("Medaglia d'Oro!");
                 img_medal.setImage(
                         new Image(getClass().getResourceAsStream("/bmt/codelympics_/img/home/medagliaOro.png")));
                 img_medal2.setImage(
                         new Image(getClass().getResourceAsStream("/bmt/codelympics_/img/home/medagliaOro.png")));
+                StringaFinale();
                 break;
             default:
                 lbl_textUp.setText("Nessuna Medaglia!");
                 lbl_textDown.setText("Non sei pronto per passare al prossimo livello.\nRiprova!");
                 img_medal.setVisible(false);
                 break;
+        }
+
+    }
+
+    public void StringaFinale() {
+        if (data.getStringaMedaglia() == 6 || data.getStringaMedaglia() == 12 || data.getStringaMedaglia() == 18
+                || data.getStringaMedaglia() == 24) {
+            lbl_textDown.setText("Ora sei pronto per passare al prossimo gioco.\nChe l'avventura continui!");
+
         }
     }
 

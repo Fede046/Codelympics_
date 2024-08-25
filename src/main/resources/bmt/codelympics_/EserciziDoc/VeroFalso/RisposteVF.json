@@ -52,8 +52,8 @@
 
 	"difficile":[
 	{
-		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, o true se due oggetti sono uguali \nsecondo equals, devono avere lo stesso valore di hashCode.",
-		"sol":"true"
+		"domanda":"In Java, il metodo equals e il metodo hashCode devono essere coerenti, o true se due oggetti sono uguali \nsecondo equals, non devono avere lo stesso valore di hashCode.",
+		"sol":"false"
 	},
 	{
 		"domanda":"In Java, una classe astratta può implementare dei metodi definiti in un'interfaccia, senza dover implementare \ntutti i metodi dell'interfaccia.",
@@ -65,8 +65,8 @@
 		"sol":"true"
 	},
 	{
-		"domanda":"In Java, l'implementazione di una HashMap è basata su una tabella hash che ridimensiona automaticamente\n la sua capacità quando viene superata una soglia di carico (load factor) specifica.",
-		"sol":"true"
+		"domanda":"In Java, l'implementazione di una HashMap non è basata su una tabella hash che ridimensiona automaticamente\n la sua capacità quando viene superata una soglia di carico (load factor) specifica.",
+		"sol":"false"
 
 	},
 	{

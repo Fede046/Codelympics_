@@ -5,32 +5,22 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.util.Duration;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
 import bmt.codelympics_.model.Time;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 
 public class esTrovaErrore extends ChangeStage implements Initializable {
     @FXML
@@ -69,9 +59,10 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
     @FXML
     private RadioButton rb_r4;
 
-    Time time = Time.getInstance();
     DataSingleton data = DataSingleton.getInstance();
 
+    // impostazione del timer
+    Time time = Time.getInstance();
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1),
                     e -> {
@@ -80,6 +71,7 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                         txt_timer.setText(time.getCurrentTime());
                     }));
 
+    // -------------------------------------------------------------------------
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         txt_timer.setText(time.getCurrentTime());
@@ -97,6 +89,7 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
 
+            // impostazione delle informazioni di gioco
             switch (data.getStringaMedaglia()) {
                 case 16:
                     JsonNode baseNode = rootNode.path("base");
@@ -109,25 +102,21 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                     InputStream inStream = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/base/" + image11);
                     Image imageObject = new Image(inStream);
-                    ImageView image2 = new ImageView(imageObject);
                     img_1.setImage(imageObject);
 
                     InputStream inStream12 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/base/" + image12);
                     Image imageObject12 = new Image(inStream12);
-                    ImageView image212 = new ImageView(imageObject12);
                     img_2.setImage(imageObject12);
 
                     InputStream inStream13 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/base/" + image13);
                     Image imageObject13 = new Image(inStream13);
-                    ImageView image213 = new ImageView(imageObject13);
                     img_3.setImage(imageObject13);
 
                     InputStream inStream14 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/base/" + image14);
                     Image imageObject14 = new Image(inStream14);
-                    ImageView image214 = new ImageView(imageObject14);
                     img_4.setImage(imageObject14);
 
                     break;
@@ -143,28 +132,24 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                             .getResourceAsStream(
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image21);
                     Image imageObject21 = new Image(inStream21);
-                    ImageView image221 = new ImageView(imageObject21);
                     img_1.setImage(imageObject21);
 
                     InputStream inStream22 = getClass()
                             .getResourceAsStream(
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image22);
                     Image imageObject22 = new Image(inStream22);
-                    ImageView image222 = new ImageView(imageObject22);
                     img_2.setImage(imageObject22);
 
                     InputStream inStream23 = getClass()
                             .getResourceAsStream(
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image23);
                     Image imageObject23 = new Image(inStream23);
-                    ImageView image223 = new ImageView(imageObject23);
                     img_3.setImage(imageObject23);
 
                     InputStream inStream24 = getClass()
                             .getResourceAsStream(
                                     "/bmt/codelympics_/EserciziDoc/TrovaErrore/intermedio/" + image24);
                     Image imageObject24 = new Image(inStream24);
-                    ImageView image224 = new ImageView(imageObject24);
                     img_4.setImage(imageObject24);
                     break;
                 case 18:
@@ -178,25 +163,21 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                     InputStream inStream31 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image31);
                     Image imageObject31 = new Image(inStream31);
-                    ImageView image231 = new ImageView(imageObject31);
                     img_1.setImage(imageObject31);
 
                     InputStream inStream32 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image32);
                     Image imageObject32 = new Image(inStream32);
-                    ImageView image322 = new ImageView(imageObject32);
                     img_2.setImage(imageObject32);
 
                     InputStream inStream33 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image33);
                     Image imageObject33 = new Image(inStream33);
-                    ImageView image233 = new ImageView(imageObject33);
                     img_3.setImage(imageObject33);
 
                     InputStream inStream34 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/difficile/" + image34);
                     Image imageObject34 = new Image(inStream34);
-                    ImageView image234 = new ImageView(imageObject34);
                     img_4.setImage(imageObject34);
                     break;
             }
@@ -207,12 +188,11 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
 
     }
 
+    // metodo per le risposte
     void Risposta() throws Exception {
         data.setNumEsercizio(data.getNumEsercizio() + 1);
         boolean temp = false;
         ObjectMapper objectMapper = new ObjectMapper();
-
-        // ------------------- aggiunto
 
         try (InputStream inputStream = getClass()
                 .getResourceAsStream("/bmt/codelympics_/EserciziDoc/TrovaErrore/RisposteE.json")) {
@@ -235,7 +215,6 @@ public class esTrovaErrore extends ChangeStage implements Initializable {
                         temp = true;
                     if (rb_r4.isSelected() && c.equals("r4"))
                         temp = true;
-                    System.err.println(temp);
 
                     break;
                 case 17:

@@ -4,7 +4,7 @@ import javafx.util.Duration;
 
 import bmt.codelympics_.model.ChangeStage;
 import bmt.codelympics_.model.DataSingleton;
-import java.io.File;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -48,6 +48,8 @@ public class esVF extends ChangeStage implements Initializable {
     private RadioButton rb_vero;
 
     DataSingleton data = DataSingleton.getInstance();
+
+    //impostazione del timer
     Time time = Time.getInstance();
 
     Timeline timeline = new Timeline(
@@ -57,11 +59,10 @@ public class esVF extends ChangeStage implements Initializable {
                         time.oneSecondPassed();
                         txt_timer.setText(time.getCurrentTime());
                     }));
-
+//-------------------------------------------------------------------
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         txt_timer.setText(time.getCurrentTime());
-
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
         ObjectMapper objectMapper = new ObjectMapper();

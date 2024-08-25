@@ -20,13 +20,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 public class esRispMult extends ChangeStage implements Initializable {
@@ -73,8 +70,9 @@ public class esRispMult extends ChangeStage implements Initializable {
     private RadioButton rb_r4;
 
     DataSingleton data = DataSingleton.getInstance();
-    Time time = Time.getInstance();
 
+    // impostazione timer
+    Time time = Time.getInstance();
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1), e -> {
 
@@ -82,16 +80,17 @@ public class esRispMult extends ChangeStage implements Initializable {
                 txt_timer.setText(time.getCurrentTime());
             }));
 
+    // -------------------------------------------------------------------------------
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        // time
         txt_timer.setText(time.getCurrentTime());
-
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // --------aggiunto per leggere il file quando uso il .jar (InputStream serve
-        // per leggere un file all'interno del .jar)
+        // aggiunto per leggere il file quando uso il .jar (InputStream serve per
+        // leggere un file all'interno del .jar)
         try (InputStream inputStream = getClass()
                 .getResourceAsStream("/bmt/codelympics_/EserciziDoc/RisposteMultiple/RisposteRM.json")) {
             if (inputStream == null) {
@@ -99,11 +98,11 @@ public class esRispMult extends ChangeStage implements Initializable {
             }
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
-//----------------------------------
 
+            // impostazione della schermata di gioco
             switch (data.getStringaMedaglia()) {
                 case 4:
-                    //--------------------------
+                    // --------------------------
                     JsonNode baseNode = rootNode.path("base");
                     String c = baseNode.get(data.getNumEsercizio()).path("domanda").asText();
                     lb_domanda.setText(c);
@@ -117,7 +116,6 @@ public class esRispMult extends ChangeStage implements Initializable {
                     InputStream inStream = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/RisposteMultiple/base/" + image);
                     Image imageObject = new Image(inStream);
-                    ImageView image2 = new ImageView(imageObject);
                     img_RM.setImage(imageObject);
 
                     break;
@@ -136,10 +134,8 @@ public class esRispMult extends ChangeStage implements Initializable {
                     InputStream inStream2 = getClass().getResourceAsStream(
                             "/bmt/codelympics_/EserciziDoc/RisposteMultiple/Intermedio/" + image21);
                     Image imageObject2 = new Image(inStream2);
-                    ImageView image22 = new ImageView(imageObject2);
                     img_RM.setImage(imageObject2);
                     break;
-
 
                 case 6:
                     JsonNode baseNode3 = rootNode.path("difficile");
@@ -154,11 +150,9 @@ public class esRispMult extends ChangeStage implements Initializable {
                     InputStream inStream3 = getClass()
                             .getResourceAsStream("/bmt/codelympics_/EserciziDoc/RisposteMultiple/Difficile/" + image23);
                     Image imageObject3 = new Image(inStream3);
-                    ImageView image24 = new ImageView(imageObject3);
                     img_RM.setImage(imageObject3);
                     break;
             }
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -173,12 +167,11 @@ public class esRispMult extends ChangeStage implements Initializable {
         fuc_changeStage(btn_ConfermaExit, "/bmt/codelympics_/fxml/transizioni/AbbandonaGame.fxml");
     }
 
+    // metodo per leggere le risposte
     void Risposta() throws Exception {
         data.setNumEsercizio(data.getNumEsercizio() + 1);
         boolean temp = false;
         ObjectMapper objectMapper = new ObjectMapper();
-
-        // ------------------- aggiunto
 
         try (InputStream inputStream = getClass().getResourceAsStream(
                 "/bmt/codelympics_/EserciziDoc/RisposteMultiple/RisposteRM.json")) {
@@ -187,7 +180,7 @@ public class esRispMult extends ChangeStage implements Initializable {
             }
 
             JsonNode rootNode = objectMapper.readTree(inputStream);
-
+            // impostazione delle risposte
             switch (data.getStringaMedaglia()) {
                 case 4:
                     JsonNode baseNode = rootNode.path("base");
@@ -201,7 +194,6 @@ public class esRispMult extends ChangeStage implements Initializable {
                         temp = true;
                     if (rb_r4.isSelected() && c.equals(btn_r4.getText()))
                         temp = true;
-                    System.err.println(temp);
                     break;
                 case 5:
                     JsonNode baseNode2 = rootNode.path("intermedio");
@@ -229,20 +221,18 @@ public class esRispMult extends ChangeStage implements Initializable {
                     break;
             }
 
-            // int[] risp = new int[] { temp };
             data.addarrayDirisposte(temp);
-            // data.risposta(data.getNumEsercizio(), risp));
         }
 
     }
 
     @FXML
     void func_Conferma(MouseEvent event) throws Exception {
-        if(rb_r1.isSelected() || rb_r2.isSelected() ||rb_r3.isSelected() ||rb_r4.isSelected()){
-        Risposta();
-        timeline.stop();
-        // -----------------cambio stage ConfermaEs--------------------
-        fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");}}
+        if (rb_r1.isSelected() || rb_r2.isSelected() || rb_r3.isSelected() || rb_r4.isSelected()) {
+            Risposta();
+            timeline.stop();
+            // -----------------cambio stage ConfermaEs--------------------
+            fuc_changeStage(btn_Conferma, "/bmt/codelympics_/fxml/transizioni/ConfermaEs.fxml");
+        }
     }
-
-
+}
