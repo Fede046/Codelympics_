@@ -33,13 +33,10 @@ import javafx.scene.layout.AnchorPane;
 public class medagliere extends ChangeStage implements Initializable {
     @FXML
     private Button btn_GoHome;
-
     @FXML
     private AnchorPane p_1;
-
     @FXML
     private TableView<User> tb_User;
-
     @FXML
     private TableView<User> tb_allUsers;
     @FXML
@@ -50,54 +47,42 @@ public class medagliere extends ChangeStage implements Initializable {
     private TableColumn<User, String> tbc_Avatar;
     @FXML
     private TableColumn<User, String> tbc_User;
-
     @FXML
     private TableColumn<User, String> tbc_UserAll;
-
     @FXML
     private TableColumn<User, String> tbc_arg;
-
     @FXML
     private TableColumn<User, String> tbc_argAll;
-
     @FXML
     private TableColumn<User, String> tbc_bro;
-
     @FXML
     private TableColumn<User, String> tbc_broAll;
-
     @FXML
     private TableColumn<User, String> tbc_oro;
-
     @FXML
     private TableColumn<User, String> tbc_oroAll;
-
     @FXML
     private TableColumn<User, String> tbc_pt;
-
     @FXML
     private TableColumn<User, String> tbc_ptAll;
 
     DataSingleton data = DataSingleton.getInstance();
 
+    // List di tutti gli utenti registrati
     private List<String[]> utenti = new ArrayList<>();
-
+    // array dell'utente che ha eseguito l'accesso
     String[] arrayUtente = data.getArrayUtente();
 
     ObservableList<User> list2 = FXCollections.observableArrayList();
 
+    // metodo per leggere tutti gli utenti registrati
     public void CatchUsers() throws Exception {
         String filePath = System.getProperty("user.home") + "/playproj/props.csv";
 
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
             String[] line;
             while ((line = reader.readNext()) != null) {
-                utenti.add(line); // Aggiungi la riga all'array di array
-            }
-
-            // Stampa per verifica
-            for (String[] utente : utenti) {
-                System.out.println(Arrays.toString(utente));
+                utenti.add(line);
             }
 
         } catch (FileNotFoundException e) {
@@ -105,13 +90,13 @@ public class medagliere extends ChangeStage implements Initializable {
         }
     }
 
+    // Converte la List in un array bidimensionale
     public String[][] getArrayUtenti() {
-        // Converte la List in un array bidimensionale
         return utenti.toArray(new String[0][]);
     }
 
+    // metodo per calcolare i pt totali
     int calcolaPunti(String[] array) {
-        System.out.println(array[0]);
         int tot = 0;
         int[] n = { 7, 8, 9, 13, 14, 15, 19, 20, 21, 25, 26, 27 };
         for (int i = 0; i < n.length; i++) {
@@ -122,8 +107,9 @@ public class medagliere extends ChangeStage implements Initializable {
         return tot;
     }
 
+    // metodo per calcolare il numero di medaglie
+    // ---------------------------------------------------------------------------
     int calcolaMedaglieOro(String[] array) {
-        System.out.println(array[0]);
         int tot = 0;
         int[] n = { 4, 5, 6, 10, 11, 12, 16, 17, 18, 22, 23, 24 };
         for (int i = 0; i < n.length; i++) {
@@ -161,7 +147,7 @@ public class medagliere extends ChangeStage implements Initializable {
         return tot;
     }
 
-    /**********************************************************************************************/
+    // metodo per ordinare la lista degli utenti in ordine di punteggio
     public void bubbleSort(String[][] matrice) {
         int n = matrice.length;
         boolean scambiato;
@@ -185,6 +171,7 @@ public class medagliere extends ChangeStage implements Initializable {
         }
     }
 
+    // --------------------------------------------------------------------------
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
