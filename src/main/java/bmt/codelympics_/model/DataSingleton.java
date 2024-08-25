@@ -13,7 +13,6 @@ public class DataSingleton {
     private int numEsercizio;
 
     private String[] arrayUtente = new String[12];
-    private String[] arrayUtenti = new String[100];
     DataSingleton data = DataSingleton.getInstance();
 
 
@@ -53,13 +52,6 @@ public class DataSingleton {
         this.arrayUtente = arrayUtente;
     }
 
-    public String[] getArrayUtenti() {
-        return arrayUtenti;
-    }
-
-    public void setArrayUtenti(String[] arrayUtenti) {
-        this.arrayUtenti = arrayUtenti;
-    }
     // trova l'esercizio con la difficoltà giusta e lo cambia nel csv (solo se ci
     // sono miglioramenti)
 

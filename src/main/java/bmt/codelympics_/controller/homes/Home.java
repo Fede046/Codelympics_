@@ -1,7 +1,7 @@
 package bmt.codelympics_.controller.homes;
 
+// Import delle classi necessarie da altri pacchetti e librerie
 import bmt.codelympics_.model.ChangeStage;
-import bmt.codelympics_.model.SalvaDimensioni;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -13,51 +13,48 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+// Classe che estende ChangeStage e implementa Initializable, utilizzata per controllare la finestra "Home"
 public class Home extends ChangeStage implements Initializable {
 
     @FXML
-    private Button btn_accedi;
+    private Button btn_accedi; // Bottone per l'accesso
 
     @FXML
-    private Button btn_iscriviti;
+    private Button btn_iscriviti; // Bottone per l'iscrizione
 
+    // Metodo chiamato quando il bottone "Accedi" viene cliccato
     @FXML
     void func_accedi(MouseEvent event) throws Exception {
-
-        // -----------------cambio stage accedi--------------------
+        // Cambia lo stage all'interfaccia di login (accedi.fxml)
         fuc_changeStage(btn_accedi, "/bmt/codelympics_/fxml/log/accedi.fxml");
-
     }
 
+    // Metodo chiamato quando il bottone "Iscriviti" viene cliccato
     @FXML
     void func_iscriviti(MouseEvent event) throws Exception {
-        // -----------------cambio stage iscriviti--------------------
+        // Cambia lo stage all'interfaccia di iscrizione (iscriviti.fxml)
         fuc_changeStage(btn_iscriviti, "/bmt/codelympics_/fxml/log/iscriviti.fxml");
-
     }
 
+    // Metodo initialize, chiamato automaticamente alla creazione del controller
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        // String directoryPath =System.getProperty("user.home") +
-        // "/playproj/props.csv";
+        // Percorso della cartella utente dove verrà salvato il file
         String directoryPath = System.getProperty("user.home") + "\\playproj";
-        String filePath = directoryPath+"\\props.csv";
-
-       // String directoryPath = "C:\\playproj";
-       // String filePath = directoryPath + "\\props.csv";
+        // Percorso completo del file CSV
+        String filePath = directoryPath + "\\props.csv";
 
         // Crea la cartella se non esiste
         File directory = new File(directoryPath);
         if (!directory.exists()) {
-            directory.mkdirs();
+            directory.mkdirs(); // Crea la cartella
         }
 
         // Crea il file CSV se non esiste
         File file = new File(filePath);
         if (!file.exists()) {
             try (FileWriter writer = new FileWriter(file)) {
-                // Scrivi l'intestazione del CSV (ad esempio, se serve)
+                // Scrivi delle righe predefinite nel file CSV
                 writer.append(
                         "ale,f7a3803365a55b197a3b43bc64aacc13,ale,0xffffffff,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n");
                 writer.append(
@@ -84,9 +81,8 @@ public class Home extends ChangeStage implements Initializable {
                         "DecathlonHero, 46bfb0bdc6c315211a098a987600d4ab, DecathlonHero,#4D8080,2,0,0,380,0,0,2,0,0,381,0,0,4,2,0,785,357,0,5,5,5,958,924,976\n");
                 writer.append(
                         "OlympusRival, cb9dec095870401bdad2b97e4da4597f, OlympusRival,#FF00FF,2,0,0,314,0,0,2,0,0,333,0,0,5,4,3,932,727,528,4,3,2,743,580,396\n");
-
             } catch (IOException e) {
-                e.printStackTrace();
+                e.printStackTrace(); // Stampa lo stack trace in caso di errore
             }
         }
     }
