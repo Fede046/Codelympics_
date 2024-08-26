@@ -30,7 +30,7 @@
                   <Insets bottom="25.0" left="25.0" right="25.0" top="7.0" />
                </GridPane.margin>
                <bottom>
-                  <Button fx:id="btn_startErrore" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startErrore" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                  <Button fx:id="btn_startErrore" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startErrore" styleClass="bottoni" text="INIZIA" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
                      </BorderPane.margin>
@@ -70,7 +70,7 @@
                   <Insets bottom="25.0" left="25.0" right="25.0" top="7.0" />
                </GridPane.margin>
                <bottom>
-                  <Button fx:id="btn_startVF" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startVF" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                  <Button fx:id="btn_startVF" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startVF" styleClass="bottoni" text="INIZIA" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
                      </BorderPane.margin>
@@ -100,7 +100,7 @@
             </BorderPane>
             <BorderPane id="img_2" fx:id="img_2" maxHeight="1.7976931348623157E308" maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" styleClass="bd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <bottom>
-                  <Button fx:id="btn_startMultiple" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startMultiplo" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                  <Button fx:id="btn_startMultiple" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startMultiplo" styleClass="bottoni" text="INIZIA" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
                      </BorderPane.margin>
@@ -133,7 +133,7 @@
             </BorderPane>
             <BorderPane id="img_4" fx:id="img_4" maxHeight="1.7976931348623157E308" maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" styleClass="bd" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <bottom>
-                  <Button fx:id="btn_startRiordinamento" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startRiordina" styleClass="bottoni" text="START" BorderPane.alignment="CENTER">
+                  <Button fx:id="btn_startRiordinamento" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#func_startRiordina" styleClass="bottoni" text="INIZIA" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="10.0" left="80.0" right="80.0" top="10.0" />
                      </BorderPane.margin>
