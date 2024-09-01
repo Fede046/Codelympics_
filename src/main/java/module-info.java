@@ -8,6 +8,7 @@ module bmt.codelympics_ {
 
     requires com.opencsv;
     requires com.fasterxml.jackson.databind;
+    requires java.desktop;
 
     exports bmt.codelympics_.controller.homes;
     opens bmt.codelympics_.controller.homes to javafx.fxml;

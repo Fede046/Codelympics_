@@ -8,7 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-
+import javafx.scene.text.Font;
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -125,7 +126,7 @@ public class RegoleGioco extends ChangeStage implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String[] arrayUtente = data.getArrayUtente();
-
+        lb_txtRegole.setFont(Font.font("Verdana", javafx.scene.text.FontWeight.BOLD, 14)); // Usare il Font di JavaFX per il grassetto
         switch (data.getStringaMedaglia()) {
             case 4:
                 if (Integer.parseInt(arrayUtente[4]) < 3)
@@ -139,7 +140,8 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                 bp_img.setId("bodyRegolePesi");
                 lb_nameGame.setText("Risposta Multipla");
                 lb_txtRegole.setText(
-                        "Ti verrà posta una domanda e dovrai scegliere la risposta corretta tra le opzioni disponibili.\n"
+                        "Ti verrà posta una domanda \n" +
+                                "dovrai scegliere la risposta corretta tra le opzioni disponibili.\n"
                                 +
                                 " Solo una è quella giusta!\n" +
                                 " Conferma la tua scelta e scopri subito se hai indovinato.\n" +
