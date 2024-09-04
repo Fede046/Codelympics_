@@ -40,7 +40,7 @@ public class Home extends ChangeStage implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Percorso della cartella utente dove verrà salvato il file
-        String directoryPath = System.getProperty("user.home") + "\\playproj";
+        String directoryPath = System.getProperty("user.home") +  File.separator+"playproj";
         // Percorso completo del file CSV
         String filePath = directoryPath + "\\props.csv";
 

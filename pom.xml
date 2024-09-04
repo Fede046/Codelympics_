@@ -8,7 +8,9 @@
     <artifactId>Codelympics_</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Codelympics_</name>
+    <!--********************************-->
 
+    <!--********************************-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.10.0</junit.version>
@@ -20,13 +22,15 @@
             <artifactId>opencsv</artifactId>
             <version>5.5</version>
         </dependency>
-
+        <!--********************************-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
-            <version>21</version>
+            <version>22</version>
         </dependency>
 
+
+<!--********************************-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -36,13 +40,13 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21</version>
+            <version>22.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>21</version>
+            <version>22.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
@@ -88,13 +92,17 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>bmt.codelympics_/bmt.codelympics_.HelloApplication</mainClass>
+                            <mainClass>bmt.codelympics_/bmt.codelympics_.model.Index</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                            <jvmArgs>
+                                <jvmArg>-Dprism.forceGPU=true</jvmArg>
+                                <jvmArg>-Dprism.order=sw</jvmArg>
+                            </jvmArgs>
                         </configuration>
                     </execution>
                 </executions>
