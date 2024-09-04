@@ -42,7 +42,7 @@ public class Home extends ChangeStage implements Initializable {
         // Percorso della cartella utente dove verrà salvato il file
         String directoryPath = System.getProperty("user.home") +  File.separator+"playproj";
         // Percorso completo del file CSV
-        String filePath = directoryPath + "\\props.csv";
+        String filePath = directoryPath + File.separator+"props.csv";
 
         // Crea la cartella se non esiste
         File directory = new File(directoryPath);

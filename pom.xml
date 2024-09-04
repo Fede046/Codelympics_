@@ -2,68 +2,83 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Dichiarazione della versione del modello POM -->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Identificatori del progetto -->
     <groupId>bmt</groupId>
     <artifactId>Codelympics_</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Codelympics_</name>
-    <!--********************************-->
 
-    <!--********************************-->
+    <!-- Sezione delle proprietà del progetto -->
     <properties>
+        <!-- Definisce la codifica dei file sorgente -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Versione di JUnit utilizzata per i test -->
         <junit.version>5.10.0</junit.version>
     </properties>
 
+    <!-- Sezione delle dipendenze del progetto -->
     <dependencies>
+        <!-- Dipendenza per la libreria OpenCSV, utile per la gestione dei file CSV -->
         <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>5.5</version>
         </dependency>
-        <!--********************************-->
+
+        <!-- Dipendenza per JavaFX Media, utilizzata per la gestione dei media in JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-media</artifactId>
             <version>22</version>
         </dependency>
 
-
-<!--********************************-->
+        <!-- Dipendenza per la libreria Jackson Databind, utilizzata per la serializzazione e deserializzazione JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
         </dependency>
 
+        <!-- Dipendenza per i controlli JavaFX, fornisce componenti UI per JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>22.0.1</version>
         </dependency>
 
+        <!-- Dipendenza per FXML, utilizzata per il design dell'interfaccia utente con JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>22.0.1</version>
         </dependency>
+
+        <!-- Dipendenza per ControlsFX, fornisce controlli e widget aggiuntivi per JavaFX -->
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
             <version>11.1.2</version>
         </dependency>
+
+        <!-- Dipendenza per BootstrapFX, fornisce uno stile basato su Bootstrap per JavaFX -->
         <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.4.0</version>
         </dependency>
+
+        <!-- Dipendenza per JUnit Jupiter API, necessaria per scrivere e eseguire test con JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Dipendenza per il motore di test JUnit Jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -72,33 +87,63 @@
         </dependency>
     </dependencies>
 
+    <!-- Sezione di configurazione del processo di build -->
     <build>
         <plugins>
+            <!-- Plugin per la compilazione del progetto -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
+                    <!-- Versioni del linguaggio Java per la compilazione -->
                     <source>21</source>
                     <target>21</target>
                 </configuration>
             </plugin>
+
+            <!-- Plugin per la creazione di un JAR eseguibile "shaded" (con tutte le dipendenze incluse)
+            Combina tutte le dipendenze dichiarate nel file pom.xml in un unico JAR. Questo significa che, una volta costruito,
+            il JAR risultante conterrà anche tutte le librerie esterne necessarie per eseguire l'applicazione.
+
+            Crea un JAR eseguibile che può essere avviato direttamente con il comando java -jar,
+            includendo anche le classi necessarie per l'esecuzione dell'applicazione.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Plugin per integrare JavaFX nel processo di build Maven -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <!-- Configurazione predefinita per eseguire il progetto con il comando: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
+                            <!-- Classe principale dell'applicazione -->
                             <mainClass>bmt.codelympics_/bmt.codelympics_.model.Index</mainClass>
+                            <!-- Nome dell'applicazione per jlink -->
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
+                            <!-- Opzioni per jlink -->
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                            <!-- Opzioni JVM -->
                             <jvmArgs>
                                 <jvmArg>-Dprism.forceGPU=true</jvmArg>
                                 <jvmArg>-Dprism.order=sw</jvmArg>
