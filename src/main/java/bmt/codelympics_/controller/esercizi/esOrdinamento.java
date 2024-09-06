@@ -30,7 +30,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.scene.text.Text;
 
 public class esOrdinamento extends ChangeStage implements Initializable {
-
+    // Definizione dei bottoni e dei componenti FXML
     @FXML
     private Button btn_1;
 
