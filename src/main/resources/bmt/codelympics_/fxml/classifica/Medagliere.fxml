@@ -58,7 +58,7 @@
             <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
          </BorderPane.margin>
          <children>
-            <TableView fx:id="tb_User" maxHeight="50.0" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="544.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <TableView fx:id="tb_User" maxHeight="70.0" maxWidth="1.7976931348623157E308" minWidth="70.0" prefHeight="70.0" prefWidth="550.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <columns>
                   <TableColumn fx:id="tbc_Avatar" prefWidth="60.0" text="Avatar" />
                   <TableColumn fx:id="tbc_User" prefWidth="100.0" text="User" />
@@ -68,7 +68,7 @@
                   <TableColumn fx:id="tbc_pt" prefWidth="225.0" text="Punteggio" />
                </columns>
                <GridPane.margin>
-                  <Insets top="20.0" />
+                  <Insets top="15.0" />
                </GridPane.margin>
             </TableView>
             <TableView fx:id="tb_allUsers" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="544.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
