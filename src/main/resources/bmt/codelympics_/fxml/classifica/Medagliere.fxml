@@ -58,7 +58,7 @@
             <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
          </BorderPane.margin>
          <children>
-            <TableView fx:id="tb_User" maxHeight="70.0" maxWidth="1.7976931348623157E308" minWidth="70.0" prefHeight="70.0" prefWidth="550.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <TableView fx:id="tb_User" maxHeight="70.0" maxWidth="1.7976931348623157E308" minWidth="53.0" prefHeight="53.0" prefWidth="550.0" style="-fx-background-radius: 6;" styleClass="tabelle" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <columns>
                   <TableColumn fx:id="tbc_Avatar" prefWidth="60.0" text="Avatar" />
                   <TableColumn fx:id="tbc_User" prefWidth="100.0" text="User" />
