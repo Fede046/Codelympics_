@@ -83,7 +83,7 @@
                     <target>21</target>
                 </configuration>
             </plugin>
-            <!-- modifica da ubuntu
+            <!-- modifica per linux
             Combina tutte le dipendenze dichiarate nel file pom.xml in un unico JAR. Questo significa che, una volta costruito,
              il JAR risultante conterrà anche tutte le librerie esterne necessarie per eseguire l'applicazione.
 Crea un JAR eseguibile che può essere avviato direttamente con il comando java -jar, includendo anche le classi necessarie per l'esecuzione dell'applicazione.
