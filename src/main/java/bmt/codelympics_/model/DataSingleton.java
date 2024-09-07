@@ -1,10 +1,5 @@
 package bmt.codelympics_.model;
 
-
-
-
-
-
 public class DataSingleton {
 
     private static final DataSingleton instance = new DataSingleton();
