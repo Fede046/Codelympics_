@@ -28,15 +28,29 @@ public class ChangeStage {
             dimensions = new Double[] { 870.0, 600.0 };
         }
 
+
+        double width=0.0;
+        double height=0.0;
+
         // Salva la larghezza e l'altezza corrente dello stage, con un piccolo aggiustamento
-        double width = stage1.getWidth() - 16;
-        double height = stage1.getHeight() - 39;
+        if(!System.getProperty("os.name").toLowerCase().contains("win")) {
+            width = stage1.getWidth();
+            height = stage1.getHeight();
+        }else{
+            width = stage1.getWidth() - 16;
+            height = stage1.getHeight() - 39;
+        }
+
+
 
         // Imposta la nuova scena con il root caricato e le dimensioni calcolate
         stage1.setScene(new Scene(root, width, height));
 
         // Imposta un listener che salva le dimensioni della finestra quando viene chiusa
+        double finalHeight = height;
+        double finalWidth = width;
+
         stage1.setOnCloseRequest(
-                event -> salvaDimensioni.setArray(new Double[] { width, height }));
+                event -> salvaDimensioni.setArray(new Double[] {finalWidth, finalHeight}));
     }
 }
