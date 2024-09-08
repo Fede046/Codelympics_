@@ -35,7 +35,7 @@ public class ChangeStage {
         // Salva la larghezza e l'altezza corrente dello stage, con un piccolo aggiustamento
         if(!System.getProperty("os.name").toLowerCase().contains("win")) {
             width = stage1.getWidth();
-            height = stage1.getHeight();
+            height = stage1.getHeight()-28.5;
         }else{
             width = stage1.getWidth() - 16;
             height = stage1.getHeight() - 39;
