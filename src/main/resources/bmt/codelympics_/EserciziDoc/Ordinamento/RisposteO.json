@@ -36,9 +36,9 @@
 		"id": 5,
 		"r1": "public class Main {",
 		"r2": "public static void main(String[] args) {",
-		"r3": "String parola1 = 'Hello';",
-		"r4": "System.out.println(parola1);}}",
-		"sol": "public class Main { public static void main(String[] args) { String parola1 = 'Hello'; System.out.println(parola1);}}"
+		"r3": "String parola = 'Hello';",
+		"r4": "System.out.println(parola);}}",
+		"sol": "public class Main { public static void main(String[] args) { String parola = 'Hello'; System.out.println(parola);}}"
 	  }
 	],
 	"intermedio": [
@@ -54,11 +54,11 @@
 	  {
 		"id": 2,
 		"r1": "import java.util.*;\npublic class Main {\npublic static void main(String[] args) {\nScanner scan = new Scanner(System.in);",
-		"r2": "System.out.println('Dimmi un numero x: ');\n int x = scan.nextInt();",
-		"r3": "System.out.println('Dimmi un numero y: ');\nint y = scan.nextInt();",
+		"r2": "System.out.println('Dimmi un primo numero x: ');\n int x = scan.nextInt();",
+		"r3": "System.out.println('Dimmi un secondo numero y: ');\nint y = scan.nextInt();",
 		"r4": "System.out.println(doppio(x));}",
 		"r5": "public static int doppio(int n){\n n=n*2;\n return n;}}",
-		"sol": "import java.util.*;\npublic class Main {\npublic static void main(String[] args) {\nScanner scan = new Scanner(System.in); System.out.println('Dimmi un numero x: ');\n int x = scan.nextInt(); System.out.println('Dimmi un numero y: ');\nint y = scan.nextInt(); System.out.println(doppio(x));} public static int doppio(int n){\n n=n*2;\n return n;}}"
+		"sol": "import java.util.*;\npublic class Main {\npublic static void main(String[] args) {\nScanner scan = new Scanner(System.in); System.out.println('Dimmi un primo numero x: ');\n int x = scan.nextInt(); System.out.println('Dimmi un secondo numero y: ');\nint y = scan.nextInt(); System.out.println(doppio(x));} public static int doppio(int n){\n n=n*2;\n return n;}}"
 	  },
 	  {
 		"id": 3,
@@ -82,9 +82,9 @@
 		"r1": "class Solution {\npublic boolean Value(int[] nums) {",
 		"r2": "boolean temp =nums[0]",
 		"r3": "<=nums[nums.length-1];",
-		"r4": "for(int j=0;j<nums.length-1;j++){ if(nums[j]>nums[j+1]&&temp) return false;",
+		"r4": "for(int j=0;j<nums.length-1;j++){ if(nums[j]>nums[j+1]&&temp) \nreturn false;",
 		"r5": "if(nums[j]<nums[j+1]&&!temp) return false;}\nreturn true;}}",
-		"sol": "class Solution {\npublic boolean Value(int[] nums) { boolean temp =nums[0] <=nums[nums.length-1]; for(int j=0;j<nums.length-1;j++){ if(nums[j]>nums[j+1]&&temp) return false; if(nums[j]<nums[j+1]&&!temp) return false;}\nreturn true;}}"}
+		"sol": "class Solution {\npublic boolean Value(int[] nums) { boolean temp =nums[0] <=nums[nums.length-1]; for(int j=0;j<nums.length-1;j++){ if(nums[j]>nums[j+1]&&temp) return false; if(nums[j]<nums[j+1]&&!temp) \nreturn false;}\nreturn true;}}"}
 	],
 	"difficile": [
 	  {
@@ -119,23 +119,23 @@
 	  {
 		"id": 4,
 		"r1": "import java.util.Scanner;",
-		"r2": "public class Main {public static void main(String[] args) {Scanner sc = new Scanner(System.in);\nString input = sc.nextLine();\nString[] elements = input.split('\\s+);",
+		"r2": "public class Main {public static void main(String[] args) {\nScanner sc = new Scanner(System.in);\nString input = sc.nextLine();\nString[] elements = input.split('\\s+);",
 		"r3": "String[] sequence = {'first', 'middle', 'last'}",
 		"r4": "int pos = 0;for (String el : elements) {",
 		"r5": "if (pos < sequence.length && el.equals(sequence[pos])) { pos++;}}",
 		"r6": "} else \n{System.out.println('Errore: ordine errato.');}",
 		"r7": "sc.close();}}",
-		"sol": "import java.util.Scanner; public class Main {public static void main(String[] args) {Scanner sc = new Scanner(System.in);\nString input = sc.nextLine();\nString[] elements = input.split('\\s+); String[] sequence = {'first', 'middle', 'last'} int pos = 0;for (String el : elements) { if (pos < sequence.length && el.equals(sequence[pos])) { pos++;}} } else \n{System.out.println('Errore: ordine errato.');} sc.close();}}"	  
+		"sol": "import java.util.Scanner; public class Main {public static void main(String[] args) {\nScanner sc = new Scanner(System.in);\nString input = sc.nextLine();\nString[] elements = input.split('\\s+); String[] sequence = {'first', 'middle', 'last'} int pos = 0;for (String el : elements) { if (pos < sequence.length && el.equals(sequence[pos])) { pos++;}} } else \n{System.out.println('Errore: ordine errato.');} sc.close();}}"
 	},
 	  {
 		"id": 5,
 		"r1": "import java.util.*;",
 		"r2": "public class Main {\npublic static void main(String[]args){\nRandom random = new Random();",
-		"r3": "Map<Integer,String> map = new TreeMap<>();for(int i=0;i<10;i++){",
+		"r3": "Map<Integer,String> map = new TreeMap<>();\nfor(int i=0;i<10;i++){",
 		"r4": "map.put(i,'Hello '+random.nextInt(10));}",
 		"r5": "for(Map.Entry<Integer,String> entry : map.entrySet()",
 		"r6": "){System.out.println(entry.getKey()+':'+entry.getValue());}}}",
-		"sol": "import java.util.*; public class Main {\npublic static void main(String[]args){\nRandom random = new Random(); Map<Integer,String> map = new TreeMap<>();for(int i=0;i<10;i++){ map.put(i,'Hello '+random.nextInt(10));} for(Map.Entry<Integer,String> entry : map.entrySet() ){System.out.println(entry.getKey()+':'+entry.getValue());}}}"
+		"sol": "import java.util.*; public class Main {\npublic static void main(String[]args){\nRandom random = new Random(); Map<Integer,String> map = new TreeMap<>();\nfor(int i=0;i<10;i++){ map.put(i,'Hello '+random.nextInt(10));} for(Map.Entry<Integer,String> entry : map.entrySet() ){System.out.println(entry.getKey()+':'+entry.getValue());}}}"
 		  }
 	]
   }
