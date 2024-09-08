@@ -58,7 +58,7 @@ public class Home extends ChangeStage implements Initializable {
                 writer.append(
                         "ale,f7a3803365a55b197a3b43bc64aacc13,ale,0xffffffff,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n");
                 writer.append(
-                        ",d41d8cd98f00b204e9800998ecf8427e,,0xffffffff,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0\n");
+                        "admin,21232f297a57a5a743894a0e4a801fc3,admin@gmail.com,#0000FF,5,5,5,1000,1000,1000,5,5,5,1000,1000,1000,5,5,5,1000,1000,1000,5,5,5,1000,1000,1000\n");
                 writer.append(
                         "OlympicFlame,d02bebfbff8ae05e612af49ad0f1d4b5, OlympicFlame,#800080,4,5,2,791,903,374,5,2,0,981,398,0,5,2,0,964,313,0,5,4,2,974,729,312\n");
                 writer.append(
