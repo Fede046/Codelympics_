@@ -192,7 +192,7 @@ public class RegoleGioco extends ChangeStage implements Initializable {
                 else
                     btn_difficile.setDisable(false);
                 bp_img.setId("bodyRegoleArco");
-                lb_nameGame.setText("Riordinamento");
+                lb_nameGame.setText("Ordinamento");
                 lb_txtRegole.setText("Il gioco ti mostrerà una serie di linee di codice disordinate.\n " +
                         "Il tuo compito è rimetterle nell'ordine corretto.\n " +
                         "Quando pensi di aver trovato la sequenza giusta, conferma la tua scelta.\n " +

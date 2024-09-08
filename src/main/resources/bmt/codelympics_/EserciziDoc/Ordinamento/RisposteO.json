@@ -29,8 +29,8 @@
 		"r1": "Scanner scanner=",
 		"r2": "new Scanner(System.in);",
 		"r3": "String parola =",
-		"r4": "1",
-		"sol": "Scanner scanner= new Scanner(System.in); String parola = 1"
+		"r4": "scanner.next();",
+		"sol": "Scanner scanner= new Scanner(System.in); String parola = scanner.next();"
 	  },
 	  {
 		"id": 5,
