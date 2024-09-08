@@ -30,6 +30,7 @@ public class Index extends Application {
 
         // Registra un listener per l'evento di chiusura della finestra
         // Quando la finestra viene chiusa, salva le dimensioni correnti
+        salvaDimensioni.setScermoIntero(Home.isFullScreen());
         Home.setOnCloseRequest(event -> salvaDimensioni.setArray(new Double[] { Home.getWidth(), Home.getHeight() }));
     }
 

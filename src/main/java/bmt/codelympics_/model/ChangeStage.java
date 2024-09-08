@@ -35,7 +35,7 @@ public class ChangeStage {
         // Salva la larghezza e l'altezza corrente dello stage, con un piccolo aggiustamento
         if(!System.getProperty("os.name").toLowerCase().contains("win")) {
             width = stage1.getWidth();
-            height = stage1.getHeight();
+            height = stage1.getHeight()-28.5;
         }else{
             width = stage1.getWidth() - 16;
             height = stage1.getHeight() - 39;
@@ -44,13 +44,24 @@ public class ChangeStage {
 
 
         // Imposta la nuova scena con il root caricato e le dimensioni calcolate
-        stage1.setScene(new Scene(root, width, height));
+        if(!salvaDimensioni.getScermoIntero()){
+            stage1.setScene(new Scene(root, width, height));
+        }else{
+            stage1.setScene(new Scene(root));
+            stage1.setFullScreen(true);
+        }
 
         // Imposta un listener che salva le dimensioni della finestra quando viene chiusa
         double finalHeight = height;
         double finalWidth = width;
 
+        salvaDimensioni.setScermoIntero(stage1.isFullScreen());
+
         stage1.setOnCloseRequest(
-                event -> salvaDimensioni.setArray(new Double[] {finalWidth, finalHeight}));
+
+                event ->{
+                    salvaDimensioni.setArray(new Double[] {finalWidth, finalHeight});
+                } );
+
     }
 }

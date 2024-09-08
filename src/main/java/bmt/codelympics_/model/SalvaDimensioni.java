@@ -22,4 +22,14 @@ public class SalvaDimensioni {
     public Double[] getArray() {
         return array;
     }
+
+    //Metodo per sapere se è a schermo intero
+
+    private boolean schermoIntero = false;
+    public boolean getScermoIntero(){
+        return schermoIntero;
+    }
+    public void setScermoIntero(boolean schermoIntero) {
+        this.schermoIntero = schermoIntero;
+    }
 }
