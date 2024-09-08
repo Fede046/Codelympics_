@@ -36,7 +36,7 @@
             </Button>
             <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="title" text="Medagliere" textAlignment="RIGHT" textFill="WHITE" GridPane.columnIndex="1">
                <font>
-                  <Font name="Verdana Pro Black" size="30.0" />
+                  <Font name="Arial Black" size="30.0" />
                </font>
                <GridPane.margin>
                   <Insets right="10.0" />

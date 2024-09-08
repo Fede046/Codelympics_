@@ -27,7 +27,7 @@
    <top>
       <Label fx:id="lbl_textUp" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="CONGRATULAZIONI!" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Verdana Pro Black" size="30.0" />
+            <Font name="Arial Black" size="30.0" />
          </font>
          <BorderPane.margin>
             <Insets top="30.0" />
