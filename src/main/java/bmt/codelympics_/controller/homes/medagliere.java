@@ -121,7 +121,7 @@ public class medagliere extends ChangeStage implements Initializable {
     }
 
     int calcolaMedaglieArg(String[] array) {
-        System.out.println(array[0]);
+
         int tot = 0;
         int[] n = { 4, 5, 6, 10, 11, 12, 16, 17, 18, 22, 23, 24 };
         for (int i = 0; i < n.length; i++) {
@@ -134,7 +134,7 @@ public class medagliere extends ChangeStage implements Initializable {
     }
 
     int calcolaMedaglieBro(String[] array) {
-        System.out.println(array[0]);
+
         int tot = 0;
         int[] n = { 4, 5, 6, 10, 11, 12, 16, 17, 18, 22, 23, 24 };
         for (int i = 0; i < n.length; i++) {
@@ -186,9 +186,6 @@ public class medagliere extends ChangeStage implements Initializable {
         // array personale
         String[] arrayUtente = data.getArrayUtente();
 
-        for (String[] utente : utentiArray) {
-            System.out.println(Arrays.toString(utente));
-        }
 
         // ordina matrice in base al punteggio
         bubbleSort(utentiArray);

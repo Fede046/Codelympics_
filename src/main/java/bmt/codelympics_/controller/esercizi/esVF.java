@@ -118,7 +118,7 @@ public class esVF extends ChangeStage implements Initializable {
 
             switch (data.getStringaMedaglia()) {
                 case 10:
-                    System.out.println(data.getNumEsercizio());
+
                     JsonNode baseNode = rootNode.path("base");
                     String c = baseNode.get(data.getNumEsercizio() - 1).path("sol").asText();
                     if (rb_vero.isSelected() && c.equals("true"))

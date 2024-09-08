@@ -34,9 +34,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
     @FXML
     void func_Avanti(MouseEvent event) throws Exception {
 
-        System.out.println(data.getNumEsercizio());
-        for (boolean e : data.getArrayRisposte())
-            System.out.print(e + " ");
+
         if (data.getNumEsercizio() > 4)
             TerminaMacroEsercizio();
         else
@@ -91,7 +89,7 @@ public class transConfermaEsercizio extends ChangeStage implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         boolean ris = true;
-        System.out.println(data.getArrayRisposte()[data.getNumEsercizio() - 1]);
+
         if (data.getArrayRisposte()[data.getNumEsercizio() - 1]) {
             // aggiungo qua il sound
             String fileName = "sound/soundVince.mp3";

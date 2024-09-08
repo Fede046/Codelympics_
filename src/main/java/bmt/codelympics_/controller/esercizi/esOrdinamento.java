@@ -131,8 +131,6 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                     }
                     if (String.join(" ", st).equals(c))
                         temp = true;
-                    System.out.println(String.join(" ", st));
-                    System.out.println(temp);
 
                     break;
                 case 23:
@@ -158,8 +156,6 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                     }
                     if (String.join(" ", st).equals(c2))
                         temp = true;
-                    System.out.println(temp);
-                    System.out.println(String.join(" ", st));
 
                     break;
                 case 24:
@@ -188,8 +184,6 @@ public class esOrdinamento extends ChangeStage implements Initializable {
                     }
                     if (String.join(" ", st).equals(c3))
                         temp = true;
-                    System.out.println(temp);
-                    System.out.println(String.join(" ", st));
 
                     break;
             }

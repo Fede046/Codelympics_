@@ -45,7 +45,6 @@ public class Time {
                 minute = 0;
                 if (hour == 24) { // Se le ore arrivano a 24, resettale a 0 (nuovo giorno)
                     hour = 0;
-                    System.out.println("Next day"); // Stampa un messaggio di debug per indicare il nuovo giorno
                 }
             }
         }
